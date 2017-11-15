@@ -94,6 +94,7 @@
             this.SendTimer = new System.Windows.Forms.Timer(this.components);
             this.btSendMsg = new MetroFramework.Controls.MetroButton();
             this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.btAutoScroll = new System.Windows.Forms.Button();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
@@ -928,6 +929,7 @@
             this.fctbRcv.CharWidth = 8;
             this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fctbRcv.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
             this.fctbRcv.IsReplaceMode = false;
             this.fctbRcv.Location = new System.Drawing.Point(1, 52);
@@ -948,12 +950,34 @@
             this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
             this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
             // 
+            // btAutoScroll
+            // 
+            this.btAutoScroll.FlatAppearance.BorderSize = 0;
+            this.btAutoScroll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btAutoScroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAutoScroll.Font = new System.Drawing.Font("SimSun", 7.5F);
+            this.btAutoScroll.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btAutoScroll.Image = global::TerminalTool.Properties.Resources.map_marker_pin;
+            this.btAutoScroll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btAutoScroll.Location = new System.Drawing.Point(378, 29);
+            this.btAutoScroll.Margin = new System.Windows.Forms.Padding(2);
+            this.btAutoScroll.Name = "btAutoScroll";
+            this.btAutoScroll.Padding = new System.Windows.Forms.Padding(0, 2, 1, 1);
+            this.btAutoScroll.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btAutoScroll.Size = new System.Drawing.Size(21, 21);
+            this.btAutoScroll.TabIndex = 76;
+            this.btAutoScroll.Tag = "Send";
+            this.menuToolTip.SetToolTip(this.btAutoScroll, "Auto Scroll");
+            this.btAutoScroll.UseVisualStyleBackColor = true;
+            this.btAutoScroll.Click += new System.EventHandler(this.btAutoScroll_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackMaxSize = 50;
             this.ClientSize = new System.Drawing.Size(500, 400);
+            this.Controls.Add(this.btAutoScroll);
             this.Controls.Add(this.btSendMsg);
             this.Controls.Add(this.panelUpDivide);
             this.Controls.Add(this.fctbRcv);
@@ -1069,6 +1093,7 @@
         private MetroFramework.Controls.MetroPanel panelUpDivide;
         private System.Windows.Forms.Timer SendTimer;
         private MetroFramework.Controls.MetroButton btSendMsg;
+        private System.Windows.Forms.Button btAutoScroll;
     }
 }
 

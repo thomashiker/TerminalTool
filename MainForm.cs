@@ -34,6 +34,7 @@ namespace TerminalTool
         private Color styleColor;
         private bool recordState = true;
         private bool sendTBMLoopChecked = false;
+        private bool fctbRcvAutoScroll = true;
 
         private SendToolForm sendTool;
         private FileSettingForm fileSettingForm;
@@ -120,6 +121,7 @@ namespace TerminalTool
             trackBarZoomInit();
             portSelectMenu.Closing += new ToolStripDropDownClosingEventHandler(portSettingContextMenu_closed);
             SavedLogPath = System.Environment.CurrentDirectory;
+            FCTBAutoScroll = true;
         }
 
         private void LogToFile(string data)
@@ -147,7 +149,7 @@ namespace TerminalTool
         {
             LogToFile(text);
             fctbRcv.AppendText(text);
-            if (fctbRcv.AutoScroll)
+            if (fctbRcvAutoScroll)
             {
                 fctbRcv.GoEnd();
             }
@@ -423,6 +425,29 @@ namespace TerminalTool
             if (capture.ShowDialog() == DialogResult.OK)
             {
             }
+        }
+
+
+        public bool FCTBAutoScroll
+        {
+            get { return fctbRcvAutoScroll; }
+            set
+            {
+                fctbRcvAutoScroll = value;
+                if (fctbRcvAutoScroll)
+                {
+                    btAutoScroll.BackColor = btAutoScroll.FlatAppearance.MouseOverBackColor;
+                }
+                else
+                {
+                    btAutoScroll.BackColor = this.BackColor;
+                }
+            }
+        }
+
+        private void btAutoScroll_Click(object sender, EventArgs e)
+        {
+            FCTBAutoScroll = !FCTBAutoScroll;
         }
 
         private void btTopMost_Click(object sender, EventArgs e)
