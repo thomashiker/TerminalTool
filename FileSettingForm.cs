@@ -14,6 +14,7 @@ using MetroFramework.Forms;
 using MetroFramework.Drawing;
 using MetroFramework.Controls;
 using System.IO;
+using FastColoredTextBoxNS;
 
 namespace TerminalTool
 {
@@ -26,6 +27,7 @@ namespace TerminalTool
         private int Period = 0;
         private int Times = 0;
         private int FileLineNum = 0;
+        private FastColoredTextBox fctb = new FastColoredTextBox();
 
 
         public MetroColorStyle MetroStyle
@@ -129,7 +131,7 @@ namespace TerminalTool
 
         private void NumInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 8 && !Char.IsDigit(e.KeyChar))
+            if (e.KeyChar != 8 && !System.Char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
                 ShowInfo("Please input a digit", ErrorType.ERROR);
@@ -209,7 +211,7 @@ namespace TerminalTool
         {
             if (cbLoop.Checked)
             {
-                if (null == tbTimes.Text)
+                if (null == tbTimes.Text || 0 == tbTimes.Text.Length)
                 {
                     return true;
                 }
@@ -237,79 +239,68 @@ namespace TerminalTool
             }
             return false;
         }
+
+        private int GetRandomNum(int up)
+        {
+            Random ro = new Random(10);
+            long tick = DateTime.Now.Ticks;
+            Random ran = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
+
+            return ran.Next(up);
+        }
+
         private void bgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            UTF8Encoding temp;
             int percent;
             int line = 0;
             string output;
-            String s;
+            int lineNum;
 
             BackgroundWorker myWork = sender as BackgroundWorker;
-            //StreamReader sr = e.Argument as StreamReader;
             string file = e.Argument as string;
-            StreamReader sr = new StreamReader(file);
 
-            FileLineNum = 0;
-            while ((s = sr.ReadLine()) != null)
+            do
             {
-                FileLineNum++;
-            }
-            sr.Close();
-
-            if (null != sr)
-            {
-                temp = new UTF8Encoding(true);
-
-                do
+                if (!File.Exists(@file))
                 {
-                    sr = new StreamReader(file);
-                    line = 0;
+                    e.Cancel = true;
+                    return;
+                }
+                fctb.OpenFile(file, UTF8Encoding.UTF8);
+                FileLineNum = fctb.LinesCount;
+                line = 0;
+                while ((line < FileLineNum) && (!myWork.CancellationPending))
+                {
+                    if (cbShuffle.Checked)
+                        lineNum = GetRandomNum(fctb.LinesCount - 1);
+                    else
+                        lineNum = 0;
+                    output = fctb.GetLineText(lineNum);
+                    fctb.RemoveLines(new List<int>() { lineNum });
 
-                   //FileStream fileStream = new FileStream(file, FileMode.Open, FileAccess.Read);
-                   //if (cbShuffle.Checked)
-                   //{
-                   //    int iSeed = 10;
-                   //    Random ro = new Random(10);
-                   //    long tick = DateTime.Now.Ticks;
-                   //    Random ran = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
-                   //
-                   //    int iResult;
-                   //    int iUp = FileLineNum;
-                   //    iResult = ran.Next(iUp);
-                   //
-                   //    fileStream.Seek(iResult, SeekOrigin.Begin);
-                   //    output = ((StreamReader)fileStream).ReadLine();
-                   //}
+                    line++;
 
-                    while (((output = sr.ReadLine()) != null) && (!myWork.CancellationPending))
+                    SendMsg(output);
+
+                    percent = (int)(line * 100 / FileLineNum);
+
+                    try
                     {
-                        line++;
-                        //ShowInfo(output, ErrorType.INFO);
-                        SendMsg(output);
-
-                        percent = (int)(line * 100 / FileLineNum);
-
-                        try
-                        {
-                            //trigger ProgressChanged event
-                            myWork.ReportProgress(percent);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-
-                        if (myWork.CancellationPending)
-                        {
-                            e.Cancel = true;
-                        }
-                        Thread.Sleep(Period);
+                        //trigger ProgressChanged event
+                        myWork.ReportProgress(percent);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
 
-                    sr.Close();
-                } while (LoopContinue() && (!myWork.CancellationPending));
-            }
+                    if (myWork.CancellationPending)
+                    {
+                        e.Cancel = true;
+                    }
+                    Thread.Sleep(Period);
+                }
+            } while (LoopContinue() && (!myWork.CancellationPending));
         }
 
         private void bgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)

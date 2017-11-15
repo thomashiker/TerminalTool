@@ -63,10 +63,9 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Location = new System.Drawing.Point(8, 52);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(39, 15);
+            this.metroLabel1.Size = new System.Drawing.Size(63, 15);
             this.metroLabel1.TabIndex = 64;
-            this.metroLabel1.Text = "Speed";
-            this.toolTip.SetToolTip(this.metroLabel1, "ms");
+            this.metroLabel1.Text = "Speed(ms)";
             this.metroLabel1.UseStyleColors = true;
             // 
             // cbLoop
@@ -147,7 +146,7 @@
             this.tbSpeed.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.tbSpeed.Lines = new string[] {
         "1000"};
-            this.tbSpeed.Location = new System.Drawing.Point(48, 48);
+            this.tbSpeed.Location = new System.Drawing.Point(72, 48);
             this.tbSpeed.Margin = new System.Windows.Forms.Padding(0);
             this.tbSpeed.MaxLength = 8;
             this.tbSpeed.Name = "tbSpeed";
@@ -172,7 +171,7 @@
             // cbShuffle
             // 
             this.cbShuffle.AutoSize = true;
-            this.cbShuffle.Location = new System.Drawing.Point(141, 52);
+            this.cbShuffle.Location = new System.Drawing.Point(146, 52);
             this.cbShuffle.Name = "cbShuffle";
             this.cbShuffle.Size = new System.Drawing.Size(60, 15);
             this.cbShuffle.TabIndex = 65;

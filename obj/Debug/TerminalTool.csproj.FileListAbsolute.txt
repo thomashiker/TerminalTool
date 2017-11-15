@@ -21,3 +21,5 @@ C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.csproj.GenerateResource.Cache
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.exe
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.pdb
+C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\bin\Debug\FastColoredTextBox.pdb
+C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\bin\Debug\FastColoredTextBox.xml

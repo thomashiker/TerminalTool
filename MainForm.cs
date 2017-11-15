@@ -15,6 +15,7 @@ using PortSettingContextMenu;
 using System.IO;
 using System.IO.Ports;
 using System.Diagnostics;
+using System.Management;
 
 
 namespace TerminalTool
@@ -26,7 +27,6 @@ namespace TerminalTool
         private string openLogFileApplication = "notepad++.exe";
         private string logPath = "log";
         private string logFileName = null;
-        private bool fctbRcvAutoScroll = true;
         private Int64 rcvCharNum = 0;
         private Int64 sendCharNum = 0;
         private Int64 TimeElapse = 0;
@@ -147,7 +147,7 @@ namespace TerminalTool
         {
             LogToFile(text);
             fctbRcv.AppendText(text);
-            if (fctbRcvAutoScroll)
+            if (fctbRcv.AutoScroll)
             {
                 fctbRcv.GoEnd();
             }
@@ -406,12 +406,12 @@ namespace TerminalTool
 
         private void btFindPrevious_Click(object sender, EventArgs e)
         {
-            fctbRcv.findForm.FCBFindPrevious();
+            //fctbRcv.findForm.FCBFindPrevious();
         }
 
         private void btFindNext_Click(object sender, EventArgs e)
         {
-            fctbRcv.findForm.FCBFindNext();
+            //fctbRcv.findForm.FCBFindNext();
         }
 
         private void btScreenShot_Click(object sender, EventArgs e)
@@ -739,7 +739,6 @@ namespace TerminalTool
 
         private void btSendSetting_Click(object sender, EventArgs e)
         {
-            //sendFileForm.UserShow();
             fileSettingForm.UserShow();
         }
 
@@ -844,6 +843,12 @@ namespace TerminalTool
         }
 
         private void MainForm_LocationChanged(object sender, EventArgs e)
+        {
+            if (null != sendTool)
+                sendTool.UpdateLocation();
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             if (null != sendTool)
                 sendTool.UpdateLocation();

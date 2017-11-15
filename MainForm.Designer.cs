@@ -65,7 +65,6 @@
             this.sendTBMLoop = new System.Windows.Forms.ToolStripMenuItem();
             this.sendTBMSelectScript = new System.Windows.Forms.ToolStripMenuItem();
             this.sendTBMSend = new System.Windows.Forms.ToolStripMenuItem();
-            this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.trackBarZoom = new MetroFramework.Controls.MetroTrackBar();
             this.linkZoom = new MetroFramework.Controls.MetroLink();
@@ -94,11 +93,12 @@
             this.panelUpDivide = new MetroFramework.Controls.MetroPanel();
             this.SendTimer = new System.Windows.Forms.Timer(this.components);
             this.btSendMsg = new MetroFramework.Controls.MetroButton();
+            this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).BeginInit();
             this.SuspendLayout();
             // 
             // labelConnect
@@ -187,25 +187,25 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.toolStripMenuItem1.Text = "&Black";
             // 
             // whiteToolStripMenuItem
             // 
             this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.whiteToolStripMenuItem.Text = "&White";
             // 
             // grayToolStripMenuItem
             // 
             this.grayToolStripMenuItem.Name = "grayToolStripMenuItem";
-            this.grayToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.grayToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.grayToolStripMenuItem.Text = "&Gray";
             // 
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // tmsiStyleSelect
@@ -234,105 +234,105 @@
             // styleDefault
             // 
             this.styleDefault.Name = "styleDefault";
-            this.styleDefault.Size = new System.Drawing.Size(152, 22);
+            this.styleDefault.Size = new System.Drawing.Size(128, 22);
             this.styleDefault.Text = "Default";
             this.styleDefault.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleBlack
             // 
             this.styleBlack.Name = "styleBlack";
-            this.styleBlack.Size = new System.Drawing.Size(152, 22);
+            this.styleBlack.Size = new System.Drawing.Size(128, 22);
             this.styleBlack.Text = "Black";
             this.styleBlack.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleWhite
             // 
             this.styleWhite.Name = "styleWhite";
-            this.styleWhite.Size = new System.Drawing.Size(152, 22);
+            this.styleWhite.Size = new System.Drawing.Size(128, 22);
             this.styleWhite.Text = "White";
             this.styleWhite.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleSilver
             // 
             this.styleSilver.Name = "styleSilver";
-            this.styleSilver.Size = new System.Drawing.Size(152, 22);
+            this.styleSilver.Size = new System.Drawing.Size(128, 22);
             this.styleSilver.Text = "Silver";
             this.styleSilver.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleBlue
             // 
             this.styleBlue.Name = "styleBlue";
-            this.styleBlue.Size = new System.Drawing.Size(152, 22);
+            this.styleBlue.Size = new System.Drawing.Size(128, 22);
             this.styleBlue.Text = "Blue";
             this.styleBlue.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleGreen
             // 
             this.styleGreen.Name = "styleGreen";
-            this.styleGreen.Size = new System.Drawing.Size(152, 22);
+            this.styleGreen.Size = new System.Drawing.Size(128, 22);
             this.styleGreen.Text = "Green";
             this.styleGreen.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleLime
             // 
             this.styleLime.Name = "styleLime";
-            this.styleLime.Size = new System.Drawing.Size(152, 22);
+            this.styleLime.Size = new System.Drawing.Size(128, 22);
             this.styleLime.Text = "Lime";
             this.styleLime.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleTeal
             // 
             this.styleTeal.Name = "styleTeal";
-            this.styleTeal.Size = new System.Drawing.Size(152, 22);
+            this.styleTeal.Size = new System.Drawing.Size(128, 22);
             this.styleTeal.Text = "Teal";
             this.styleTeal.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleOrange
             // 
             this.styleOrange.Name = "styleOrange";
-            this.styleOrange.Size = new System.Drawing.Size(152, 22);
+            this.styleOrange.Size = new System.Drawing.Size(128, 22);
             this.styleOrange.Text = "Orange";
             this.styleOrange.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleBrown
             // 
             this.styleBrown.Name = "styleBrown";
-            this.styleBrown.Size = new System.Drawing.Size(152, 22);
+            this.styleBrown.Size = new System.Drawing.Size(128, 22);
             this.styleBrown.Text = "Brown";
             this.styleBrown.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // stylePink
             // 
             this.stylePink.Name = "stylePink";
-            this.stylePink.Size = new System.Drawing.Size(152, 22);
+            this.stylePink.Size = new System.Drawing.Size(128, 22);
             this.stylePink.Text = "Pink";
             this.stylePink.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleMagenta
             // 
             this.styleMagenta.Name = "styleMagenta";
-            this.styleMagenta.Size = new System.Drawing.Size(152, 22);
+            this.styleMagenta.Size = new System.Drawing.Size(128, 22);
             this.styleMagenta.Text = "Magenta";
             this.styleMagenta.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // stylePurple
             // 
             this.stylePurple.Name = "stylePurple";
-            this.stylePurple.Size = new System.Drawing.Size(152, 22);
+            this.stylePurple.Size = new System.Drawing.Size(128, 22);
             this.stylePurple.Text = "Purple";
             this.stylePurple.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleRed
             // 
             this.styleRed.Name = "styleRed";
-            this.styleRed.Size = new System.Drawing.Size(152, 22);
+            this.styleRed.Size = new System.Drawing.Size(128, 22);
             this.styleRed.Text = "Red";
             this.styleRed.Click += new System.EventHandler(this.styleSelect_Click);
             // 
             // styleYellow
             // 
             this.styleYellow.Name = "styleYellow";
-            this.styleYellow.Size = new System.Drawing.Size(152, 22);
+            this.styleYellow.Size = new System.Drawing.Size(128, 22);
             this.styleYellow.Text = "Yellow";
             this.styleYellow.Click += new System.EventHandler(this.styleSelect_Click);
             // 
@@ -442,49 +442,6 @@
             this.sendTBMSend.Size = new System.Drawing.Size(109, 22);
             this.sendTBMSend.Text = "Send";
             this.sendTBMSend.Click += new System.EventHandler(this.sendTBMSend_Click);
-            // 
-            // fctbRcv
-            // 
-            this.fctbRcv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.fctbRcv.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.fctbRcv.AutoScrollMinSize = new System.Drawing.Size(27, 14);
-            this.fctbRcv.BackBrush = null;
-            this.fctbRcv.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.fctbRcv.BookmarkColor = System.Drawing.Color.RoyalBlue;
-            this.fctbRcv.CaretColor = System.Drawing.Color.MediumSeaGreen;
-            this.fctbRcv.CharHeight = 14;
-            this.fctbRcv.CharWidth = 8;
-            this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
-            this.fctbRcv.IsReplaceMode = false;
-            this.fctbRcv.Location = new System.Drawing.Point(1, 52);
-            this.fctbRcv.Name = "fctbRcv";
-            this.fctbRcv.Paddings = new System.Windows.Forms.Padding(0);
-            this.fctbRcv.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.fctbRcv.SelectionUnFormatColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.fctbRcv.ServiceColors = null;
-            this.fctbRcv.ServiceLinesColor = System.Drawing.Color.DeepSkyBlue;
-            this.fctbRcv.Size = new System.Drawing.Size(498, 305);
-            this.fctbRcv.TabIndex = 0;
-            this.fctbRcv.Zoom = 100;
-            this.fctbRcv.KeyPressed += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPressed);
-            this.fctbRcv.ZoomChanged += new System.EventHandler(this.fctbRcv_ZoomChanged);
-            this.fctbRcv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fctbRcv_KeyDown);
-            this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
-            this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
             // 
             // panel1
             // 
@@ -946,6 +903,51 @@
             this.btSendMsg.UseStyleColors = true;
             this.btSendMsg.Click += new System.EventHandler(this.btSendMsg_Click);
             // 
+            // fctbRcv
+            // 
+            this.fctbRcv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fctbRcv.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.fctbRcv.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            this.fctbRcv.BackBrush = null;
+            this.fctbRcv.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.fctbRcv.BookmarkColor = System.Drawing.Color.RoyalBlue;
+            this.fctbRcv.CaretColor = System.Drawing.Color.MediumSeaGreen;
+            this.fctbRcv.CharHeight = 14;
+            this.fctbRcv.CharWidth = 8;
+            this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
+            this.fctbRcv.IsReplaceMode = false;
+            this.fctbRcv.Location = new System.Drawing.Point(1, 52);
+            this.fctbRcv.Margin = new System.Windows.Forms.Padding(0);
+            this.fctbRcv.Name = "fctbRcv";
+            this.fctbRcv.Paddings = new System.Windows.Forms.Padding(0);
+            this.fctbRcv.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.fctbRcv.ServiceColors = null;
+            this.fctbRcv.ServiceLinesColor = System.Drawing.Color.DeepSkyBlue;
+            this.fctbRcv.Size = new System.Drawing.Size(498, 305);
+            this.fctbRcv.TabIndex = 0;
+            this.fctbRcv.WordWrapAutoIndent = false;
+            this.fctbRcv.WordWrapMode = FastColoredTextBoxNS.WordWrapMode.Custom;
+            this.fctbRcv.Zoom = 100;
+            this.fctbRcv.KeyPressed += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPressed);
+            this.fctbRcv.ZoomChanged += new System.EventHandler(this.fctbRcv_ZoomChanged);
+            this.fctbRcv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fctbRcv_KeyDown);
+            this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
+            this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -991,11 +993,12 @@
             this.Text = "Terminal";
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.cmSys.ResumeLayout(false);
             this.cmSend.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
