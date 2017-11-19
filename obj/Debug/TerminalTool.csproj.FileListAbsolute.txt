@@ -23,3 +23,5 @@ C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.pdb
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\bin\Debug\FastColoredTextBox.pdb
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\bin\Debug\FastColoredTextBox.xml
+C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.HelpForm.resources
+C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\bin\Debug\CaptureImageTool.pdb

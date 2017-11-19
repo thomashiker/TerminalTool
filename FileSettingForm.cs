@@ -48,6 +48,7 @@ namespace TerminalTool
 
             StyleManager = StyleMng;
             mainForm = form;
+            
             UpdateBtnStyle();
             labelInfo.BackColor = MetroPaint.GetStyleColor(StyleMng.Style);
         }

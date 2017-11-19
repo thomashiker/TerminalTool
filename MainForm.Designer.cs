@@ -59,7 +59,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiSystemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbSend = new MetroFramework.Controls.MetroTextBox();
             this.cmSend = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.sendTBMSave = new System.Windows.Forms.ToolStripMenuItem();
             this.sendTBMLoop = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,6 +69,7 @@
             this.linkZoom = new MetroFramework.Controls.MetroLink();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.menuToolTip = new MetroFramework.Components.MetroToolTip();
+            this.btAutoScroll = new System.Windows.Forms.Button();
             this.btNew = new System.Windows.Forms.Button();
             this.btFindNext = new System.Windows.Forms.Button();
             this.btScreenShot = new System.Windows.Forms.Button();
@@ -89,12 +89,12 @@
             this.btSendSetting = new System.Windows.Forms.Button();
             this.LinkTimer = new System.Windows.Forms.Timer(this.components);
             this.StyleMng = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelUpDivide = new MetroFramework.Controls.MetroPanel();
             this.SendTimer = new System.Windows.Forms.Timer(this.components);
             this.btSendMsg = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbSend = new MetroFramework.Controls.MetroTextBox();
             this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
-            this.btAutoScroll = new System.Windows.Forms.Button();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
@@ -353,53 +353,7 @@
             this.tsmiHelp.Name = "tsmiHelp";
             this.tsmiHelp.Size = new System.Drawing.Size(140, 22);
             this.tsmiHelp.Text = "&Help";
-            // 
-            // tbSend
-            // 
-            this.tbSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSend.ContextMenuStrip = this.cmSend;
-            // 
-            // 
-            // 
-            this.tbSend.CustomButton.FlatAppearance.BorderSize = 0;
-            this.tbSend.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbSend.CustomButton.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.tbSend.CustomButton.Image = global::TerminalTool.Properties.Resources.arrow_7_down;
-            this.tbSend.CustomButton.Location = new System.Drawing.Point(417, 2);
-            this.tbSend.CustomButton.Margin = new System.Windows.Forms.Padding(0);
-            this.tbSend.CustomButton.Name = "";
-            this.tbSend.CustomButton.Size = new System.Drawing.Size(17, 17);
-            this.tbSend.CustomButton.Style = MetroFramework.MetroColorStyle.Lime;
-            this.tbSend.CustomButton.TabIndex = 1;
-            this.tbSend.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbSend.CustomButton.UseSelectable = true;
-            this.tbSend.CustomButton.UseStyleColors = true;
-            this.tbSend.DisplayIcon = true;
-            this.tbSend.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.tbSend.Icon = global::TerminalTool.Properties.Resources.mail_inbox;
-            this.tbSend.Lines = new string[0];
-            this.tbSend.Location = new System.Drawing.Point(1, 359);
-            this.tbSend.MaxLength = 32767;
-            this.tbSend.Name = "tbSend";
-            this.tbSend.PasswordChar = '\0';
-            this.tbSend.PromptText = "send...";
-            this.tbSend.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbSend.SelectedText = "";
-            this.tbSend.SelectionLength = 0;
-            this.tbSend.SelectionStart = 0;
-            this.tbSend.ShortcutsEnabled = true;
-            this.tbSend.ShowButton = true;
-            this.tbSend.ShowClearButton = true;
-            this.tbSend.Size = new System.Drawing.Size(437, 22);
-            this.tbSend.TabIndex = 48;
-            this.tbSend.UseSelectable = true;
-            this.tbSend.UseStyleColors = true;
-            this.tbSend.WaterMark = "send...";
-            this.tbSend.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbSend.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSend.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbSend_ButtonClick);
-            this.tbSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSend_KeyDown);
+            this.tsmiHelp.Click += new System.EventHandler(this.tsmiHelp_Click);
             // 
             // cmSend
             // 
@@ -495,6 +449,27 @@
             this.menuToolTip.StyleManager = null;
             this.menuToolTip.Theme = MetroFramework.MetroThemeStyle.Default;
             // 
+            // btAutoScroll
+            // 
+            this.btAutoScroll.FlatAppearance.BorderSize = 0;
+            this.btAutoScroll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btAutoScroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAutoScroll.Font = new System.Drawing.Font("SimSun", 7.5F);
+            this.btAutoScroll.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btAutoScroll.Image = global::TerminalTool.Properties.Resources.map_marker_pin;
+            this.btAutoScroll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btAutoScroll.Location = new System.Drawing.Point(378, 29);
+            this.btAutoScroll.Margin = new System.Windows.Forms.Padding(2);
+            this.btAutoScroll.Name = "btAutoScroll";
+            this.btAutoScroll.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
+            this.btAutoScroll.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btAutoScroll.Size = new System.Drawing.Size(21, 21);
+            this.btAutoScroll.TabIndex = 76;
+            this.btAutoScroll.Tag = "Send";
+            this.menuToolTip.SetToolTip(this.btAutoScroll, "Auto Scroll");
+            this.btAutoScroll.UseVisualStyleBackColor = true;
+            this.btAutoScroll.Click += new System.EventHandler(this.btAutoScroll_Click);
+            // 
             // btNew
             // 
             this.btNew.FlatAppearance.BorderSize = 0;
@@ -507,7 +482,7 @@
             this.btNew.Location = new System.Drawing.Point(3, 29);
             this.btNew.Margin = new System.Windows.Forms.Padding(2);
             this.btNew.Name = "btNew";
-            this.btNew.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btNew.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btNew.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btNew.Size = new System.Drawing.Size(21, 21);
             this.btNew.TabIndex = 72;
@@ -528,7 +503,7 @@
             this.btFindNext.Location = new System.Drawing.Point(328, 29);
             this.btFindNext.Margin = new System.Windows.Forms.Padding(2);
             this.btFindNext.Name = "btFindNext";
-            this.btFindNext.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btFindNext.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btFindNext.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btFindNext.Size = new System.Drawing.Size(21, 21);
             this.btFindNext.TabIndex = 67;
@@ -549,7 +524,7 @@
             this.btScreenShot.Location = new System.Drawing.Point(353, 29);
             this.btScreenShot.Margin = new System.Windows.Forms.Padding(2);
             this.btScreenShot.Name = "btScreenShot";
-            this.btScreenShot.Padding = new System.Windows.Forms.Padding(0, 2, 1, 1);
+            this.btScreenShot.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btScreenShot.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btScreenShot.Size = new System.Drawing.Size(21, 21);
             this.btScreenShot.TabIndex = 66;
@@ -570,7 +545,7 @@
             this.btFindPrevious.Location = new System.Drawing.Point(303, 29);
             this.btFindPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btFindPrevious.Name = "btFindPrevious";
-            this.btFindPrevious.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btFindPrevious.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btFindPrevious.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btFindPrevious.Size = new System.Drawing.Size(21, 21);
             this.btFindPrevious.TabIndex = 65;
@@ -591,7 +566,7 @@
             this.btGoForward.Location = new System.Drawing.Point(278, 29);
             this.btGoForward.Margin = new System.Windows.Forms.Padding(2);
             this.btGoForward.Name = "btGoForward";
-            this.btGoForward.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btGoForward.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btGoForward.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btGoForward.Size = new System.Drawing.Size(21, 21);
             this.btGoForward.TabIndex = 64;
@@ -612,7 +587,7 @@
             this.btGoBackward.Location = new System.Drawing.Point(253, 29);
             this.btGoBackward.Margin = new System.Windows.Forms.Padding(2);
             this.btGoBackward.Name = "btGoBackward";
-            this.btGoBackward.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btGoBackward.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btGoBackward.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btGoBackward.Size = new System.Drawing.Size(21, 21);
             this.btGoBackward.TabIndex = 63;
@@ -633,7 +608,7 @@
             this.btOpenDir.Location = new System.Drawing.Point(228, 29);
             this.btOpenDir.Margin = new System.Windows.Forms.Padding(2);
             this.btOpenDir.Name = "btOpenDir";
-            this.btOpenDir.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btOpenDir.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btOpenDir.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btOpenDir.Size = new System.Drawing.Size(21, 21);
             this.btOpenDir.TabIndex = 62;
@@ -654,7 +629,7 @@
             this.btOpenLogWithApp.Location = new System.Drawing.Point(203, 29);
             this.btOpenLogWithApp.Margin = new System.Windows.Forms.Padding(2);
             this.btOpenLogWithApp.Name = "btOpenLogWithApp";
-            this.btOpenLogWithApp.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btOpenLogWithApp.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btOpenLogWithApp.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btOpenLogWithApp.Size = new System.Drawing.Size(21, 21);
             this.btOpenLogWithApp.TabIndex = 61;
@@ -675,7 +650,7 @@
             this.btNewLog.Location = new System.Drawing.Point(178, 29);
             this.btNewLog.Margin = new System.Windows.Forms.Padding(2);
             this.btNewLog.Name = "btNewLog";
-            this.btNewLog.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btNewLog.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btNewLog.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btNewLog.Size = new System.Drawing.Size(21, 21);
             this.btNewLog.TabIndex = 60;
@@ -696,7 +671,7 @@
             this.btRecord.Location = new System.Drawing.Point(153, 29);
             this.btRecord.Margin = new System.Windows.Forms.Padding(2);
             this.btRecord.Name = "btRecord";
-            this.btRecord.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btRecord.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btRecord.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btRecord.Size = new System.Drawing.Size(21, 21);
             this.btRecord.TabIndex = 59;
@@ -717,7 +692,7 @@
             this.btTag.Location = new System.Drawing.Point(128, 29);
             this.btTag.Margin = new System.Windows.Forms.Padding(2);
             this.btTag.Name = "btTag";
-            this.btTag.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btTag.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btTag.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btTag.Size = new System.Drawing.Size(21, 21);
             this.btTag.TabIndex = 58;
@@ -738,7 +713,7 @@
             this.btLine.Location = new System.Drawing.Point(103, 29);
             this.btLine.Margin = new System.Windows.Forms.Padding(2);
             this.btLine.Name = "btLine";
-            this.btLine.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btLine.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btLine.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btLine.Size = new System.Drawing.Size(21, 21);
             this.btLine.TabIndex = 57;
@@ -759,7 +734,7 @@
             this.btClear.Location = new System.Drawing.Point(78, 29);
             this.btClear.Margin = new System.Windows.Forms.Padding(2);
             this.btClear.Name = "btClear";
-            this.btClear.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btClear.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btClear.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btClear.Size = new System.Drawing.Size(21, 21);
             this.btClear.TabIndex = 56;
@@ -780,7 +755,7 @@
             this.btSaveRcv.Location = new System.Drawing.Point(53, 29);
             this.btSaveRcv.Margin = new System.Windows.Forms.Padding(2);
             this.btSaveRcv.Name = "btSaveRcv";
-            this.btSaveRcv.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btSaveRcv.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btSaveRcv.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btSaveRcv.Size = new System.Drawing.Size(21, 21);
             this.btSaveRcv.TabIndex = 55;
@@ -801,7 +776,7 @@
             this.btOpen.Location = new System.Drawing.Point(28, 29);
             this.btOpen.Margin = new System.Windows.Forms.Padding(2);
             this.btOpen.Name = "btOpen";
-            this.btOpen.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btOpen.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btOpen.Size = new System.Drawing.Size(21, 21);
             this.btOpen.TabIndex = 54;
@@ -823,7 +798,7 @@
             this.btTopMost.Location = new System.Drawing.Point(390, 5);
             this.btTopMost.Margin = new System.Windows.Forms.Padding(2);
             this.btTopMost.Name = "btTopMost";
-            this.btTopMost.Padding = new System.Windows.Forms.Padding(0, 2, 1, 1);
+            this.btTopMost.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
             this.btTopMost.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btTopMost.Size = new System.Drawing.Size(20, 20);
             this.btTopMost.TabIndex = 53;
@@ -838,7 +813,7 @@
             this.btSendSetting.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btSendSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btSendSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSendSetting.Image = global::TerminalTool.Properties.Resources.MD_stop;
+            this.btSendSetting.Image = global::TerminalTool.Properties.Resources.ftp;
             this.btSendSetting.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btSendSetting.Location = new System.Drawing.Point(475, 359);
             this.btSendSetting.Margin = new System.Windows.Forms.Padding(2);
@@ -846,7 +821,7 @@
             this.btSendSetting.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
             this.btSendSetting.Size = new System.Drawing.Size(22, 22);
             this.btSendSetting.TabIndex = 47;
-            this.menuToolTip.SetToolTip(this.btSendSetting, "file");
+            this.menuToolTip.SetToolTip(this.btSendSetting, "Send File");
             this.btSendSetting.UseVisualStyleBackColor = true;
             this.btSendSetting.Click += new System.EventHandler(this.btSendSetting_Click);
             // 
@@ -858,16 +833,6 @@
             // StyleMng
             // 
             this.StyleMng.Owner = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ContextMenuStrip = this.cmSys;
-            this.pictureBox1.Image = global::TerminalTool.Properties.Resources._3D_Cube;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 68;
-            this.pictureBox1.TabStop = false;
             // 
             // panelUpDivide
             // 
@@ -903,6 +868,63 @@
             this.btSendMsg.UseSelectable = true;
             this.btSendMsg.UseStyleColors = true;
             this.btSendMsg.Click += new System.EventHandler(this.btSendMsg_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ContextMenuStrip = this.cmSys;
+            this.pictureBox1.Image = global::TerminalTool.Properties.Resources.terminal;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 68;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tbSend
+            // 
+            this.tbSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSend.ContextMenuStrip = this.cmSend;
+            // 
+            // 
+            // 
+            this.tbSend.CustomButton.FlatAppearance.BorderSize = 0;
+            this.tbSend.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbSend.CustomButton.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.tbSend.CustomButton.Image = global::TerminalTool.Properties.Resources.arrow_7_down;
+            this.tbSend.CustomButton.Location = new System.Drawing.Point(417, 2);
+            this.tbSend.CustomButton.Margin = new System.Windows.Forms.Padding(0);
+            this.tbSend.CustomButton.Name = "";
+            this.tbSend.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.tbSend.CustomButton.Style = MetroFramework.MetroColorStyle.Lime;
+            this.tbSend.CustomButton.TabIndex = 1;
+            this.tbSend.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbSend.CustomButton.UseSelectable = true;
+            this.tbSend.CustomButton.UseStyleColors = true;
+            this.tbSend.DisplayIcon = true;
+            this.tbSend.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
+            this.tbSend.Icon = global::TerminalTool.Properties.Resources.mail_inbox;
+            this.tbSend.Lines = new string[0];
+            this.tbSend.Location = new System.Drawing.Point(1, 359);
+            this.tbSend.MaxLength = 32767;
+            this.tbSend.Name = "tbSend";
+            this.tbSend.PasswordChar = '\0';
+            this.tbSend.PromptText = "send...";
+            this.tbSend.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbSend.SelectedText = "";
+            this.tbSend.SelectionLength = 0;
+            this.tbSend.SelectionStart = 0;
+            this.tbSend.ShortcutsEnabled = true;
+            this.tbSend.ShowButton = true;
+            this.tbSend.ShowClearButton = true;
+            this.tbSend.Size = new System.Drawing.Size(437, 22);
+            this.tbSend.TabIndex = 48;
+            this.tbSend.UseSelectable = true;
+            this.tbSend.UseStyleColors = true;
+            this.tbSend.WaterMark = "send...";
+            this.tbSend.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbSend.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSend.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbSend_ButtonClick);
+            this.tbSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSend_KeyDown);
             // 
             // fctbRcv
             // 
@@ -950,27 +972,6 @@
             this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
             this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
             // 
-            // btAutoScroll
-            // 
-            this.btAutoScroll.FlatAppearance.BorderSize = 0;
-            this.btAutoScroll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btAutoScroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAutoScroll.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btAutoScroll.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btAutoScroll.Image = global::TerminalTool.Properties.Resources.map_marker_pin;
-            this.btAutoScroll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btAutoScroll.Location = new System.Drawing.Point(378, 29);
-            this.btAutoScroll.Margin = new System.Windows.Forms.Padding(2);
-            this.btAutoScroll.Name = "btAutoScroll";
-            this.btAutoScroll.Padding = new System.Windows.Forms.Padding(0, 2, 1, 1);
-            this.btAutoScroll.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btAutoScroll.Size = new System.Drawing.Size(21, 21);
-            this.btAutoScroll.TabIndex = 76;
-            this.btAutoScroll.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btAutoScroll, "Auto Scroll");
-            this.btAutoScroll.UseVisualStyleBackColor = true;
-            this.btAutoScroll.Click += new System.EventHandler(this.btAutoScroll_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1009,7 +1010,7 @@
             this.Controls.Add(this.labelConnect);
             this.DisplayHeader = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(400, 300);
+            this.MinimumSize = new System.Drawing.Size(450, 300);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(1, 52, 1, 8);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;

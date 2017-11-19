@@ -5173,6 +5173,16 @@ namespace TerminalTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Port_16px {
+            get {
+                object obj = ResourceManager.GetObject("Port_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap power_off {
             get {
                 object obj = ResourceManager.GetObject("power-off", resourceCulture);
@@ -6006,6 +6016,26 @@ namespace TerminalTool.Properties {
         internal static System.Drawing.Bitmap terminal {
             get {
                 object obj = ResourceManager.GetObject("terminal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap terminal_19_772727272727px_1170595_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("terminal_19.772727272727px_1170595_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap terminal_24_475675675676px_1154830_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("terminal_24.475675675676px_1154830_easyicon.net", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

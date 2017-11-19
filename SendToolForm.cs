@@ -38,6 +38,7 @@ namespace TerminalTool
         {
             InitializeComponent();
 
+            StyleMng.Theme = MetroThemeStyle.Light;
             StyleManager = StyleMng;
             MetroStyle = MetroColorStyle.Default;
             textBox = tb;
@@ -455,6 +456,16 @@ namespace TerminalTool
             if (null != row)
             {
                 SendMsg((string)row.Cells[1].Value);
+            }
+        }
+
+        private void SendToolForm_Deactivate(object sender, EventArgs e)
+        {
+            if (autoHideToggle.Checked)
+            {
+                this.TopLevel = false;
+                Hide();
+                this.TopLevel = true;
             }
         }
     }

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
 using MetroFramework.Drawing;
-using CSharpWin_JD.CaptureImage;
 using PortSettingContextMenu;
 using System.IO;
 using System.IO.Ports;
 using System.Diagnostics;
 using System.Management;
+using CSharpWin;
 
 
 namespace TerminalTool
@@ -122,6 +122,8 @@ namespace TerminalTool
             portSelectMenu.Closing += new ToolStripDropDownClosingEventHandler(portSettingContextMenu_closed);
             SavedLogPath = System.Environment.CurrentDirectory;
             FCTBAutoScroll = true;
+
+            
         }
 
         private void LogToFile(string data)
@@ -157,7 +159,7 @@ namespace TerminalTool
 
         bool PortInit()
         {
-            serialPort.Encoding = System.Text.Encoding.GetEncoding("GB2312");
+            serialPort.Encoding = System.Text.Encoding.GetEncoding("UTF8");
 
             return true;
         }
@@ -871,12 +873,25 @@ namespace TerminalTool
         {
             if (null != sendTool)
                 sendTool.UpdateLocation();
+
+            if (null != fctbRcv)
+            {
+                if (null != fctbRcv.findForm)
+                    fctbRcv.findForm.OnLocationChanged();
+            }
+           
         }
 
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             if (null != sendTool)
                 sendTool.UpdateLocation();
+        }
+
+        private void tsmiHelp_Click(object sender, EventArgs e)
+        {
+            HelpForm help = new HelpForm();
+            help.Show(this);
         }
     }
 }

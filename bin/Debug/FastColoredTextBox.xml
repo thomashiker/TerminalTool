@@ -562,6 +562,92 @@
             Actions for shortcuts
             </summary>
         </member>
+        <member name="T:FastColoredTextBoxNS.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.arrow_2_left">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.arrow_2_right">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.arrow_7_down">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.arrow_8_down">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.door">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.edit_replace_16px">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.font">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.font_17px">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.font_case_64_16px_521772_easyicon_net">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.font_lowercase_10px">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.search">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.search_advanced">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.view">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FastColoredTextBoxNS.Properties.Resources.window_stack">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="F:FastColoredTextBoxNS.Ruler.components">
             <summary> 
             Required designer variable.
