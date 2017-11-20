@@ -951,13 +951,13 @@
             this.fctbRcv.CharWidth = 8;
             this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.fctbRcv.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
             this.fctbRcv.IsReplaceMode = false;
             this.fctbRcv.Location = new System.Drawing.Point(1, 52);
             this.fctbRcv.Margin = new System.Windows.Forms.Padding(0);
             this.fctbRcv.Name = "fctbRcv";
             this.fctbRcv.Paddings = new System.Windows.Forms.Padding(0);
+            this.fctbRcv.ReadOnly = true;
             this.fctbRcv.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.fctbRcv.ServiceColors = null;
             this.fctbRcv.ServiceLinesColor = System.Drawing.Color.DeepSkyBlue;

@@ -518,7 +518,7 @@ namespace TerminalTool
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    ReceiveUserInput("\n");
+                    //ReceiveUserInput("\n");
                     StringBuilder sendMsgBuilder = new StringBuilder(MsgToSend);
                     SendMessage(sendMsgBuilder.ToString(), true);
                     MsgToSend = null;
@@ -601,17 +601,19 @@ namespace TerminalTool
         private void serialPort_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             int n = serialPort.BytesToRead;//先记录下来，避免某种原因，人为的原因，操作几次之间时间长，缓存不一致  
-            byte[] buf = new byte[n];//声明一个临时数组存储当前来的串口数据  
+            byte[] buf = new byte[n];//声明一个临时数组存储当前来的串口数据
+            string rcvdata;
             rcvCharNum += n;//增加接收计数  
             serialPort.Read(buf, 0, n); ;//读取缓冲数据
+            serialPort.DiscardInBuffer();
 
-            StringBuilder builder = new StringBuilder();
-            builder.Clear();//清除字符串构造器的内容  
+            //StringBuilder builder = new StringBuilder();
+            //builder.Clear();//清除字符串构造器的内容  
             //因为要访问ui资源，所以需要使用invoke方式同步ui。  
             this.Invoke((EventHandler)(delegate
             {
-                //直接按ASCII规则转换成字符串  
-                builder.Append(Encoding.ASCII.GetString(buf));
+            //直接按ASCII规则转换成字符串  
+                rcvdata = Encoding.Default.GetString(buf);
                 //追加的形式添加到文本框末端，并滚动到最后。  
                 /*fctbRcv.AppendText(builder.ToString());
                 if (fctbRcvAutoScroll)
@@ -619,13 +621,14 @@ namespace TerminalTool
                     fctbRcv.GoEnd();
                 }*/
 
-                AppendRcvText(builder.ToString());
+                //AppendRcvText(builder.ToString());
+                AppendRcvText(rcvdata);
                 UpdateRcvCharDisplay(rcvCharNum);
             }));
 
 
-            SerialPort sp = (SerialPort)sender;
-            string indata = sp.ReadExisting();
+            //SerialPort sp = (SerialPort)sender;
+            //string indata = sp.ReadExisting();
         }
 
         public bool SendMessage(string msg, bool save2file)
