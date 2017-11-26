@@ -606,13 +606,19 @@ namespace TerminalTool
             rcvCharNum += n;//增加接收计数  
             serialPort.Read(buf, 0, n); ;//读取缓冲数据
             serialPort.DiscardInBuffer();
+            //serialPort.ReadExisting
 
             //StringBuilder builder = new StringBuilder();
             //builder.Clear();//清除字符串构造器的内容  
-            //因为要访问ui资源，所以需要使用invoke方式同步ui。  
+            //因为要访问ui资源，所以需要使用invoke方式同步ui。
+            //SerialPort sp = (SerialPort)sender;
+            //string indata = sp.ReadExisting();
+            //do
+            //{
+            //} while ();
             this.Invoke((EventHandler)(delegate
             {
-            //直接按ASCII规则转换成字符串  
+                //直接按ASCII规则转换成字符串  
                 rcvdata = Encoding.Default.GetString(buf);
                 //追加的形式添加到文本框末端，并滚动到最后。  
                 /*fctbRcv.AppendText(builder.ToString());
@@ -653,7 +659,7 @@ namespace TerminalTool
                         labelSend.Text = "s:" + sendCharNum.ToString();
 
                         //fctbRcv.AppendText(builder.ToString());
-                        AppendRcvText(builder.ToString());
+                        //AppendRcvText(builder.ToString());
 
                         if (save2file)
                         {

@@ -39,7 +39,7 @@ namespace TerminalTool
             InitializeComponent();
 
             StyleMng.Theme = MetroThemeStyle.Light;
-            StyleManager = StyleMng;
+            //StyleManager = StyleMng;
             MetroStyle = MetroColorStyle.Default;
             textBox = tb;
             mainForm = form;
@@ -266,7 +266,8 @@ namespace TerminalTool
             int index;
 
             NewCmdForm addForm = new NewCmdForm();
-            addForm.Owner = mainForm;
+            //addForm.Owner = this;
+            //addForm.Parent = mainForm.Parent;
             if (addForm.ShowDialog() == DialogResult.OK)
             {
                 cmd = addForm.GetNewCmd();

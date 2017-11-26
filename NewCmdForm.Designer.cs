@@ -107,7 +107,7 @@
             // btOk
             // 
             this.btOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btOk.Location = new System.Drawing.Point(228, 96);
+            this.btOk.Location = new System.Drawing.Point(221, 88);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(60, 23);
             this.btOk.TabIndex = 2;
@@ -120,7 +120,7 @@
             // btCancel
             // 
             this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCancel.Location = new System.Drawing.Point(292, 96);
+            this.btCancel.Location = new System.Drawing.Point(285, 88);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(60, 23);
             this.btCancel.TabIndex = 3;
@@ -150,11 +150,11 @@
             this.metroLabel2.Text = "Name";
             this.metroLabel2.UseStyleColors = true;
             // 
-            // AddNewCmdForm
+            // NewCmdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 128);
+            this.ClientSize = new System.Drawing.Size(370, 120);
             this.ControlBox = false;
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
@@ -163,13 +163,17 @@
             this.Controls.Add(this.tbCmdName);
             this.Controls.Add(this.tbCmd);
             this.DisplayHeader = false;
-            this.Name = "AddNewCmdForm";
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(370, 120);
+            this.MinimizeBox = false;
+            this.Name = "NewCmdForm";
             this.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddNewCmdForm";
-            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

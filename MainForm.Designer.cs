@@ -951,6 +951,7 @@
             this.fctbRcv.CharWidth = 8;
             this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fctbRcv.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
             this.fctbRcv.IsReplaceMode = false;
             this.fctbRcv.Location = new System.Drawing.Point(1, 52);
