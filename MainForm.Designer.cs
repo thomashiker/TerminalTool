@@ -69,37 +69,40 @@
             this.linkZoom = new MetroFramework.Controls.MetroLink();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.menuToolTip = new MetroFramework.Components.MetroToolTip();
-            this.btAutoScroll = new System.Windows.Forms.Button();
-            this.btNew = new System.Windows.Forms.Button();
-            this.btFindNext = new System.Windows.Forms.Button();
-            this.btScreenShot = new System.Windows.Forms.Button();
-            this.btFindPrevious = new System.Windows.Forms.Button();
-            this.btGoForward = new System.Windows.Forms.Button();
-            this.btGoBackward = new System.Windows.Forms.Button();
-            this.btOpenDir = new System.Windows.Forms.Button();
-            this.btOpenLogWithApp = new System.Windows.Forms.Button();
-            this.btNewLog = new System.Windows.Forms.Button();
-            this.btRecord = new System.Windows.Forms.Button();
-            this.btTag = new System.Windows.Forms.Button();
-            this.btLine = new System.Windows.Forms.Button();
-            this.btClear = new System.Windows.Forms.Button();
-            this.btSaveRcv = new System.Windows.Forms.Button();
-            this.btOpen = new System.Windows.Forms.Button();
             this.btTopMost = new System.Windows.Forms.Button();
             this.btSendSetting = new System.Windows.Forms.Button();
             this.LinkTimer = new System.Windows.Forms.Timer(this.components);
             this.StyleMng = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.panelUpDivide = new MetroFramework.Controls.MetroPanel();
             this.SendTimer = new System.Windows.Forms.Timer(this.components);
             this.btSendMsg = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbSend = new MetroFramework.Controls.MetroTextBox();
             this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.ToolStrip = new Antiufo.Controls.MetroToolStrip();
+            this.tSBNew = new System.Windows.Forms.ToolStripButton();
+            this.tSBConnect = new System.Windows.Forms.ToolStripButton();
+            this.tSBSave = new System.Windows.Forms.ToolStripButton();
+            this.tSBClear = new System.Windows.Forms.ToolStripButton();
+            this.tSBShowLineNum = new System.Windows.Forms.ToolStripButton();
+            this.tSBClearTags = new System.Windows.Forms.ToolStripButton();
+            this.tSBRecord = new System.Windows.Forms.ToolStripButton();
+            this.tSBNewLogFile = new System.Windows.Forms.ToolStripButton();
+            this.tSBOpenLog = new System.Windows.Forms.ToolStripButton();
+            this.tSBOpenLogDir = new System.Windows.Forms.ToolStripButton();
+            this.tSBFindPrevious = new System.Windows.Forms.ToolStripButton();
+            this.tSBFindNext = new System.Windows.Forms.ToolStripButton();
+            this.tSBScreenShot = new System.Windows.Forms.ToolStripButton();
+            this.tSBAutoScroll = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).BeginInit();
+            this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelConnect
@@ -402,7 +405,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(413, 11);
+            this.panel1.Location = new System.Drawing.Point(413, -11);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 10);
             this.panel1.TabIndex = 50;
@@ -448,342 +451,6 @@
             this.menuToolTip.Style = MetroFramework.MetroColorStyle.Default;
             this.menuToolTip.StyleManager = null;
             this.menuToolTip.Theme = MetroFramework.MetroThemeStyle.Default;
-            // 
-            // btAutoScroll
-            // 
-            this.btAutoScroll.FlatAppearance.BorderSize = 0;
-            this.btAutoScroll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btAutoScroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAutoScroll.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btAutoScroll.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btAutoScroll.Image = global::TerminalTool.Properties.Resources.map_marker_pin;
-            this.btAutoScroll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btAutoScroll.Location = new System.Drawing.Point(378, 29);
-            this.btAutoScroll.Margin = new System.Windows.Forms.Padding(2);
-            this.btAutoScroll.Name = "btAutoScroll";
-            this.btAutoScroll.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btAutoScroll.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btAutoScroll.Size = new System.Drawing.Size(21, 21);
-            this.btAutoScroll.TabIndex = 76;
-            this.btAutoScroll.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btAutoScroll, "Auto Scroll");
-            this.btAutoScroll.UseVisualStyleBackColor = true;
-            this.btAutoScroll.Click += new System.EventHandler(this.btAutoScroll_Click);
-            // 
-            // btNew
-            // 
-            this.btNew.FlatAppearance.BorderSize = 0;
-            this.btNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btNew.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btNew.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btNew.Image = global::TerminalTool.Properties.Resources.file_add;
-            this.btNew.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btNew.Location = new System.Drawing.Point(3, 29);
-            this.btNew.Margin = new System.Windows.Forms.Padding(2);
-            this.btNew.Name = "btNew";
-            this.btNew.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btNew.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btNew.Size = new System.Drawing.Size(21, 21);
-            this.btNew.TabIndex = 72;
-            this.btNew.Tag = "New";
-            this.menuToolTip.SetToolTip(this.btNew, "New");
-            this.btNew.UseVisualStyleBackColor = true;
-            this.btNew.Click += new System.EventHandler(this.btNew_Click);
-            // 
-            // btFindNext
-            // 
-            this.btFindNext.FlatAppearance.BorderSize = 0;
-            this.btFindNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btFindNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btFindNext.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btFindNext.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btFindNext.Image = global::TerminalTool.Properties.Resources.arrow_2_right;
-            this.btFindNext.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btFindNext.Location = new System.Drawing.Point(328, 29);
-            this.btFindNext.Margin = new System.Windows.Forms.Padding(2);
-            this.btFindNext.Name = "btFindNext";
-            this.btFindNext.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btFindNext.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btFindNext.Size = new System.Drawing.Size(21, 21);
-            this.btFindNext.TabIndex = 67;
-            this.btFindNext.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btFindNext, "Find Next");
-            this.btFindNext.UseVisualStyleBackColor = true;
-            this.btFindNext.Click += new System.EventHandler(this.btFindNext_Click);
-            // 
-            // btScreenShot
-            // 
-            this.btScreenShot.FlatAppearance.BorderSize = 0;
-            this.btScreenShot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btScreenShot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btScreenShot.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btScreenShot.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btScreenShot.Image = global::TerminalTool.Properties.Resources.screenshot;
-            this.btScreenShot.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btScreenShot.Location = new System.Drawing.Point(353, 29);
-            this.btScreenShot.Margin = new System.Windows.Forms.Padding(2);
-            this.btScreenShot.Name = "btScreenShot";
-            this.btScreenShot.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btScreenShot.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btScreenShot.Size = new System.Drawing.Size(21, 21);
-            this.btScreenShot.TabIndex = 66;
-            this.btScreenShot.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btScreenShot, "ScreenShot");
-            this.btScreenShot.UseVisualStyleBackColor = true;
-            this.btScreenShot.Click += new System.EventHandler(this.btScreenShot_Click);
-            // 
-            // btFindPrevious
-            // 
-            this.btFindPrevious.FlatAppearance.BorderSize = 0;
-            this.btFindPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btFindPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btFindPrevious.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btFindPrevious.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btFindPrevious.Image = global::TerminalTool.Properties.Resources.arrow_2_left;
-            this.btFindPrevious.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btFindPrevious.Location = new System.Drawing.Point(303, 29);
-            this.btFindPrevious.Margin = new System.Windows.Forms.Padding(2);
-            this.btFindPrevious.Name = "btFindPrevious";
-            this.btFindPrevious.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btFindPrevious.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btFindPrevious.Size = new System.Drawing.Size(21, 21);
-            this.btFindPrevious.TabIndex = 65;
-            this.btFindPrevious.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btFindPrevious, "Find Previous");
-            this.btFindPrevious.UseVisualStyleBackColor = true;
-            this.btFindPrevious.Click += new System.EventHandler(this.btFindPrevious_Click);
-            // 
-            // btGoForward
-            // 
-            this.btGoForward.FlatAppearance.BorderSize = 0;
-            this.btGoForward.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btGoForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btGoForward.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btGoForward.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btGoForward.Image = global::TerminalTool.Properties.Resources.arrow_1_forward;
-            this.btGoForward.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btGoForward.Location = new System.Drawing.Point(278, 29);
-            this.btGoForward.Margin = new System.Windows.Forms.Padding(2);
-            this.btGoForward.Name = "btGoForward";
-            this.btGoForward.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btGoForward.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btGoForward.Size = new System.Drawing.Size(21, 21);
-            this.btGoForward.TabIndex = 64;
-            this.btGoForward.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btGoForward, "Go Foreward");
-            this.btGoForward.UseVisualStyleBackColor = true;
-            this.btGoForward.Click += new System.EventHandler(this.btGoForward_Click);
-            // 
-            // btGoBackward
-            // 
-            this.btGoBackward.FlatAppearance.BorderSize = 0;
-            this.btGoBackward.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btGoBackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btGoBackward.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btGoBackward.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btGoBackward.Image = global::TerminalTool.Properties.Resources.arrow_1_backward;
-            this.btGoBackward.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btGoBackward.Location = new System.Drawing.Point(253, 29);
-            this.btGoBackward.Margin = new System.Windows.Forms.Padding(2);
-            this.btGoBackward.Name = "btGoBackward";
-            this.btGoBackward.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btGoBackward.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btGoBackward.Size = new System.Drawing.Size(21, 21);
-            this.btGoBackward.TabIndex = 63;
-            this.btGoBackward.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btGoBackward, "Go Backward");
-            this.btGoBackward.UseVisualStyleBackColor = true;
-            this.btGoBackward.Click += new System.EventHandler(this.btGoBackward_Click);
-            // 
-            // btOpenDir
-            // 
-            this.btOpenDir.FlatAppearance.BorderSize = 0;
-            this.btOpenDir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btOpenDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btOpenDir.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btOpenDir.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btOpenDir.Image = global::TerminalTool.Properties.Resources.folder_open;
-            this.btOpenDir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btOpenDir.Location = new System.Drawing.Point(228, 29);
-            this.btOpenDir.Margin = new System.Windows.Forms.Padding(2);
-            this.btOpenDir.Name = "btOpenDir";
-            this.btOpenDir.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btOpenDir.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btOpenDir.Size = new System.Drawing.Size(21, 21);
-            this.btOpenDir.TabIndex = 62;
-            this.btOpenDir.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btOpenDir, "Open Directory");
-            this.btOpenDir.UseVisualStyleBackColor = true;
-            this.btOpenDir.Click += new System.EventHandler(this.btOpenDir_Click);
-            // 
-            // btOpenLogWithApp
-            // 
-            this.btOpenLogWithApp.FlatAppearance.BorderSize = 0;
-            this.btOpenLogWithApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btOpenLogWithApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btOpenLogWithApp.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btOpenLogWithApp.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btOpenLogWithApp.Image = global::TerminalTool.Properties.Resources.notepad;
-            this.btOpenLogWithApp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btOpenLogWithApp.Location = new System.Drawing.Point(203, 29);
-            this.btOpenLogWithApp.Margin = new System.Windows.Forms.Padding(2);
-            this.btOpenLogWithApp.Name = "btOpenLogWithApp";
-            this.btOpenLogWithApp.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btOpenLogWithApp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btOpenLogWithApp.Size = new System.Drawing.Size(21, 21);
-            this.btOpenLogWithApp.TabIndex = 61;
-            this.btOpenLogWithApp.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btOpenLogWithApp, "Open Log");
-            this.btOpenLogWithApp.UseVisualStyleBackColor = true;
-            this.btOpenLogWithApp.Click += new System.EventHandler(this.btOpenLogWithApp_Click);
-            // 
-            // btNewLog
-            // 
-            this.btNewLog.FlatAppearance.BorderSize = 0;
-            this.btNewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btNewLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btNewLog.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btNewLog.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btNewLog.Image = global::TerminalTool.Properties.Resources.file;
-            this.btNewLog.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btNewLog.Location = new System.Drawing.Point(178, 29);
-            this.btNewLog.Margin = new System.Windows.Forms.Padding(2);
-            this.btNewLog.Name = "btNewLog";
-            this.btNewLog.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btNewLog.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btNewLog.Size = new System.Drawing.Size(21, 21);
-            this.btNewLog.TabIndex = 60;
-            this.btNewLog.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btNewLog, "New Log File");
-            this.btNewLog.UseVisualStyleBackColor = true;
-            this.btNewLog.Click += new System.EventHandler(this.btNewLog_Click);
-            // 
-            // btRecord
-            // 
-            this.btRecord.FlatAppearance.BorderSize = 0;
-            this.btRecord.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRecord.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btRecord.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btRecord.Image = global::TerminalTool.Properties.Resources.MD_record;
-            this.btRecord.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btRecord.Location = new System.Drawing.Point(153, 29);
-            this.btRecord.Margin = new System.Windows.Forms.Padding(2);
-            this.btRecord.Name = "btRecord";
-            this.btRecord.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btRecord.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btRecord.Size = new System.Drawing.Size(21, 21);
-            this.btRecord.TabIndex = 59;
-            this.btRecord.Tag = "true";
-            this.menuToolTip.SetToolTip(this.btRecord, "Record");
-            this.btRecord.UseVisualStyleBackColor = true;
-            this.btRecord.Click += new System.EventHandler(this.btRecord_Click);
-            // 
-            // btTag
-            // 
-            this.btTag.FlatAppearance.BorderSize = 0;
-            this.btTag.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btTag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btTag.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btTag.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btTag.Image = global::TerminalTool.Properties.Resources.tags;
-            this.btTag.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btTag.Location = new System.Drawing.Point(128, 29);
-            this.btTag.Margin = new System.Windows.Forms.Padding(2);
-            this.btTag.Name = "btTag";
-            this.btTag.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btTag.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btTag.Size = new System.Drawing.Size(21, 21);
-            this.btTag.TabIndex = 58;
-            this.btTag.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btTag, "Clear Tags");
-            this.btTag.UseVisualStyleBackColor = true;
-            this.btTag.Click += new System.EventHandler(this.btTag_Click);
-            // 
-            // btLine
-            // 
-            this.btLine.FlatAppearance.BorderSize = 0;
-            this.btLine.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btLine.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btLine.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btLine.Image = global::TerminalTool.Properties.Resources.list_numbered;
-            this.btLine.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btLine.Location = new System.Drawing.Point(103, 29);
-            this.btLine.Margin = new System.Windows.Forms.Padding(2);
-            this.btLine.Name = "btLine";
-            this.btLine.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btLine.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btLine.Size = new System.Drawing.Size(21, 21);
-            this.btLine.TabIndex = 57;
-            this.btLine.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btLine, "Show Line Number");
-            this.btLine.UseVisualStyleBackColor = true;
-            this.btLine.Click += new System.EventHandler(this.btLine_Click);
-            // 
-            // btClear
-            // 
-            this.btClear.FlatAppearance.BorderSize = 0;
-            this.btClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btClear.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btClear.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btClear.Image = global::TerminalTool.Properties.Resources.eraser;
-            this.btClear.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btClear.Location = new System.Drawing.Point(78, 29);
-            this.btClear.Margin = new System.Windows.Forms.Padding(2);
-            this.btClear.Name = "btClear";
-            this.btClear.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btClear.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btClear.Size = new System.Drawing.Size(21, 21);
-            this.btClear.TabIndex = 56;
-            this.btClear.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btClear, "Clear");
-            this.btClear.UseVisualStyleBackColor = true;
-            this.btClear.Click += new System.EventHandler(this.btClear_Click);
-            // 
-            // btSaveRcv
-            // 
-            this.btSaveRcv.FlatAppearance.BorderSize = 0;
-            this.btSaveRcv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btSaveRcv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSaveRcv.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btSaveRcv.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btSaveRcv.Image = global::TerminalTool.Properties.Resources.save;
-            this.btSaveRcv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btSaveRcv.Location = new System.Drawing.Point(53, 29);
-            this.btSaveRcv.Margin = new System.Windows.Forms.Padding(2);
-            this.btSaveRcv.Name = "btSaveRcv";
-            this.btSaveRcv.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btSaveRcv.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btSaveRcv.Size = new System.Drawing.Size(21, 21);
-            this.btSaveRcv.TabIndex = 55;
-            this.btSaveRcv.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btSaveRcv, "Save");
-            this.btSaveRcv.UseVisualStyleBackColor = true;
-            this.btSaveRcv.Click += new System.EventHandler(this.btSaveRcv_Click);
-            // 
-            // btOpen
-            // 
-            this.btOpen.FlatAppearance.BorderSize = 0;
-            this.btOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.btOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btOpen.Font = new System.Drawing.Font("SimSun", 7.5F);
-            this.btOpen.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btOpen.Image = global::TerminalTool.Properties.Resources.connection_error;
-            this.btOpen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btOpen.Location = new System.Drawing.Point(28, 29);
-            this.btOpen.Margin = new System.Windows.Forms.Padding(2);
-            this.btOpen.Name = "btOpen";
-            this.btOpen.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btOpen.Size = new System.Drawing.Size(21, 21);
-            this.btOpen.TabIndex = 54;
-            this.btOpen.Tag = "Open/Close";
-            this.menuToolTip.SetToolTip(this.btOpen, "Open/Close");
-            this.btOpen.UseVisualStyleBackColor = true;
-            this.btOpen.Click += new System.EventHandler(this.btOpen_Click);
             // 
             // btTopMost
             // 
@@ -833,22 +500,6 @@
             // StyleMng
             // 
             this.StyleMng.Owner = this;
-            // 
-            // panelUpDivide
-            // 
-            this.panelUpDivide.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelUpDivide.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelUpDivide.HorizontalScrollbarBarColor = true;
-            this.panelUpDivide.HorizontalScrollbarHighlightOnWheel = false;
-            this.panelUpDivide.HorizontalScrollbarSize = 10;
-            this.panelUpDivide.Location = new System.Drawing.Point(1, 52);
-            this.panelUpDivide.Name = "panelUpDivide";
-            this.panelUpDivide.Size = new System.Drawing.Size(498, 1);
-            this.panelUpDivide.TabIndex = 74;
-            this.panelUpDivide.UseCustomBackColor = true;
-            this.panelUpDivide.VerticalScrollbarBarColor = true;
-            this.panelUpDivide.VerticalScrollbarHighlightOnWheel = false;
-            this.panelUpDivide.VerticalScrollbarSize = 10;
             // 
             // SendTimer
             // 
@@ -951,10 +602,9 @@
             this.fctbRcv.CharWidth = 8;
             this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.fctbRcv.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
             this.fctbRcv.IsReplaceMode = false;
-            this.fctbRcv.Location = new System.Drawing.Point(1, 52);
+            this.fctbRcv.Location = new System.Drawing.Point(0, 56);
             this.fctbRcv.Margin = new System.Windows.Forms.Padding(0);
             this.fctbRcv.Name = "fctbRcv";
             this.fctbRcv.Paddings = new System.Windows.Forms.Padding(0);
@@ -962,7 +612,7 @@
             this.fctbRcv.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.fctbRcv.ServiceColors = null;
             this.fctbRcv.ServiceLinesColor = System.Drawing.Color.DeepSkyBlue;
-            this.fctbRcv.Size = new System.Drawing.Size(498, 305);
+            this.fctbRcv.Size = new System.Drawing.Size(498, 301);
             this.fctbRcv.TabIndex = 0;
             this.fctbRcv.WordWrapAutoIndent = false;
             this.fctbRcv.WordWrapMode = FastColoredTextBoxNS.WordWrapMode.Custom;
@@ -973,34 +623,244 @@
             this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
             this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
             // 
+            // ToolStrip
+            // 
+            this.ToolStrip.CanOverflow = false;
+            this.ToolStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tSBNew,
+            this.tSBConnect,
+            this.toolStripSeparator1,
+            this.tSBSave,
+            this.tSBClear,
+            this.tSBShowLineNum,
+            this.tSBClearTags,
+            this.tSBRecord,
+            this.toolStripSeparator3,
+            this.tSBNewLogFile,
+            this.tSBOpenLog,
+            this.tSBOpenLogDir,
+            this.toolStripSeparator4,
+            this.tSBFindPrevious,
+            this.tSBFindNext,
+            this.toolStripSeparator5,
+            this.tSBScreenShot,
+            this.tSBAutoScroll});
+            this.ToolStrip.Location = new System.Drawing.Point(1, 30);
+            this.ToolStrip.Name = "ToolStrip";
+            this.ToolStrip.Padding = new System.Windows.Forms.Padding(0);
+            this.ToolStrip.Size = new System.Drawing.Size(498, 26);
+            this.ToolStrip.TabIndex = 77;
+            this.ToolStrip.Text = "ToolStrip";
+            // 
+            // tSBNew
+            // 
+            this.tSBNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBNew.Image = global::TerminalTool.Properties.Resources.file_add;
+            this.tSBNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBNew.Name = "tSBNew";
+            this.tSBNew.Size = new System.Drawing.Size(23, 23);
+            this.tSBNew.Text = "toolStripButton1";
+            this.tSBNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBNew.ToolTipText = "new";
+            this.tSBNew.Click += new System.EventHandler(this.tSBNew_Click);
+            // 
+            // tSBConnect
+            // 
+            this.tSBConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBConnect.Image = global::TerminalTool.Properties.Resources.connection_error;
+            this.tSBConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBConnect.Name = "tSBConnect";
+            this.tSBConnect.Size = new System.Drawing.Size(23, 23);
+            this.tSBConnect.Text = "toolStripButton2";
+            this.tSBConnect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBConnect.ToolTipText = "connect";
+            this.tSBConnect.Click += new System.EventHandler(this.tSBConnect_Click);
+            // 
+            // tSBSave
+            // 
+            this.tSBSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBSave.Image = global::TerminalTool.Properties.Resources.save;
+            this.tSBSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBSave.Name = "tSBSave";
+            this.tSBSave.Size = new System.Drawing.Size(23, 23);
+            this.tSBSave.Text = "toolStripButton3";
+            this.tSBSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBSave.ToolTipText = "save";
+            this.tSBSave.Click += new System.EventHandler(this.tSBSave_Click);
+            // 
+            // tSBClear
+            // 
+            this.tSBClear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBClear.Image = global::TerminalTool.Properties.Resources.eraser;
+            this.tSBClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBClear.Name = "tSBClear";
+            this.tSBClear.Size = new System.Drawing.Size(23, 23);
+            this.tSBClear.Text = "toolStripButton4";
+            this.tSBClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBClear.ToolTipText = "clear";
+            this.tSBClear.Click += new System.EventHandler(this.tSBClear_Click);
+            // 
+            // tSBShowLineNum
+            // 
+            this.tSBShowLineNum.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBShowLineNum.Image = global::TerminalTool.Properties.Resources.list_numbered;
+            this.tSBShowLineNum.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBShowLineNum.Name = "tSBShowLineNum";
+            this.tSBShowLineNum.Size = new System.Drawing.Size(23, 23);
+            this.tSBShowLineNum.Text = "toolStripButton5";
+            this.tSBShowLineNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBShowLineNum.ToolTipText = "line number";
+            this.tSBShowLineNum.Click += new System.EventHandler(this.tSBShowLineNum_Click);
+            // 
+            // tSBClearTags
+            // 
+            this.tSBClearTags.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBClearTags.Image = global::TerminalTool.Properties.Resources.tags;
+            this.tSBClearTags.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBClearTags.Name = "tSBClearTags";
+            this.tSBClearTags.Size = new System.Drawing.Size(23, 23);
+            this.tSBClearTags.Text = "toolStripButton6";
+            this.tSBClearTags.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBClearTags.ToolTipText = "clear tags";
+            this.tSBClearTags.Click += new System.EventHandler(this.tSBClearTags_Click);
+            // 
+            // tSBRecord
+            // 
+            this.tSBRecord.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBRecord.Image = global::TerminalTool.Properties.Resources.MD_record;
+            this.tSBRecord.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBRecord.Name = "tSBRecord";
+            this.tSBRecord.Size = new System.Drawing.Size(23, 23);
+            this.tSBRecord.Text = "toolStripButton7";
+            this.tSBRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBRecord.ToolTipText = "record";
+            this.tSBRecord.Click += new System.EventHandler(this.tSBRecord_Click);
+            // 
+            // tSBNewLogFile
+            // 
+            this.tSBNewLogFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBNewLogFile.Image = global::TerminalTool.Properties.Resources.file;
+            this.tSBNewLogFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBNewLogFile.Name = "tSBNewLogFile";
+            this.tSBNewLogFile.Size = new System.Drawing.Size(23, 23);
+            this.tSBNewLogFile.Text = "toolStripButton8";
+            this.tSBNewLogFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBNewLogFile.ToolTipText = "new log";
+            this.tSBNewLogFile.Click += new System.EventHandler(this.tSBNewLogFile_Click);
+            // 
+            // tSBOpenLog
+            // 
+            this.tSBOpenLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBOpenLog.Image = global::TerminalTool.Properties.Resources.notepad;
+            this.tSBOpenLog.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBOpenLog.Name = "tSBOpenLog";
+            this.tSBOpenLog.Size = new System.Drawing.Size(23, 23);
+            this.tSBOpenLog.Text = "toolStripButton9";
+            this.tSBOpenLog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBOpenLog.ToolTipText = "open log";
+            this.tSBOpenLog.Click += new System.EventHandler(this.tSBOpenLog_Click);
+            // 
+            // tSBOpenLogDir
+            // 
+            this.tSBOpenLogDir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBOpenLogDir.Image = global::TerminalTool.Properties.Resources.folder_open;
+            this.tSBOpenLogDir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBOpenLogDir.Name = "tSBOpenLogDir";
+            this.tSBOpenLogDir.Size = new System.Drawing.Size(23, 23);
+            this.tSBOpenLogDir.Text = "toolStripButton10";
+            this.tSBOpenLogDir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBOpenLogDir.ToolTipText = "open log directory";
+            this.tSBOpenLogDir.Click += new System.EventHandler(this.tSBOpenLogDir_Click);
+            // 
+            // tSBFindPrevious
+            // 
+            this.tSBFindPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBFindPrevious.Image = global::TerminalTool.Properties.Resources.arrow_2_left;
+            this.tSBFindPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBFindPrevious.Name = "tSBFindPrevious";
+            this.tSBFindPrevious.Size = new System.Drawing.Size(23, 23);
+            this.tSBFindPrevious.Text = "toolStripButton13";
+            this.tSBFindPrevious.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBFindPrevious.ToolTipText = "find previous";
+            this.tSBFindPrevious.Click += new System.EventHandler(this.tSBFindPrevious_Click);
+            // 
+            // tSBFindNext
+            // 
+            this.tSBFindNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBFindNext.Image = global::TerminalTool.Properties.Resources.arrow_2_right;
+            this.tSBFindNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBFindNext.Name = "tSBFindNext";
+            this.tSBFindNext.Size = new System.Drawing.Size(23, 23);
+            this.tSBFindNext.Text = "toolStripButton14";
+            this.tSBFindNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBFindNext.ToolTipText = "find next";
+            this.tSBFindNext.Click += new System.EventHandler(this.tSBFindNext_Click);
+            // 
+            // tSBScreenShot
+            // 
+            this.tSBScreenShot.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBScreenShot.Image = global::TerminalTool.Properties.Resources.screenshot;
+            this.tSBScreenShot.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBScreenShot.Name = "tSBScreenShot";
+            this.tSBScreenShot.Size = new System.Drawing.Size(23, 23);
+            this.tSBScreenShot.Text = "toolStripButton15";
+            this.tSBScreenShot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBScreenShot.ToolTipText = "screen shot";
+            this.tSBScreenShot.Click += new System.EventHandler(this.tSBScreenShot_Click);
+            // 
+            // tSBAutoScroll
+            // 
+            this.tSBAutoScroll.Checked = true;
+            this.tSBAutoScroll.CheckOnClick = true;
+            this.tSBAutoScroll.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tSBAutoScroll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBAutoScroll.Image = global::TerminalTool.Properties.Resources.map_marker_pin;
+            this.tSBAutoScroll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBAutoScroll.Name = "tSBAutoScroll";
+            this.tSBAutoScroll.Size = new System.Drawing.Size(23, 23);
+            this.tSBAutoScroll.Text = "toolStripButton16";
+            this.tSBAutoScroll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBAutoScroll.ToolTipText = "auto scroll";
+            this.tSBAutoScroll.Click += new System.EventHandler(this.tSBAutoScroll_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.ForeColor = System.Drawing.Color.Black;
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackMaxSize = 50;
             this.ClientSize = new System.Drawing.Size(500, 400);
-            this.Controls.Add(this.btAutoScroll);
             this.Controls.Add(this.btSendMsg);
-            this.Controls.Add(this.panelUpDivide);
             this.Controls.Add(this.fctbRcv);
-            this.Controls.Add(this.btNew);
             this.Controls.Add(this.linkZoom);
             this.Controls.Add(this.trackBarZoom);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btFindNext);
-            this.Controls.Add(this.btScreenShot);
-            this.Controls.Add(this.btFindPrevious);
-            this.Controls.Add(this.btGoForward);
-            this.Controls.Add(this.btGoBackward);
-            this.Controls.Add(this.btOpenDir);
-            this.Controls.Add(this.btOpenLogWithApp);
-            this.Controls.Add(this.btNewLog);
-            this.Controls.Add(this.btRecord);
-            this.Controls.Add(this.btTag);
-            this.Controls.Add(this.btLine);
-            this.Controls.Add(this.btClear);
-            this.Controls.Add(this.btSaveRcv);
-            this.Controls.Add(this.btOpen);
             this.Controls.Add(this.btTopMost);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btSendSetting);
@@ -1009,11 +869,12 @@
             this.Controls.Add(this.labelSend);
             this.Controls.Add(this.labelRcv);
             this.Controls.Add(this.labelConnect);
+            this.Controls.Add(this.ToolStrip);
             this.DisplayHeader = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(450, 300);
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(1, 52, 1, 8);
+            this.Padding = new System.Windows.Forms.Padding(1, 30, 1, 8);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.StyleManager = this.StyleMng;
             this.Text = "Terminal";
@@ -1025,6 +886,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).EndInit();
+            this.ToolStrip.ResumeLayout(false);
+            this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1043,25 +906,10 @@
         private FastColoredTextBoxNS.FastColoredTextBox fctbRcv;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btTopMost;
-        private System.Windows.Forms.Button btOpen;
-        private System.Windows.Forms.Button btSaveRcv;
-        private System.Windows.Forms.Button btClear;
-        private System.Windows.Forms.Button btLine;
-        private System.Windows.Forms.Button btTag;
-        private System.Windows.Forms.Button btRecord;
-        private System.Windows.Forms.Button btFindPrevious;
-        private System.Windows.Forms.Button btGoForward;
-        private System.Windows.Forms.Button btGoBackward;
-        private System.Windows.Forms.Button btOpenDir;
-        private System.Windows.Forms.Button btOpenLogWithApp;
-        private System.Windows.Forms.Button btNewLog;
-        private System.Windows.Forms.Button btScreenShot;
-        private System.Windows.Forms.Button btFindNext;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTrackBar trackBarZoom;
         private MetroFramework.Controls.MetroLink linkZoom;
         private System.IO.Ports.SerialPort serialPort;
-        private System.Windows.Forms.Button btNew;
         private MetroFramework.Components.MetroToolTip menuToolTip;
         private System.Windows.Forms.Timer LinkTimer;
         private System.Windows.Forms.ToolStripMenuItem tmsiStyleSelect;
@@ -1092,10 +940,27 @@
         private System.Windows.Forms.ToolStripMenuItem sendTBMLoop;
         private System.Windows.Forms.ToolStripMenuItem sendTBMSelectScript;
         private System.Windows.Forms.ToolStripMenuItem sendTBMSend;
-        private MetroFramework.Controls.MetroPanel panelUpDivide;
         private System.Windows.Forms.Timer SendTimer;
         private MetroFramework.Controls.MetroButton btSendMsg;
-        private System.Windows.Forms.Button btAutoScroll;
+        private Antiufo.Controls.MetroToolStrip ToolStrip;
+        private System.Windows.Forms.ToolStripButton tSBNew;
+        private System.Windows.Forms.ToolStripButton tSBConnect;
+        private System.Windows.Forms.ToolStripButton tSBSave;
+        private System.Windows.Forms.ToolStripButton tSBClear;
+        private System.Windows.Forms.ToolStripButton tSBShowLineNum;
+        private System.Windows.Forms.ToolStripButton tSBClearTags;
+        private System.Windows.Forms.ToolStripButton tSBRecord;
+        private System.Windows.Forms.ToolStripButton tSBNewLogFile;
+        private System.Windows.Forms.ToolStripButton tSBOpenLog;
+        private System.Windows.Forms.ToolStripButton tSBOpenLogDir;
+        private System.Windows.Forms.ToolStripButton tSBFindPrevious;
+        private System.Windows.Forms.ToolStripButton tSBFindNext;
+        private System.Windows.Forms.ToolStripButton tSBScreenShot;
+        private System.Windows.Forms.ToolStripButton tSBAutoScroll;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }
 

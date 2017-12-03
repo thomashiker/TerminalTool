@@ -189,7 +189,7 @@ namespace TerminalTool
         {
             if (IsPortOpen())
             {
-                btOpen.Image = global::TerminalTool.Properties.Resources.connect;
+                tSBConnect.Image = global::TerminalTool.Properties.Resources.connect;
                 labelConnect.Text = GetPortSetting();
                 //labelConnect.Font = new Font(labelConnect.Font, FontStyle.Regular);
                 //labelConnect.ForeColor = Color.Green;
@@ -199,7 +199,7 @@ namespace TerminalTool
             }
             else
             {
-                btOpen.Image = global::TerminalTool.Properties.Resources.connection_error;
+                tSBConnect.Image = global::TerminalTool.Properties.Resources.connection_error;
                 //lableConectState.Text = "No Conection";
                 labelConnect.Font = new Font(labelConnect.Font, FontStyle.Strikeout);
                 //labelConnect.ForeColor = Color.Red;
@@ -267,18 +267,6 @@ namespace TerminalTool
             trackBarZoom.Value = 100 - zoombase;
         }
 
-        private void btOpen_Click(object sender, EventArgs e)
-        {
-            if (IsPortOpen())
-            {
-                ClosePort();
-            }
-            else
-            {
-                OpenPort();
-            }
-        }
-
         private void SaveToFileAs()
         {
             SaveFileDialog fileDialog = new SaveFileDialog();
@@ -296,57 +284,6 @@ namespace TerminalTool
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
-        }
-
-        private void btSaveRcv_Click(object sender, EventArgs e)
-        {
-            SaveToFileAs();
-        }
-
-        private void btNew_Click(object sender, EventArgs e)
-        {
-            portSelectMenu.Show(this, new Point(btNew.Left, btNew.Bottom));
-        }
-
-        private void btClear_Click(object sender, EventArgs e)
-        {
-            fctbRcv.Clear();
-            rcvCharNum = 0;
-        }
-
-        private void btLine_Click(object sender, EventArgs e)
-        {
-            fctbRcv.ShowLineNumbers = !fctbRcv.ShowLineNumbers;
-            if (!fctbRcv.ShowLineNumbers)
-            {
-                fctbRcv.Bookmarks.Clear();
-            }
-        }
-
-        private void btTag_Click(object sender, EventArgs e)
-        {
-            //fctbRcv.Bookmarks.Clear();
-            int line = 0;
-            while (line < fctbRcv.LinesCount)
-            {
-                fctbRcv.Bookmarks.Remove(line);
-                line++;
-            }
-        }
-
-        private void btRecord_Click(object sender, EventArgs e)
-        {
-            recordState = !recordState;
-            if (recordState)
-            {
-                btRecord.Image = global::TerminalTool.Properties.Resources.MD_record; //toolStripimageList.Images[11];
-                menuToolTip.ToolTipTitle = "Record";
-            }
-            else
-            {
-                btRecord.Image = global::TerminalTool.Properties.Resources.MD_stop;//toolStripimageList.Images[12];
-                menuToolTip.ToolTipTitle = "Stop Record";
             }
         }
 
@@ -374,12 +311,86 @@ namespace TerminalTool
             return this.LogFile;
         }
 
-        private void btNewLog_Click(object sender, EventArgs e)
+
+        public bool FCTBAutoScroll
+        {
+            get { return fctbRcvAutoScroll; }
+            set
+            {
+                fctbRcvAutoScroll = value;
+            }
+        }
+
+        private void tSBNew_Click(object sender, EventArgs e)
+        {
+            ToolStripButton item = sender as ToolStripButton;
+            portSelectMenu.Show(this, new Point(item.Owner.Left, item.Owner.Bottom));
+        }
+
+        private void tSBConnect_Click(object sender, EventArgs e)
+        {
+            if (IsPortOpen())
+            {
+                ClosePort();
+            }
+            else
+            {
+                OpenPort();
+            }
+        }
+
+        private void tSBSave_Click(object sender, EventArgs e)
+        {
+            SaveToFileAs();
+        }
+
+        private void tSBClear_Click(object sender, EventArgs e)
+        {
+            fctbRcv.Clear();
+            rcvCharNum = 0;
+        }
+
+        private void tSBShowLineNum_Click(object sender, EventArgs e)
+        {
+            fctbRcv.ShowLineNumbers = !fctbRcv.ShowLineNumbers;
+            if (!fctbRcv.ShowLineNumbers)
+            {
+                fctbRcv.Bookmarks.Clear();
+            }
+        }
+
+        private void tSBClearTags_Click(object sender, EventArgs e)
+        {
+            //fctbRcv.Bookmarks.Clear();
+            int line = 0;
+            while (line < fctbRcv.LinesCount)
+            {
+                fctbRcv.Bookmarks.Remove(line);
+                line++;
+            }
+        }
+
+        private void tSBRecord_Click(object sender, EventArgs e)
+        {
+            recordState = !recordState;
+            if (recordState)
+            {
+                tSBRecord.Image = global::TerminalTool.Properties.Resources.MD_record; //toolStripimageList.Images[11];
+                tSBRecord.ToolTipText = "Record";
+            }
+            else
+            {
+                tSBRecord.Image = global::TerminalTool.Properties.Resources.MD_stop;//toolStripimageList.Images[12];
+                tSBRecord.ToolTipText = "Stop Record";
+            }
+        }
+
+        private void tSBNewLogFile_Click(object sender, EventArgs e)
         {
             CreateLogFile();
         }
 
-        private void btOpenLogWithApp_Click(object sender, EventArgs e)
+        private void tSBOpenLog_Click(object sender, EventArgs e)
         {
             try
             {
@@ -391,34 +402,34 @@ namespace TerminalTool
             }
         }
 
-        private void btOpenDir_Click(object sender, EventArgs e)
+        private void tSBOpenLogDir_Click(object sender, EventArgs e)
         {
             System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("Explorer.exe");
             psi.Arguments = "/e,/select," + SavedLogPath;
             System.Diagnostics.Process.Start(psi);
         }
 
-        private void btGoBackward_Click(object sender, EventArgs e)
+        private void tSBGoBackward_Click(object sender, EventArgs e)
         {
             fctbRcv.NavigateBackward();
         }
 
-        private void btGoForward_Click(object sender, EventArgs e)
+        private void tSBGoForward_Click(object sender, EventArgs e)
         {
             fctbRcv.NavigateForward();
         }
 
-        private void btFindPrevious_Click(object sender, EventArgs e)
+        private void tSBFindPrevious_Click(object sender, EventArgs e)
         {
             //fctbRcv.findForm.FCBFindPrevious();
         }
 
-        private void btFindNext_Click(object sender, EventArgs e)
+        private void tSBFindNext_Click(object sender, EventArgs e)
         {
             //fctbRcv.findForm.FCBFindNext();
         }
 
-        private void btScreenShot_Click(object sender, EventArgs e)
+        private void tSBScreenShot_Click(object sender, EventArgs e)
         {
             CaptureImageTool capture = new CaptureImageTool();
 
@@ -429,25 +440,7 @@ namespace TerminalTool
             }
         }
 
-
-        public bool FCTBAutoScroll
-        {
-            get { return fctbRcvAutoScroll; }
-            set
-            {
-                fctbRcvAutoScroll = value;
-                if (fctbRcvAutoScroll)
-                {
-                    btAutoScroll.BackColor = btAutoScroll.FlatAppearance.MouseOverBackColor;
-                }
-                else
-                {
-                    btAutoScroll.BackColor = this.BackColor;
-                }
-            }
-        }
-
-        private void btAutoScroll_Click(object sender, EventArgs e)
+        private void tSBAutoScroll_Click(object sender, EventArgs e)
         {
             FCTBAutoScroll = !FCTBAutoScroll;
         }

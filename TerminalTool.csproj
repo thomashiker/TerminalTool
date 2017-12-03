@@ -121,6 +121,36 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CaptureImageTool\CaptureImageTool.csproj">
+      <Project>{13e62362-5d00-418f-83ff-99b2699746d7}</Project>
+      <Name>CaptureImageTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastColoredTextBox\FastColoredTextBox.csproj">
+      <Project>{6dd14a85-ccfc-4774-bd26-0f5772512319}</Project>
+      <Name>FastColoredTextBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetroFramework.Design\MetroFramework.Design.csproj">
+      <Project>{7316584d-9a16-4280-a8ab-6d45198c6e4d}</Project>
+      <Name>MetroFramework.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetroFramework.Fonts\MetroFramework.Fonts.csproj">
+      <Project>{5a2fcae8-c2fa-41bd-90ea-16103ea07b26}</Project>
+      <Name>MetroFramework.Fonts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetroFramework\MetroFramework.csproj">
+      <Project>{bb41ac8b-cbed-4387-a7e0-4567edb3f57f}</Project>
+      <Name>MetroFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetroRenderer\MetroToolStrip.csproj">
+      <Project>{A5DAE67B-A6D6-400C-B598-9F87B954B702}</Project>
+      <Name>MetroToolStrip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PortSettingContexMenu\PortSettingContextMenu.csproj">
+      <Project>{a489c81e-bacd-4670-b68c-608f222763f3}</Project>
+      <Name>PortSettingContextMenu</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\3D_X_Axis_Rotation.png" />
   </ItemGroup>
   <ItemGroup>
@@ -2080,63 +2110,7 @@
     <None Include="Resources\zoom-out.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\push_pin_16px_1204745_easyicon.net.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pin_16.285714285714px_1145574_easyicon.net.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pin_15.978723404255px_1152768_easyicon.net.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pin_16px_1116541_easyicon.net.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\pin_24px_1116541_easyicon.net.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\link_24px_1074870_easyicon.net.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\link_broken_24px_1074871_easyicon.net.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3D-Cube1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CaptureImageTool\CaptureImageTool.csproj">
-      <Project>{13e62362-5d00-418f-83ff-99b2699746d7}</Project>
-      <Name>CaptureImageTool</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FastColoredTextBox\FastColoredTextBox.csproj">
-      <Project>{6dd14a85-ccfc-4774-bd26-0f5772512319}</Project>
-      <Name>FastColoredTextBox</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetroFramework.Design\MetroFramework.Design.csproj">
-      <Project>{7316584d-9a16-4280-a8ab-6d45198c6e4d}</Project>
-      <Name>MetroFramework.Design</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetroFramework.Fonts\MetroFramework.Fonts.csproj">
-      <Project>{5a2fcae8-c2fa-41bd-90ea-16103ea07b26}</Project>
-      <Name>MetroFramework.Fonts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetroFramework\MetroFramework.csproj">
-      <Project>{bb41ac8b-cbed-4387-a7e0-4567edb3f57f}</Project>
-      <Name>MetroFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PortSettingContexMenu\PortSettingContextMenu.csproj">
-      <Project>{a489c81e-bacd-4670-b68c-608f222763f3}</Project>
-      <Name>PortSettingContextMenu</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\terminal_24.475675675676px_1154830_easyicon.net.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\terminal_19.772727272727px_1170595_easyicon.net.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Port_16px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
