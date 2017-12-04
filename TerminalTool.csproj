@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Monitor_Flat_128px.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -2111,6 +2114,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pin_24px_1116541_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Monitor_Flat_128px.ico" />
+    <None Include="Resources\pin_16.png" />
+    <None Include="Resources\pin_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

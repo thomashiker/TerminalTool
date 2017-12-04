@@ -445,17 +445,9 @@ namespace TerminalTool
             FCTBAutoScroll = !FCTBAutoScroll;
         }
 
-        private void btTopMost_Click(object sender, EventArgs e)
+        private void tSBTopMost_Click(object sender, EventArgs e)
         {
-            TopMost = !TopMost;
-            if (TopMost)
-            {
-                btTopMost.BackColor = btTopMost.FlatAppearance.MouseOverBackColor;//Color.Teal;//this.Style.ToColor;
-            }
-            else
-            {
-                btTopMost.BackColor = this.BackColor;
-            }
+            TopMost = tSBTopMost.Checked;
         }
 
         private void fctbRcv_MouseDoubleClick(object sender, MouseEventArgs e)

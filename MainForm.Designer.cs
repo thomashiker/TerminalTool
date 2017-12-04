@@ -61,7 +61,6 @@
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.cmSend = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.sendTBMSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.sendTBMLoop = new System.Windows.Forms.ToolStripMenuItem();
             this.sendTBMSelectScript = new System.Windows.Forms.ToolStripMenuItem();
             this.sendTBMSend = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,39 +68,40 @@
             this.linkZoom = new MetroFramework.Controls.MetroLink();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.menuToolTip = new MetroFramework.Components.MetroToolTip();
-            this.btTopMost = new System.Windows.Forms.Button();
-            this.btSendSetting = new System.Windows.Forms.Button();
             this.LinkTimer = new System.Windows.Forms.Timer(this.components);
             this.StyleMng = new MetroFramework.Components.MetroStyleManager(this.components);
             this.SendTimer = new System.Windows.Forms.Timer(this.components);
             this.btSendMsg = new MetroFramework.Controls.MetroButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbSend = new MetroFramework.Controls.MetroTextBox();
             this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btSendSetting = new System.Windows.Forms.Button();
+            this.tbSend = new MetroFramework.Controls.MetroTextBox();
+            this.sendTBMLoop = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStrip = new Antiufo.Controls.MetroToolStrip();
             this.tSBNew = new System.Windows.Forms.ToolStripButton();
             this.tSBConnect = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tSBSave = new System.Windows.Forms.ToolStripButton();
             this.tSBClear = new System.Windows.Forms.ToolStripButton();
             this.tSBShowLineNum = new System.Windows.Forms.ToolStripButton();
             this.tSBClearTags = new System.Windows.Forms.ToolStripButton();
             this.tSBRecord = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tSBNewLogFile = new System.Windows.Forms.ToolStripButton();
             this.tSBOpenLog = new System.Windows.Forms.ToolStripButton();
             this.tSBOpenLogDir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tSBFindPrevious = new System.Windows.Forms.ToolStripButton();
             this.tSBFindNext = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tSBScreenShot = new System.Windows.Forms.ToolStripButton();
             this.tSBAutoScroll = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tSBTopMost = new System.Windows.Forms.ToolStripButton();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,7 +112,7 @@
             this.labelConnect.FontSize = MetroFramework.MetroLabelSize.Small;
             this.labelConnect.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.labelConnect.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelConnect.Location = new System.Drawing.Point(5, 384);
+            this.labelConnect.Location = new System.Drawing.Point(6, 384);
             this.labelConnect.Name = "labelConnect";
             this.labelConnect.Size = new System.Drawing.Size(89, 15);
             this.labelConnect.TabIndex = 1;
@@ -126,7 +126,7 @@
             this.labelRcv.AutoSize = true;
             this.labelRcv.FontSize = MetroFramework.MetroLabelSize.Small;
             this.labelRcv.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.labelRcv.Location = new System.Drawing.Point(203, 384);
+            this.labelRcv.Location = new System.Drawing.Point(202, 384);
             this.labelRcv.Name = "labelRcv";
             this.labelRcv.Size = new System.Drawing.Size(22, 15);
             this.labelRcv.TabIndex = 2;
@@ -140,7 +140,7 @@
             this.labelSend.AutoSize = true;
             this.labelSend.FontSize = MetroFramework.MetroLabelSize.Small;
             this.labelSend.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.labelSend.Location = new System.Drawing.Point(272, 384);
+            this.labelSend.Location = new System.Drawing.Point(271, 384);
             this.labelSend.Name = "labelSend";
             this.labelSend.Size = new System.Drawing.Size(22, 15);
             this.labelSend.TabIndex = 3;
@@ -154,7 +154,7 @@
             this.labelTime.AutoSize = true;
             this.labelTime.FontSize = MetroFramework.MetroLabelSize.Small;
             this.labelTime.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.labelTime.Location = new System.Drawing.Point(335, 384);
+            this.labelTime.Location = new System.Drawing.Point(334, 384);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(55, 15);
             this.labelTime.TabIndex = 4;
@@ -378,16 +378,6 @@
             this.sendTBMSave.Text = "&Save";
             this.sendTBMSave.Click += new System.EventHandler(this.sendTBMSave_Click);
             // 
-            // sendTBMLoop
-            // 
-            this.sendTBMLoop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.sendTBMLoop.Image = global::TerminalTool.Properties.Resources.arrow_3_down_right;
-            this.sendTBMLoop.Name = "sendTBMLoop";
-            this.sendTBMLoop.Size = new System.Drawing.Size(109, 22);
-            this.sendTBMLoop.Tag = "true";
-            this.sendTBMLoop.Text = "Loop";
-            this.sendTBMLoop.Click += new System.EventHandler(this.sendTBMLoop_Click);
-            // 
             // sendTBMSelectScript
             // 
             this.sendTBMSelectScript.Name = "sendTBMSelectScript";
@@ -405,7 +395,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(413, -11);
+            this.panel1.Location = new System.Drawing.Point(412, -11);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 10);
             this.panel1.TabIndex = 50;
@@ -415,7 +405,7 @@
             this.trackBarZoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBarZoom.BackColor = System.Drawing.Color.Transparent;
             this.trackBarZoom.LargeChange = 10;
-            this.trackBarZoom.Location = new System.Drawing.Point(427, 385);
+            this.trackBarZoom.Location = new System.Drawing.Point(426, 385);
             this.trackBarZoom.Maximum = 140;
             this.trackBarZoom.Name = "trackBarZoom";
             this.trackBarZoom.Size = new System.Drawing.Size(50, 12);
@@ -428,7 +418,7 @@
             // linkZoom
             // 
             this.linkZoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkZoom.Location = new System.Drawing.Point(391, 384);
+            this.linkZoom.Location = new System.Drawing.Point(390, 384);
             this.linkZoom.Name = "linkZoom";
             this.linkZoom.Size = new System.Drawing.Size(38, 15);
             this.linkZoom.TabIndex = 71;
@@ -452,46 +442,6 @@
             this.menuToolTip.StyleManager = null;
             this.menuToolTip.Theme = MetroFramework.MetroThemeStyle.Default;
             // 
-            // btTopMost
-            // 
-            this.btTopMost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btTopMost.FlatAppearance.BorderSize = 0;
-            this.btTopMost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.btTopMost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btTopMost.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btTopMost.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btTopMost.Image = global::TerminalTool.Properties.Resources.pin_24px_1116541_easyicon_net;
-            this.btTopMost.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btTopMost.Location = new System.Drawing.Point(390, 5);
-            this.btTopMost.Margin = new System.Windows.Forms.Padding(2);
-            this.btTopMost.Name = "btTopMost";
-            this.btTopMost.Padding = new System.Windows.Forms.Padding(0, 1, 1, 2);
-            this.btTopMost.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btTopMost.Size = new System.Drawing.Size(20, 20);
-            this.btTopMost.TabIndex = 53;
-            this.btTopMost.Tag = "Send";
-            this.menuToolTip.SetToolTip(this.btTopMost, "Top Most");
-            this.btTopMost.UseVisualStyleBackColor = true;
-            this.btTopMost.Click += new System.EventHandler(this.btTopMost_Click);
-            // 
-            // btSendSetting
-            // 
-            this.btSendSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSendSetting.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btSendSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btSendSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSendSetting.Image = global::TerminalTool.Properties.Resources.ftp;
-            this.btSendSetting.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btSendSetting.Location = new System.Drawing.Point(475, 359);
-            this.btSendSetting.Margin = new System.Windows.Forms.Padding(2);
-            this.btSendSetting.Name = "btSendSetting";
-            this.btSendSetting.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
-            this.btSendSetting.Size = new System.Drawing.Size(22, 22);
-            this.btSendSetting.TabIndex = 47;
-            this.menuToolTip.SetToolTip(this.btSendSetting, "Send File");
-            this.btSendSetting.UseVisualStyleBackColor = true;
-            this.btSendSetting.Click += new System.EventHandler(this.btSendSetting_Click);
-            // 
             // LinkTimer
             // 
             this.LinkTimer.Interval = 1000;
@@ -509,7 +459,7 @@
             // btSendMsg
             // 
             this.btSendMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSendMsg.Location = new System.Drawing.Point(437, 359);
+            this.btSendMsg.Location = new System.Drawing.Point(436, 359);
             this.btSendMsg.Margin = new System.Windows.Forms.Padding(0);
             this.btSendMsg.Name = "btSendMsg";
             this.btSendMsg.Size = new System.Drawing.Size(35, 22);
@@ -519,63 +469,6 @@
             this.btSendMsg.UseSelectable = true;
             this.btSendMsg.UseStyleColors = true;
             this.btSendMsg.Click += new System.EventHandler(this.btSendMsg_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ContextMenuStrip = this.cmSys;
-            this.pictureBox1.Image = global::TerminalTool.Properties.Resources.terminal;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 68;
-            this.pictureBox1.TabStop = false;
-            // 
-            // tbSend
-            // 
-            this.tbSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSend.ContextMenuStrip = this.cmSend;
-            // 
-            // 
-            // 
-            this.tbSend.CustomButton.FlatAppearance.BorderSize = 0;
-            this.tbSend.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbSend.CustomButton.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.tbSend.CustomButton.Image = global::TerminalTool.Properties.Resources.arrow_7_down;
-            this.tbSend.CustomButton.Location = new System.Drawing.Point(417, 2);
-            this.tbSend.CustomButton.Margin = new System.Windows.Forms.Padding(0);
-            this.tbSend.CustomButton.Name = "";
-            this.tbSend.CustomButton.Size = new System.Drawing.Size(17, 17);
-            this.tbSend.CustomButton.Style = MetroFramework.MetroColorStyle.Lime;
-            this.tbSend.CustomButton.TabIndex = 1;
-            this.tbSend.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbSend.CustomButton.UseSelectable = true;
-            this.tbSend.CustomButton.UseStyleColors = true;
-            this.tbSend.DisplayIcon = true;
-            this.tbSend.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.tbSend.Icon = global::TerminalTool.Properties.Resources.mail_inbox;
-            this.tbSend.Lines = new string[0];
-            this.tbSend.Location = new System.Drawing.Point(1, 359);
-            this.tbSend.MaxLength = 32767;
-            this.tbSend.Name = "tbSend";
-            this.tbSend.PasswordChar = '\0';
-            this.tbSend.PromptText = "send...";
-            this.tbSend.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbSend.SelectedText = "";
-            this.tbSend.SelectionLength = 0;
-            this.tbSend.SelectionStart = 0;
-            this.tbSend.ShortcutsEnabled = true;
-            this.tbSend.ShowButton = true;
-            this.tbSend.ShowClearButton = true;
-            this.tbSend.Size = new System.Drawing.Size(437, 22);
-            this.tbSend.TabIndex = 48;
-            this.tbSend.UseSelectable = true;
-            this.tbSend.UseStyleColors = true;
-            this.tbSend.WaterMark = "send...";
-            this.tbSend.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbSend.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSend.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbSend_ButtonClick);
-            this.tbSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSend_KeyDown);
             // 
             // fctbRcv
             // 
@@ -604,7 +497,7 @@
             this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
             this.fctbRcv.IsReplaceMode = false;
-            this.fctbRcv.Location = new System.Drawing.Point(0, 56);
+            this.fctbRcv.Location = new System.Drawing.Point(1, 56);
             this.fctbRcv.Margin = new System.Windows.Forms.Padding(0);
             this.fctbRcv.Name = "fctbRcv";
             this.fctbRcv.Paddings = new System.Windows.Forms.Padding(0);
@@ -612,7 +505,7 @@
             this.fctbRcv.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.fctbRcv.ServiceColors = null;
             this.fctbRcv.ServiceLinesColor = System.Drawing.Color.DeepSkyBlue;
-            this.fctbRcv.Size = new System.Drawing.Size(498, 301);
+            this.fctbRcv.Size = new System.Drawing.Size(498, 300);
             this.fctbRcv.TabIndex = 0;
             this.fctbRcv.WordWrapAutoIndent = false;
             this.fctbRcv.WordWrapMode = FastColoredTextBoxNS.WordWrapMode.Custom;
@@ -622,6 +515,91 @@
             this.fctbRcv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fctbRcv_KeyDown);
             this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
             this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ContextMenuStrip = this.cmSys;
+            this.pictureBox1.Image = global::TerminalTool.Properties.Resources.terminal;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 68;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btSendSetting
+            // 
+            this.btSendSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSendSetting.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btSendSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btSendSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSendSetting.Image = global::TerminalTool.Properties.Resources.ftp;
+            this.btSendSetting.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btSendSetting.Location = new System.Drawing.Point(474, 359);
+            this.btSendSetting.Margin = new System.Windows.Forms.Padding(2);
+            this.btSendSetting.Name = "btSendSetting";
+            this.btSendSetting.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btSendSetting.Size = new System.Drawing.Size(22, 22);
+            this.btSendSetting.TabIndex = 47;
+            this.menuToolTip.SetToolTip(this.btSendSetting, "Send File");
+            this.btSendSetting.UseVisualStyleBackColor = true;
+            this.btSendSetting.Click += new System.EventHandler(this.btSendSetting_Click);
+            // 
+            // tbSend
+            // 
+            this.tbSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSend.ContextMenuStrip = this.cmSend;
+            // 
+            // 
+            // 
+            this.tbSend.CustomButton.FlatAppearance.BorderSize = 0;
+            this.tbSend.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbSend.CustomButton.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.tbSend.CustomButton.Image = global::TerminalTool.Properties.Resources.arrow_7_down;
+            this.tbSend.CustomButton.Location = new System.Drawing.Point(415, 2);
+            this.tbSend.CustomButton.Margin = new System.Windows.Forms.Padding(0);
+            this.tbSend.CustomButton.Name = "";
+            this.tbSend.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.tbSend.CustomButton.Style = MetroFramework.MetroColorStyle.Lime;
+            this.tbSend.CustomButton.TabIndex = 1;
+            this.tbSend.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbSend.CustomButton.UseSelectable = true;
+            this.tbSend.CustomButton.UseStyleColors = true;
+            this.tbSend.DisplayIcon = true;
+            this.tbSend.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
+            this.tbSend.Icon = global::TerminalTool.Properties.Resources.mail_inbox;
+            this.tbSend.Lines = new string[0];
+            this.tbSend.Location = new System.Drawing.Point(2, 359);
+            this.tbSend.MaxLength = 32767;
+            this.tbSend.Name = "tbSend";
+            this.tbSend.PasswordChar = '\0';
+            this.tbSend.PromptText = "send...";
+            this.tbSend.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbSend.SelectedText = "";
+            this.tbSend.SelectionLength = 0;
+            this.tbSend.SelectionStart = 0;
+            this.tbSend.ShortcutsEnabled = true;
+            this.tbSend.ShowButton = true;
+            this.tbSend.ShowClearButton = true;
+            this.tbSend.Size = new System.Drawing.Size(435, 22);
+            this.tbSend.TabIndex = 48;
+            this.tbSend.UseSelectable = true;
+            this.tbSend.UseStyleColors = true;
+            this.tbSend.WaterMark = "send...";
+            this.tbSend.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbSend.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSend.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbSend_ButtonClick);
+            this.tbSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSend_KeyDown);
+            // 
+            // sendTBMLoop
+            // 
+            this.sendTBMLoop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.sendTBMLoop.Image = global::TerminalTool.Properties.Resources.arrow_3_down_right;
+            this.sendTBMLoop.Name = "sendTBMLoop";
+            this.sendTBMLoop.Size = new System.Drawing.Size(109, 22);
+            this.sendTBMLoop.Tag = "true";
+            this.sendTBMLoop.Text = "Loop";
+            this.sendTBMLoop.Click += new System.EventHandler(this.sendTBMLoop_Click);
             // 
             // ToolStrip
             // 
@@ -646,11 +624,13 @@
             this.tSBFindNext,
             this.toolStripSeparator5,
             this.tSBScreenShot,
-            this.tSBAutoScroll});
-            this.ToolStrip.Location = new System.Drawing.Point(1, 30);
+            this.tSBAutoScroll,
+            this.tSBTopMost});
+            this.ToolStrip.Location = new System.Drawing.Point(2, 30);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.ToolStrip.Size = new System.Drawing.Size(498, 26);
+            this.ToolStrip.ShowItemToolTips = false;
+            this.ToolStrip.Size = new System.Drawing.Size(496, 26);
             this.ToolStrip.TabIndex = 77;
             this.ToolStrip.Text = "ToolStrip";
             // 
@@ -677,6 +657,13 @@
             this.tSBConnect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.tSBConnect.ToolTipText = "connect";
             this.tSBConnect.Click += new System.EventHandler(this.tSBConnect_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.ForeColor = System.Drawing.Color.Black;
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
             // tSBSave
             // 
@@ -738,6 +725,12 @@
             this.tSBRecord.ToolTipText = "record";
             this.tSBRecord.Click += new System.EventHandler(this.tSBRecord_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
+            // 
             // tSBNewLogFile
             // 
             this.tSBNewLogFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -774,6 +767,12 @@
             this.tSBOpenLogDir.ToolTipText = "open log directory";
             this.tSBOpenLogDir.Click += new System.EventHandler(this.tSBOpenLogDir_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
+            // 
             // tSBFindPrevious
             // 
             this.tSBFindPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -797,6 +796,12 @@
             this.tSBFindNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.tSBFindNext.ToolTipText = "find next";
             this.tSBFindNext.Click += new System.EventHandler(this.tSBFindNext_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
             // 
             // tSBScreenShot
             // 
@@ -825,30 +830,20 @@
             this.tSBAutoScroll.ToolTipText = "auto scroll";
             this.tSBAutoScroll.Click += new System.EventHandler(this.tSBAutoScroll_Click);
             // 
-            // toolStripSeparator1
+            // tSBTopMost
             // 
-            this.toolStripSeparator1.ForeColor = System.Drawing.Color.Black;
-            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
+            this.tSBTopMost.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tSBTopMost.AutoToolTip = false;
+            this.tSBTopMost.CheckOnClick = true;
+            this.tSBTopMost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBTopMost.Image = global::TerminalTool.Properties.Resources.pin_16;
+            this.tSBTopMost.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBTopMost.Name = "tSBTopMost";
+            this.tSBTopMost.Size = new System.Drawing.Size(23, 23);
+            this.tSBTopMost.Text = "top most";
+            this.tSBTopMost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBTopMost.ToolTipText = "top most";
+            this.tSBTopMost.Click += new System.EventHandler(this.tSBTopMost_Click);
             // 
             // MainForm
             // 
@@ -861,7 +856,6 @@
             this.Controls.Add(this.linkZoom);
             this.Controls.Add(this.trackBarZoom);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btTopMost);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btSendSetting);
             this.Controls.Add(this.tbSend);
@@ -874,7 +868,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(450, 300);
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(1, 30, 1, 8);
+            this.Padding = new System.Windows.Forms.Padding(2, 30, 2, 8);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.StyleManager = this.StyleMng;
             this.Text = "Terminal";
@@ -884,8 +878,8 @@
             this.cmSys.ResumeLayout(false);
             this.cmSend.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -905,7 +899,6 @@
         private MetroFramework.Controls.MetroTextBox tbSend;
         private FastColoredTextBoxNS.FastColoredTextBox fctbRcv;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btTopMost;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTrackBar trackBarZoom;
         private MetroFramework.Controls.MetroLink linkZoom;
@@ -961,6 +954,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton tSBTopMost;
     }
 }
 
