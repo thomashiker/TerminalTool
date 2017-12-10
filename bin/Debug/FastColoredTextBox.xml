@@ -1761,6 +1761,11 @@
             Move caret to end of text
             </summary>
         </member>
+        <member name="M:FastColoredTextBoxNS.FastColoredTextBox.GoEndLine">
+            <summary>
+            Move caret to end line
+            </summary>
+        </member>
         <member name="M:FastColoredTextBoxNS.FastColoredTextBox.GoHome">
             <summary>
             Move caret to first position

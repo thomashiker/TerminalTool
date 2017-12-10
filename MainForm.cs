@@ -16,7 +16,7 @@ using System.IO.Ports;
 using System.Diagnostics;
 using System.Management;
 using CSharpWin;
-
+using System.Threading;
 
 namespace TerminalTool
 {
@@ -123,7 +123,8 @@ namespace TerminalTool
             SavedLogPath = System.Environment.CurrentDirectory;
             FCTBAutoScroll = true;
 
-            
+            // 打开控件的双缓冲
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
         }
 
         private void LogToFile(string data)
@@ -150,11 +151,18 @@ namespace TerminalTool
         private void AppendRcvText(string text)
         {
             LogToFile(text);
-            fctbRcv.AppendText(text);
-            if (fctbRcvAutoScroll)
+
+            fctbRcv.BeginInvoke((MethodInvoker)delegate ()
             {
-                fctbRcv.GoEnd();
-            }
+                fctbRcv.BeginUpdate();
+                fctbRcv.AppendText(text);
+                if (fctbRcvAutoScroll)
+                {
+                    //fctbRcv.GoEnd();
+                    fctbRcv.GoEndLine();
+                }
+                fctbRcv.EndUpdate();
+            }); 
         }
 
         bool PortInit()
@@ -581,45 +589,46 @@ namespace TerminalTool
 
         private void UpdateRcvCharDisplay(Int64 num)
         {
-            labelRcv.Text = "r:" + num.ToString();
+            labelRcv.BeginInvoke((MethodInvoker)delegate ()
+            {
+                labelRcv.Text = "r:" + num.ToString();
+            });
         }
         private void serialPort_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
-            int n = serialPort.BytesToRead;//先记录下来，避免某种原因，人为的原因，操作几次之间时间长，缓存不一致  
+            int n;
+            n = serialPort.BytesToRead;//先记录下来，避免某种原因，人为的原因，操作几次之间时间长，缓存不一致  
             byte[] buf = new byte[n];//声明一个临时数组存储当前来的串口数据
             string rcvdata;
             rcvCharNum += n;//增加接收计数  
             serialPort.Read(buf, 0, n); ;//读取缓冲数据
-            serialPort.DiscardInBuffer();
+            
+            //因为要访问ui资源，所以需要使用invoke方式同步ui。 
+            rcvdata = Encoding.Default.GetString(buf);
+            AppendRcvText(rcvdata);
+            UpdateRcvCharDisplay(rcvCharNum);
+            
+            Application.DoEvents();
+
+            //serialPort.DiscardInBuffer();
             //serialPort.ReadExisting
-
-            //StringBuilder builder = new StringBuilder();
-            //builder.Clear();//清除字符串构造器的内容  
-            //因为要访问ui资源，所以需要使用invoke方式同步ui。
             //SerialPort sp = (SerialPort)sender;
             //string indata = sp.ReadExisting();
-            //do
-            //{
-            //} while ();
-            this.Invoke((EventHandler)(delegate
-            {
-                //直接按ASCII规则转换成字符串  
-                rcvdata = Encoding.Default.GetString(buf);
-                //追加的形式添加到文本框末端，并滚动到最后。  
-                /*fctbRcv.AppendText(builder.ToString());
-                if (fctbRcvAutoScroll)
-                {
-                    fctbRcv.GoEnd();
-                }*/
 
-                //AppendRcvText(builder.ToString());
-                AppendRcvText(rcvdata);
-                UpdateRcvCharDisplay(rcvCharNum);
-            }));
-
-
-            //SerialPort sp = (SerialPort)sender;
-            //string indata = sp.ReadExisting();
+           //while ((n = serialPort.BytesToRead) > 0)
+           //{
+           //    byte[] buf = new byte[n];//声明一个临时数组存储当前来的串口数据
+           //    string rcvdata;
+           //    rcvCharNum += n;//增加接收计数  
+           //    serialPort.Read(buf, 0, n); ;//读取缓冲数据
+           //
+           //    //因为要访问ui资源，所以需要使用invoke方式同步ui。 
+           //    rcvdata = Encoding.Default.GetString(buf);
+           //    AppendRcvText(rcvdata);
+           //    UpdateRcvCharDisplay(rcvCharNum);
+           //
+           //    Application.DoEvents();
+           //}
         }
 
         public bool SendMessage(string msg, bool save2file)
@@ -716,6 +725,11 @@ namespace TerminalTool
 
         private void SetStyleColor(Color style)
         {
+            ToolStrip.ItemSelectedColor = style;
+            ToolStrip.CheckedItemColor = style;
+            ToolStrip.CheckPressItemColors = style;
+            ToolStrip.ItemPressedColors = style;
+
             fctbRcv.ServiceLinesColor = style;
             fctbRcv.LineNumberColor = style;
             fctbRcv.SelectionColor = style;
@@ -880,6 +894,7 @@ namespace TerminalTool
         {
             if (null != sendTool)
                 sendTool.UpdateLocation();
+            this.Update();
         }
 
         private void tsmiHelp_Click(object sender, EventArgs e)

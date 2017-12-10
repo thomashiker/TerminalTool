@@ -61,6 +61,7 @@
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.cmSend = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.sendTBMSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendTBMLoop = new System.Windows.Forms.ToolStripMenuItem();
             this.sendTBMSelectScript = new System.Windows.Forms.ToolStripMenuItem();
             this.sendTBMSend = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -68,15 +69,14 @@
             this.linkZoom = new MetroFramework.Controls.MetroLink();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.menuToolTip = new MetroFramework.Components.MetroToolTip();
+            this.btSendSetting = new System.Windows.Forms.Button();
             this.LinkTimer = new System.Windows.Forms.Timer(this.components);
             this.StyleMng = new MetroFramework.Components.MetroStyleManager(this.components);
             this.SendTimer = new System.Windows.Forms.Timer(this.components);
             this.btSendMsg = new MetroFramework.Controls.MetroButton();
             this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btSendSetting = new System.Windows.Forms.Button();
             this.tbSend = new MetroFramework.Controls.MetroTextBox();
-            this.sendTBMLoop = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStrip = new Antiufo.Controls.MetroToolStrip();
             this.tSBNew = new System.Windows.Forms.ToolStripButton();
             this.tSBConnect = new System.Windows.Forms.ToolStripButton();
@@ -378,6 +378,16 @@
             this.sendTBMSave.Text = "&Save";
             this.sendTBMSave.Click += new System.EventHandler(this.sendTBMSave_Click);
             // 
+            // sendTBMLoop
+            // 
+            this.sendTBMLoop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.sendTBMLoop.Image = global::TerminalTool.Properties.Resources.arrow_3_down_right;
+            this.sendTBMLoop.Name = "sendTBMLoop";
+            this.sendTBMLoop.Size = new System.Drawing.Size(109, 22);
+            this.sendTBMLoop.Tag = "true";
+            this.sendTBMLoop.Text = "Loop";
+            this.sendTBMLoop.Click += new System.EventHandler(this.sendTBMLoop_Click);
+            // 
             // sendTBMSelectScript
             // 
             this.sendTBMSelectScript.Name = "sendTBMSelectScript";
@@ -441,6 +451,24 @@
             this.menuToolTip.Style = MetroFramework.MetroColorStyle.Default;
             this.menuToolTip.StyleManager = null;
             this.menuToolTip.Theme = MetroFramework.MetroThemeStyle.Default;
+            // 
+            // btSendSetting
+            // 
+            this.btSendSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSendSetting.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btSendSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btSendSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSendSetting.Image = global::TerminalTool.Properties.Resources.ftp;
+            this.btSendSetting.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btSendSetting.Location = new System.Drawing.Point(474, 359);
+            this.btSendSetting.Margin = new System.Windows.Forms.Padding(2);
+            this.btSendSetting.Name = "btSendSetting";
+            this.btSendSetting.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
+            this.btSendSetting.Size = new System.Drawing.Size(22, 22);
+            this.btSendSetting.TabIndex = 47;
+            this.menuToolTip.SetToolTip(this.btSendSetting, "Send File");
+            this.btSendSetting.UseVisualStyleBackColor = true;
+            this.btSendSetting.Click += new System.EventHandler(this.btSendSetting_Click);
             // 
             // LinkTimer
             // 
@@ -526,24 +554,6 @@
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
             // 
-            // btSendSetting
-            // 
-            this.btSendSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSendSetting.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btSendSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btSendSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSendSetting.Image = global::TerminalTool.Properties.Resources.ftp;
-            this.btSendSetting.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btSendSetting.Location = new System.Drawing.Point(474, 359);
-            this.btSendSetting.Margin = new System.Windows.Forms.Padding(2);
-            this.btSendSetting.Name = "btSendSetting";
-            this.btSendSetting.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
-            this.btSendSetting.Size = new System.Drawing.Size(22, 22);
-            this.btSendSetting.TabIndex = 47;
-            this.menuToolTip.SetToolTip(this.btSendSetting, "Send File");
-            this.btSendSetting.UseVisualStyleBackColor = true;
-            this.btSendSetting.Click += new System.EventHandler(this.btSendSetting_Click);
-            // 
             // tbSend
             // 
             this.tbSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -590,16 +600,6 @@
             this.tbSend.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSend.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbSend_ButtonClick);
             this.tbSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSend_KeyDown);
-            // 
-            // sendTBMLoop
-            // 
-            this.sendTBMLoop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.sendTBMLoop.Image = global::TerminalTool.Properties.Resources.arrow_3_down_right;
-            this.sendTBMLoop.Name = "sendTBMLoop";
-            this.sendTBMLoop.Size = new System.Drawing.Size(109, 22);
-            this.sendTBMLoop.Tag = "true";
-            this.sendTBMLoop.Text = "Loop";
-            this.sendTBMLoop.Click += new System.EventHandler(this.sendTBMLoop_Click);
             // 
             // ToolStrip
             // 
