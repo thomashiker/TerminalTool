@@ -608,7 +608,7 @@ namespace TerminalTool
             AppendRcvText(rcvdata);
             UpdateRcvCharDisplay(rcvCharNum);
             
-            Application.DoEvents();
+            //Application.DoEvents();
 
             //serialPort.DiscardInBuffer();
             //serialPort.ReadExisting
@@ -901,6 +901,19 @@ namespace TerminalTool
         {
             HelpForm help = new HelpForm();
             help.Show(this);
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //if (fctbRcv.SelectedText.Equals(""))
+            //    return;
+            //Clipboard.SetDataObject(fctbRcv.SelectedText, true);
+            fctbRcv.Copy();
+        }
+
+        private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetDataObject(fctbRcv.Text, true);
         }
     }
 }

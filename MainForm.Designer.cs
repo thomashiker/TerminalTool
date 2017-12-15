@@ -97,12 +97,17 @@
             this.tSBScreenShot = new System.Windows.Forms.ToolStripButton();
             this.tSBAutoScroll = new System.Windows.Forms.ToolStripButton();
             this.tSBTopMost = new System.Windows.Forms.ToolStripButton();
+            this.toolMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.copyAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ToolStrip.SuspendLayout();
+            this.toolMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelConnect
@@ -521,8 +526,10 @@
             this.fctbRcv.CaretColor = System.Drawing.Color.MediumSeaGreen;
             this.fctbRcv.CharHeight = 14;
             this.fctbRcv.CharWidth = 8;
+            this.fctbRcv.ContextMenuStrip = this.toolMenu;
             this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fctbRcv.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
             this.fctbRcv.IsReplaceMode = false;
             this.fctbRcv.Location = new System.Drawing.Point(1, 56);
@@ -604,8 +611,11 @@
             // ToolStrip
             // 
             this.ToolStrip.CanOverflow = false;
+            this.ToolStrip.CheckedItemColor = System.Drawing.Color.Chocolate;
+            this.ToolStrip.CheckPressItemColors = System.Drawing.Color.Chocolate;
             this.ToolStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.ToolStrip.ItemPressedColors = System.Drawing.Color.Chocolate;
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tSBNew,
             this.tSBConnect,
@@ -626,6 +636,7 @@
             this.tSBScreenShot,
             this.tSBAutoScroll,
             this.tSBTopMost});
+            this.ToolStrip.ItemSelectedColor = System.Drawing.Color.Chocolate;
             this.ToolStrip.Location = new System.Drawing.Point(2, 30);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.Padding = new System.Windows.Forms.Padding(0);
@@ -845,6 +856,35 @@
             this.tSBTopMost.ToolTipText = "top most";
             this.tSBTopMost.Click += new System.EventHandler(this.tSBTopMost_Click);
             // 
+            // toolMenu
+            // 
+            this.toolMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pasteToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.copyAllToolStripMenuItem});
+            this.toolMenu.Name = "toolMenu";
+            this.toolMenu.Size = new System.Drawing.Size(125, 70);
+            // 
+            // copyAllToolStripMenuItem
+            // 
+            this.copyAllToolStripMenuItem.Name = "copyAllToolStripMenuItem";
+            this.copyAllToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.copyAllToolStripMenuItem.Text = "&Copy All";
+            this.copyAllToolStripMenuItem.Click += new System.EventHandler(this.copyAllToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.copyToolStripMenuItem.Text = "&Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.pasteToolStripMenuItem.Text = "&Connect";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -882,6 +922,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
+            this.toolMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -955,6 +996,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton tSBTopMost;
+        private MetroFramework.Controls.MetroContextMenu toolMenu;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
     }
 }
 

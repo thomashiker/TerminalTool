@@ -12,6 +12,7 @@ using MetroFramework;
 using MetroFramework.Forms;
 using MetroFramework.Drawing;
 using MetroFramework.Controls;
+using System.Xml;
 
 namespace TerminalTool
 {
@@ -153,6 +154,24 @@ namespace TerminalTool
             {
                 SendMsg((string)row.Cells[1].Value);
             }
+        }
+
+        public void AddGridItem(string cmd, string discription)
+        {
+            if (null == cmd || 0 == cmd.Length)
+                return;
+
+            foreach (DataGridViewRow row in gridCmdList.Rows)
+            {
+                if (cmd.Equals(row.Cells[1].Value))
+                {
+                    return;
+                }
+            }
+
+            int index = gridCmdList.Rows.Add();
+            gridCmdList.Rows[index].Cells[1].Value = cmd;
+            gridCmdList.Rows[index].Cells[1].ToolTipText = discription;
         }
 
         public void AddItem(string item)
@@ -349,6 +368,28 @@ namespace TerminalTool
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadGridItem();
+        }
+
+        private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = Application.StartupPath + "\\cmdlist.xml";
+
+            if (!File.Exists(@path))
+            {
+                MessageBox.Show(path + ":文件不存在");
+                return;
+            }
+
+            XmlDocument xml = new XmlDocument();
+            
+            xml.Load(@path);
+
+            XmlNodeList nodeList = xml.DocumentElement.GetElementsByTagName("CMD");
+            foreach (XmlNode node in nodeList) //当然也能用nodeList的值
+            {
+                //node.Attributes["Name"].InnerText;
+                AddGridItem(node.Attributes["cmd"].InnerText, node.Attributes["discription"].InnerText);
+            }
         }
 
         private void UploadFile()
