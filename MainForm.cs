@@ -71,24 +71,6 @@ namespace TerminalTool
             }
         }
 
-        private bool SendTBMLoopChecked
-        {
-            get { return sendTBMLoopChecked; }
-            set
-            {
-                if (sendTBMLoop.DisplayStyle == ToolStripItemDisplayStyle.Text)
-                {
-                    sendTBMLoopChecked = true;
-                    sendTBMLoop.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-                }
-                else
-                {
-                    sendTBMLoopChecked = false;
-                    sendTBMLoop.DisplayStyle = ToolStripItemDisplayStyle.Text;
-                }
-            }
-        }
-
         private void trackBarZoomInit()
         {
             trackBarZoom.Value = 100 - zoombase;
@@ -188,7 +170,7 @@ namespace TerminalTool
             return state;
         }
 
-        private bool IsPortOpen()
+        public bool IsPortOpen()
         {
             return serialPort.IsOpen;
         }
@@ -352,10 +334,14 @@ namespace TerminalTool
             SaveToFileAs();
         }
 
-        private void tSBClear_Click(object sender, EventArgs e)
+        private void ClearReceive()
         {
             fctbRcv.Clear();
             rcvCharNum = 0;
+        }
+        private void tSBClear_Click(object sender, EventArgs e)
+        {
+            ClearReceive();
         }
 
         private void tSBShowLineNum_Click(object sender, EventArgs e)
@@ -589,7 +575,7 @@ namespace TerminalTool
 
         private void UpdateRcvCharDisplay(Int64 num)
         {
-            labelRcv.BeginInvoke((MethodInvoker)delegate ()
+            this.BeginInvoke((MethodInvoker)delegate ()
             {
                 labelRcv.Text = "r:" + num.ToString();
             });
@@ -809,62 +795,12 @@ namespace TerminalTool
 
         private void sendTBMSave_Click(object sender, EventArgs e)
         {
-            sendTool.AddItem(tbSend.Text);
-        }
-
-        private long SendTimes = 0;
-        private void SendLoopStart()
-        {
-            //SendTimer.Interval = sentSetting.GetSendPeriod();
-            SendTimes = 0;
-            SendTimer.Start();
-        }
-        private void SendLoopStop()
-        {
-            SendTimer.Stop();
-            if (SendTBMLoopChecked)
-            {
-                SendTBMLoopChecked = false;
-            }
-        }
-        private void sendTBMLoop_Click(object sender, EventArgs e)
-        {
-            SendTBMLoopChecked = !SendTBMLoopChecked;
-            if (SendTBMLoopChecked)
-                SendLoopStart();
-            else
-                SendLoopStop();
-        }
-
-        private void sendTBMSendFile_Click(object sender, EventArgs e)
-        {
+            sendTool.AddCmd(tbSend.Text);
         }
 
         private void sendTBMSend_Click(object sender, EventArgs e)
         {
             SendMessage(tbSend.Text, true);
-        }
-
-        private void SendTimer_Tick(object sender, EventArgs e)
-        {
-            SendMessage(tbSend.Text, true);
-            /*switch (sentSetting.GetSendMode())
-            {
-                case SendSettingMode.ONCE:
-                    SendLoopStop();
-                    break;
-                case SendSettingMode.REPEAT:
-                    SendTimes++;
-                    if (SendTimes == sentSetting.GetSendTimes())
-                        SendLoopStop();
-                    break;
-                case SendSettingMode.LOOP:
-                    break;
-                default:
-                    break;
-            }*/
-            if (!SendTBMLoopChecked)
-                SendLoopStop();
         }
 
         private void btSendFile_Click(object sender, EventArgs e)
@@ -914,6 +850,16 @@ namespace TerminalTool
         private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Clipboard.SetDataObject(fctbRcv.Text, true);
+        }
+
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearReceive();
+        }
+
+        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tSBConnect_Click(sender, e);
         }
     }
 }

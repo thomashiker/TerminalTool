@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cmdlist>
+  <CMD cmd="rdmem 0x20000" discription="读内存" />
+  <CMD cmd="12313" discription="test" />
+  <CMD cmd="cadfdas" discription="" />
+  <CMD cmd="123srewrqewq13" discription="no discription" />
+  <CMD cmd="hello world" discription="hello " />
+  <CMD cmd="" discription="" />
+</cmdlist>

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.IO;
 using MetroFramework;
@@ -22,6 +23,7 @@ namespace TerminalTool
         private MainForm mainForm = null;
         private bool loopChecked = false;
         private Control ParentControl = null;
+        private string _cmdListDefaultFile;
 
 
         public MetroColorStyle MetroStyle
@@ -31,6 +33,16 @@ namespace TerminalTool
             {
                 StyleMng.Style = value;
                 dividePanel.BackColor = MetroPaint.GetStyleColor(StyleMng.Style);
+            }
+        }
+
+        public string CmdListDefaultFile
+        {
+            get { return _cmdListDefaultFile; }
+            set
+            {
+                _cmdListDefaultFile = value;
+                reloadToolStripMenuItem.ToolTipText = _cmdListDefaultFile;
             }
         }
 
@@ -44,6 +56,9 @@ namespace TerminalTool
             MetroStyle = MetroColorStyle.Default;
             textBox = tb;
             mainForm = form;
+
+            CmdListDefaultFile = Application.StartupPath + "\\default.xml";
+            ReloadFile(false);
         }
 
         private void SendMsg(string msg)
@@ -105,10 +120,11 @@ namespace TerminalTool
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in gridCmdList.Rows)
+            DataGridViewRow row = gridCmdList.CurrentRow;
+
+            if (null != row)
             {
                 Clipboard.SetDataObject((string)row.Cells[1].Value);
-                return;
             }
         }
 
@@ -118,7 +134,7 @@ namespace TerminalTool
 
             foreach (DataGridViewRow row in gridCmdList.Rows)
             {
-                str = str + row.Cells[1].Value + "\r";
+                str = str + row.Cells[1].Value + "\r\n";
             }
             Clipboard.SetDataObject(str);
         }
@@ -141,22 +157,7 @@ namespace TerminalTool
             textBox.Clear();
         }
 
-        private void sendToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            /*foreach (DataGridViewRow row in gridCmdList.SelectedRows)
-            {
-                SendMsg((string)row.Cells[1].Value);
-                break;
-            }*/
-            DataGridViewRow row = gridCmdList.CurrentRow;
-
-            if (null != row)
-            {
-                SendMsg((string)row.Cells[1].Value);
-            }
-        }
-
-        public void AddGridItem(string cmd, string discription)
+        public void AddCmdDisc(string cmd, string discription)
         {
             if (null == cmd || 0 == cmd.Length)
                 return;
@@ -174,7 +175,7 @@ namespace TerminalTool
             gridCmdList.Rows[index].Cells[1].ToolTipText = discription;
         }
 
-        public void AddItem(string item)
+        public void AddCmd(string item)
         {
             if (null == item || 0 == item.Length)
                 return;
@@ -189,56 +190,121 @@ namespace TerminalTool
 
             int index = gridCmdList.Rows.Add();
             gridCmdList.Rows[index].Cells[1].Value = item;
-            gridCmdList.Rows[index].Cells[1].ToolTipText = "Add from file";
+            gridCmdList.Rows[index].Cells[1].ToolTipText = "no discription";
             //    string[] array = new string[] { "null", item };
             //gridCmdList.Rows.Insert(0, array);
         }
 
-        private void uploadFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void UploadFile()
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "(*.txt)|*.txt";
+            ofd.Filter = "(*.xml)|*.xml";
             ofd.InitialDirectory = Application.StartupPath;
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                FileStream fileStream = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
-                StreamReader streamReader = new StreamReader(fileStream, Encoding.UTF8);
+                XmlDocument xml = new XmlDocument();
 
-                string content = streamReader.ReadLine();
-                while (content != null)
+                xml.Load(@ofd.FileName);
+
+                XmlNodeList nodeList = xml.DocumentElement.GetElementsByTagName("CMD");
+                foreach (XmlNode node in nodeList) //当然也能用nodeList的值
                 {
-                    if (content.Length > 0)
-                        AddItem(content);
-                    //lbTextList.Items.Add(content);
-                    content = streamReader.ReadLine();
+                    if (null != node.Attributes["cmd"])
+                    {
+                        if (null != node.Attributes["discription"])
+                        {
+                            AddCmdDisc(node.Attributes["cmd"].InnerText, node.Attributes["discription"].InnerText);
+                        }
+                        else
+                        {
+                            AddCmd(node.Attributes["cmd"].InnerText);
+                        }
+                    }
                 }
-            }
+                CmdListDefaultFile = ofd.FileName;
+            }  
         }
 
-        private void saveToFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveToFile()
         {
             SaveFileDialog fileDialog = new SaveFileDialog();
-            fileDialog.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
-            fileDialog.DefaultExt = "txt";
+            fileDialog.Filter = "(*.xml)|*.xml"; 
+            fileDialog.DefaultExt = "xml";
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    StringBuilder sb = new StringBuilder();
+                    XmlDocument doc = new XmlDocument();
+                    XmlDeclaration dec = doc.CreateXmlDeclaration("1.0", "utf-8", null);
+                    doc.AppendChild(dec);
 
+                    XmlElement root = doc.CreateElement("cmdlist");
+                    doc.AppendChild(root);
                     foreach (DataGridViewRow row in gridCmdList.Rows)
                     {
-                        sb.AppendLine((string)row.Cells[1].Value);
+                        XmlElement element = doc.CreateElement("CMD");
+                        element.SetAttribute("cmd", (string)row.Cells[1].Value);
+                        element.SetAttribute("discription", row.Cells[1].ToolTipText);
+                        root.AppendChild(element);
                     }
-                    File.WriteAllText(fileDialog.FileName, sb.ToString());
+
+                    doc.Save(@fileDialog.FileName);
                 }
                 catch (Exception ex)
                 {
                     MetroMessageBox.Show(this, ex.Message, "MetroMessagebox");
                 }
             }
+        }
+
+        private void ReloadFile(bool warning)
+        {
+            if (!File.Exists(@CmdListDefaultFile))
+            {
+                if (warning)
+                    MetroMessageBox.Show(this, CmdListDefaultFile + ":文件不存在");
+                return;
+            }
+
+            gridCmdList.Rows.Clear();
+            textBox.Clear();
+
+            XmlDocument xml = new XmlDocument();
+
+            xml.Load(@CmdListDefaultFile);
+
+            XmlNodeList nodeList = xml.DocumentElement.GetElementsByTagName("CMD");
+            foreach (XmlNode node in nodeList) //当然也能用nodeList的值
+            {
+                if (null != node.Attributes["cmd"])
+                {
+                    if (null != node.Attributes["discription"])
+                    {
+                        AddCmdDisc(node.Attributes["cmd"].InnerText, node.Attributes["discription"].InnerText);
+                    }
+                    else
+                    {
+                        AddCmd(node.Attributes["cmd"].InnerText);
+                    }
+                }
+            }
+        }
+
+        private void uploadFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UploadFile();
+        }
+
+        private void saveToFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveToFile();
+        }
+
+        private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReloadFile(true);
         }
 
         private void UpdateOwnerTextBox(string text)
@@ -370,87 +436,6 @@ namespace TerminalTool
             LoadGridItem();
         }
 
-        private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string path = Application.StartupPath + "\\cmdlist.xml";
-
-            if (!File.Exists(@path))
-            {
-                MessageBox.Show(path + ":文件不存在");
-                return;
-            }
-
-            XmlDocument xml = new XmlDocument();
-            
-            xml.Load(@path);
-
-            XmlNodeList nodeList = xml.DocumentElement.GetElementsByTagName("CMD");
-            foreach (XmlNode node in nodeList) //当然也能用nodeList的值
-            {
-                //node.Attributes["Name"].InnerText;
-                AddGridItem(node.Attributes["cmd"].InnerText, node.Attributes["discription"].InnerText);
-            }
-        }
-
-        private void UploadFile()
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "(*.txt)|*.txt";
-            ofd.InitialDirectory = Application.StartupPath;
-
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                FileStream fileStream = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
-                StreamReader streamReader = new StreamReader(fileStream, Encoding.UTF8);
-
-                string content = streamReader.ReadLine();
-                while (content != null)
-                {
-                    if (content.Length > 0)
-                        AddItem(content);
-                    //lbTextList.Items.Add(content);
-                    content = streamReader.ReadLine();
-                }
-
-                streamReader.Close();
-            }
-        }
-
-        private void SaveToFile()
-        {
-            SaveFileDialog fileDialog = new SaveFileDialog();
-            fileDialog.Filter = "Text Files (*.txt)|*.txt|All files (*.*)|*.*";
-            fileDialog.DefaultExt = "txt";
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    StringBuilder sb = new StringBuilder();
-
-                    foreach (DataGridViewRow row in gridCmdList.Rows)
-                    {
-                        sb.AppendLine((string)row.Cells[1].Value);
-                    }
-                    File.WriteAllText(fileDialog.FileName, sb.ToString());
-                }
-                catch (Exception ex)
-                {
-                    MetroMessageBox.Show(this, ex.Message, "MetroMessagebox");
-                }
-            }
-        }
-
-        private void uploadFileToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            UploadFile();
-        }
-
-        private void saveToFileToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            SaveToFile();
-        }
-
         private void gridCmdList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = gridCmdList.CurrentRow;
@@ -477,18 +462,15 @@ namespace TerminalTool
                 {
                     loopChecked = true;
                     loopToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                    LoopBGWorker.RunWorkerAsync();
                 }
                 else
                 {
                     loopChecked = false;
                     loopToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
+                    LoopBGWorker.CancelAsync();
                 }
             }
-        }
-
-        private void loopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoopChecked = !LoopChecked;
         }
 
         private void btListSend_Click(object sender, EventArgs e)
@@ -509,6 +491,79 @@ namespace TerminalTool
                 Hide();
                 this.TopLevel = true;
             }
+        }
+
+        private void selectedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = gridCmdList.CurrentRow;
+
+            if (null != row)
+            {
+                SendMsg((string)row.Cells[1].Value);
+            }
+        }
+
+        private void SendChecked()
+        {
+            foreach (DataGridViewRow row in gridCmdList.Rows)
+            {
+                DataGridViewCheckBoxCell checkCell = (DataGridViewCheckBoxCell)row.Cells[0];
+                if ((bool)checkCell.EditedFormattedValue)
+                {
+                    SendMsg((string)row.Cells[1].Value);
+                    Thread.Sleep(1);
+                }
+            }
+        }
+
+        private void checkedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendChecked();
+        }
+
+        private void loopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (mainForm.IsPortOpen())
+            {
+                LoopChecked = !LoopChecked;
+            }
+            else
+            {
+                LoopChecked = false;
+            }
+        }
+
+        private void LoopBGWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            do
+            {
+                foreach (DataGridViewRow row in gridCmdList.Rows)
+                {
+                    try
+                    {
+                        DataGridViewCheckBoxCell checkCell = (DataGridViewCheckBoxCell)row.Cells[0];
+                        if ((bool)checkCell.EditedFormattedValue)
+                        {
+                            SendMsg((string)row.Cells[1].Value);
+                            Thread.Sleep(10);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MetroMessageBox.Show(this, ex.Message, "MetroMessagebox");
+                    }
+                    
+                    if (LoopBGWorker.CancellationPending)
+                    {
+                        break;
+                    }
+                }
+            } while (LoopChecked && (!LoopBGWorker.CancellationPending));
+        }
+
+        private void LoopBGWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            
         }
     }
 }

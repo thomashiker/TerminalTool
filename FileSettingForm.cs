@@ -13,7 +13,6 @@ using MetroFramework;
 using MetroFramework.Forms;
 using MetroFramework.Drawing;
 using MetroFramework.Controls;
-using System.IO;
 using FastColoredTextBoxNS;
 
 namespace TerminalTool

@@ -61,8 +61,6 @@
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.cmSend = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.sendTBMSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.sendTBMLoop = new System.Windows.Forms.ToolStripMenuItem();
-            this.sendTBMSelectScript = new System.Windows.Forms.ToolStripMenuItem();
             this.sendTBMSend = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.trackBarZoom = new MetroFramework.Controls.MetroTrackBar();
@@ -72,9 +70,13 @@
             this.btSendSetting = new System.Windows.Forms.Button();
             this.LinkTimer = new System.Windows.Forms.Timer(this.components);
             this.StyleMng = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.SendTimer = new System.Windows.Forms.Timer(this.components);
             this.btSendMsg = new MetroFramework.Controls.MetroButton();
             this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.toolMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbSend = new MetroFramework.Controls.MetroTextBox();
             this.ToolStrip = new Antiufo.Controls.MetroToolStrip();
@@ -97,17 +99,13 @@
             this.tSBScreenShot = new System.Windows.Forms.ToolStripButton();
             this.tSBAutoScroll = new System.Windows.Forms.ToolStripButton();
             this.tSBTopMost = new System.Windows.Forms.ToolStripButton();
-            this.toolMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.copyAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).BeginInit();
+            this.toolMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ToolStrip.SuspendLayout();
-            this.toolMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelConnect
@@ -369,40 +367,22 @@
             this.cmSend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmSend.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sendTBMSave,
-            this.sendTBMLoop,
-            this.sendTBMSelectScript,
             this.sendTBMSend});
             this.cmSend.Name = "metroContextMenu1";
-            this.cmSend.Size = new System.Drawing.Size(110, 92);
+            this.cmSend.Size = new System.Drawing.Size(106, 48);
             this.cmSend.UseStyleColors = true;
             // 
             // sendTBMSave
             // 
             this.sendTBMSave.Name = "sendTBMSave";
-            this.sendTBMSave.Size = new System.Drawing.Size(109, 22);
+            this.sendTBMSave.Size = new System.Drawing.Size(105, 22);
             this.sendTBMSave.Text = "&Save";
             this.sendTBMSave.Click += new System.EventHandler(this.sendTBMSave_Click);
-            // 
-            // sendTBMLoop
-            // 
-            this.sendTBMLoop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.sendTBMLoop.Image = global::TerminalTool.Properties.Resources.arrow_3_down_right;
-            this.sendTBMLoop.Name = "sendTBMLoop";
-            this.sendTBMLoop.Size = new System.Drawing.Size(109, 22);
-            this.sendTBMLoop.Tag = "true";
-            this.sendTBMLoop.Text = "Loop";
-            this.sendTBMLoop.Click += new System.EventHandler(this.sendTBMLoop_Click);
-            // 
-            // sendTBMSelectScript
-            // 
-            this.sendTBMSelectScript.Name = "sendTBMSelectScript";
-            this.sendTBMSelectScript.Size = new System.Drawing.Size(109, 22);
-            this.sendTBMSelectScript.Text = "Script";
             // 
             // sendTBMSend
             // 
             this.sendTBMSend.Name = "sendTBMSend";
-            this.sendTBMSend.Size = new System.Drawing.Size(109, 22);
+            this.sendTBMSend.Size = new System.Drawing.Size(105, 22);
             this.sendTBMSend.Text = "Send";
             this.sendTBMSend.Click += new System.EventHandler(this.sendTBMSend_Click);
             // 
@@ -484,11 +464,6 @@
             // 
             this.StyleMng.Owner = this;
             // 
-            // SendTimer
-            // 
-            this.SendTimer.Interval = 1000;
-            this.SendTimer.Tick += new System.EventHandler(this.SendTimer_Tick);
-            // 
             // btSendMsg
             // 
             this.btSendMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -550,6 +525,46 @@
             this.fctbRcv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fctbRcv_KeyDown);
             this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
             this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
+            // 
+            // toolMenu
+            // 
+            this.toolMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.toolMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.connectToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.copyAllToolStripMenuItem,
+            this.clearToolStripMenuItem});
+            this.toolMenu.Name = "toolMenu";
+            this.toolMenu.Size = new System.Drawing.Size(153, 114);
+            // 
+            // connectToolStripMenuItem
+            // 
+            this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.connectToolStripMenuItem.Text = "Connect";
+            this.connectToolStripMenuItem.Click += new System.EventHandler(this.connectToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Text = "&Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // copyAllToolStripMenuItem
+            // 
+            this.copyAllToolStripMenuItem.Name = "copyAllToolStripMenuItem";
+            this.copyAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyAllToolStripMenuItem.Text = "Copy All";
+            this.copyAllToolStripMenuItem.Click += new System.EventHandler(this.copyAllToolStripMenuItem_Click);
+            // 
+            // clearToolStripMenuItem
+            // 
+            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearToolStripMenuItem.Text = "Clear";
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -856,35 +871,6 @@
             this.tSBTopMost.ToolTipText = "top most";
             this.tSBTopMost.Click += new System.EventHandler(this.tSBTopMost_Click);
             // 
-            // toolMenu
-            // 
-            this.toolMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pasteToolStripMenuItem,
-            this.copyToolStripMenuItem,
-            this.copyAllToolStripMenuItem});
-            this.toolMenu.Name = "toolMenu";
-            this.toolMenu.Size = new System.Drawing.Size(125, 70);
-            // 
-            // copyAllToolStripMenuItem
-            // 
-            this.copyAllToolStripMenuItem.Name = "copyAllToolStripMenuItem";
-            this.copyAllToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.copyAllToolStripMenuItem.Text = "&Copy All";
-            this.copyAllToolStripMenuItem.Click += new System.EventHandler(this.copyAllToolStripMenuItem_Click);
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.copyToolStripMenuItem.Text = "&Copy";
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.pasteToolStripMenuItem.Text = "&Connect";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -919,10 +905,10 @@
             this.cmSend.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).EndInit();
+            this.toolMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
-            this.toolMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -971,10 +957,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
         private MetroFramework.Controls.MetroContextMenu cmSend;
         private System.Windows.Forms.ToolStripMenuItem sendTBMSave;
-        private System.Windows.Forms.ToolStripMenuItem sendTBMLoop;
-        private System.Windows.Forms.ToolStripMenuItem sendTBMSelectScript;
         private System.Windows.Forms.ToolStripMenuItem sendTBMSend;
-        private System.Windows.Forms.Timer SendTimer;
         private MetroFramework.Controls.MetroButton btSendMsg;
         private Antiufo.Controls.MetroToolStrip ToolStrip;
         private System.Windows.Forms.ToolStripButton tSBNew;
@@ -999,7 +982,8 @@
         private MetroFramework.Controls.MetroContextMenu toolMenu;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem connectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
     }
 }
 
