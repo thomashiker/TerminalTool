@@ -497,9 +497,8 @@ namespace TerminalTool
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    //ReceiveUserInput("\n");
-                    StringBuilder sendMsgBuilder = new StringBuilder(MsgToSend);
-                    SendMessage(sendMsgBuilder.ToString(), true);
+                    //StringBuilder sendMsgBuilder = new StringBuilder(MsgToSend);
+                    SendMessage(MsgToSend, true);
                     MsgToSend = null;
                     e.Handled = true;
                     break;
@@ -533,22 +532,6 @@ namespace TerminalTool
             {
                 ReceiveUserInput(input.ToString());
             }
-        }
-
-        private void fctbRcv_ZoomChanged(object sender, EventArgs e)
-        {
-            //int percent = trackBarZoom.Value + zoombase;
-            //fctbRcv.Zoom = percent;
-            //linkZoom.Text = percent.ToString() + "%";
-
-            //trackBarZoom.SuspendLayout();
-            //if (fctbRcv.Zoom > trackBarZoom.Maximum)
-            //{
-            //    fctbRcv.Zoom = trackBarZoom.Maximum;
-            //}
-            //trackBarZoom.Value = fctbRcv.Zoom;
-            //trackBarZoom.ResumeLayout();
-            //labelZoomState.Text = fctbRcv.Zoom.ToString() + "%";
         }
 
         private void UpdateLinkTimeDisplay(Int64 time)
@@ -619,7 +602,7 @@ namespace TerminalTool
 
         public bool SendMessage(string msg, bool save2file)
         {
-            if (msg == null)
+            if (msg == null || 0 == msg.Length)
             {
                 return true;
             }
@@ -631,7 +614,7 @@ namespace TerminalTool
                     this.Invoke((EventHandler)(delegate
                     {
                         StringBuilder builder = new StringBuilder(msg);
-                        builder.Append("\r\n");
+                        builder.Append("\n");
 
                         serialPort.Write(builder.ToString());
 

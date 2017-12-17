@@ -37,7 +37,7 @@
             this.metroLink1.Name = "metroLink1";
             this.metroLink1.Size = new System.Drawing.Size(306, 23);
             this.metroLink1.TabIndex = 0;
-            this.metroLink1.Text = "www.hhhhhh.com";
+            this.metroLink1.Text = "https://github.com/thomashiker/TerminalTool";
             this.metroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroLink1.UseSelectable = true;
             this.metroLink1.UseStyleColors = true;
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 185);
+            this.ClientSize = new System.Drawing.Size(412, 171);
             this.Controls.Add(this.metroLink1);
             this.Name = "HelpForm";
             this.Resizable = false;
@@ -54,7 +54,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Help";
+            this.Text = "About";
             this.ResumeLayout(false);
 
         }

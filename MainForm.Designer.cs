@@ -504,7 +504,6 @@
             this.fctbRcv.ContextMenuStrip = this.toolMenu;
             this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.fctbRcv.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
             this.fctbRcv.IsReplaceMode = false;
             this.fctbRcv.Location = new System.Drawing.Point(1, 56);
@@ -521,7 +520,6 @@
             this.fctbRcv.WordWrapMode = FastColoredTextBoxNS.WordWrapMode.Custom;
             this.fctbRcv.Zoom = 100;
             this.fctbRcv.KeyPressed += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPressed);
-            this.fctbRcv.ZoomChanged += new System.EventHandler(this.fctbRcv_ZoomChanged);
             this.fctbRcv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fctbRcv_KeyDown);
             this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
             this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
@@ -536,33 +534,33 @@
             this.copyAllToolStripMenuItem,
             this.clearToolStripMenuItem});
             this.toolMenu.Name = "toolMenu";
-            this.toolMenu.Size = new System.Drawing.Size(153, 114);
+            this.toolMenu.Size = new System.Drawing.Size(125, 92);
             // 
             // connectToolStripMenuItem
             // 
             this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.connectToolStripMenuItem.Text = "Connect";
             this.connectToolStripMenuItem.Click += new System.EventHandler(this.connectToolStripMenuItem_Click);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // copyAllToolStripMenuItem
             // 
             this.copyAllToolStripMenuItem.Name = "copyAllToolStripMenuItem";
-            this.copyAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyAllToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.copyAllToolStripMenuItem.Text = "Copy All";
             this.copyAllToolStripMenuItem.Click += new System.EventHandler(this.copyAllToolStripMenuItem_Click);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
