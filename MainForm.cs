@@ -93,6 +93,7 @@ namespace TerminalTool
         public MainForm()
         {
             InitializeComponent();
+            this.StyleManager = StyleMng;
 
             sendTool = new SendToolForm(this, tbSend);
             fileSettingForm = new FileSettingForm(this);
@@ -130,14 +131,14 @@ namespace TerminalTool
             }
         }
 
-        private void AppendRcvText(string text)
+        private void AppendRcvText(string msg)
         {
-            LogToFile(text);
+            LogToFile(msg);
 
             fctbRcv.BeginInvoke((MethodInvoker)delegate ()
             {
                 fctbRcv.BeginUpdate();
-                fctbRcv.AppendText(text);
+                fctbRcv.AppendText(msg);
                 if (fctbRcvAutoScroll)
                 {
                     //fctbRcv.GoEnd();
@@ -145,6 +146,23 @@ namespace TerminalTool
                 }
                 fctbRcv.EndUpdate();
             }); 
+        }
+        public delegate void WriteText(string msg);
+        public void WriteReceiveText(String msg)
+        {
+            if (fctbRcv.InvokeRequired)
+            {
+                fctbRcv.BeginInvoke(new WriteText(WriteReceiveText), msg);
+                return;
+            }
+            fctbRcv.BeginUpdate();
+            fctbRcv.AppendText(msg);
+            if (fctbRcvAutoScroll)
+            {
+                //fctbRcv.GoEnd();
+                fctbRcv.GoEndLine();
+            }
+            fctbRcv.EndUpdate();
         }
 
         bool PortInit()
@@ -540,14 +558,22 @@ namespace TerminalTool
             Int64 hours;
             Int64 minutes;
 
-            this.Invoke((EventHandler)(delegate
+            /*labelTime.Invoke((EventHandler)(delegate
             {
                 seconds = time % 60;
                 hours = time / 60;
                 minutes = (hours) % 60;
                 hours = hours / 60;
                 labelTime.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
-            }));
+            }));*/
+            labelTime.BeginInvoke((MethodInvoker)delegate ()
+            {
+                seconds = time % 60;
+                hours = time / 60;
+                minutes = (hours) % 60;
+                hours = hours / 60;
+                labelTime.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
+            });
         }
 
         private void LinkTimer_Tick(object sender, EventArgs e)
@@ -558,7 +584,7 @@ namespace TerminalTool
 
         private void UpdateRcvCharDisplay(Int64 num)
         {
-            this.BeginInvoke((MethodInvoker)delegate ()
+            labelRcv.BeginInvoke((MethodInvoker)delegate ()
             {
                 labelRcv.Text = "r:" + num.ToString();
             });
@@ -574,7 +600,8 @@ namespace TerminalTool
             
             //因为要访问ui资源，所以需要使用invoke方式同步ui。 
             rcvdata = Encoding.Default.GetString(buf);
-            AppendRcvText(rcvdata);
+            //AppendRcvText(rcvdata);
+            WriteReceiveText(rcvdata);
             UpdateRcvCharDisplay(rcvCharNum);
             
             //Application.DoEvents();
@@ -602,7 +629,7 @@ namespace TerminalTool
 
         public bool SendMessage(string msg, bool save2file)
         {
-            if (msg == null || 0 == msg.Length)
+            if (msg == null)
             {
                 return true;
             }
@@ -698,6 +725,7 @@ namespace TerminalTool
             ToolStrip.CheckedItemColor = style;
             ToolStrip.CheckPressItemColors = style;
             ToolStrip.ItemPressedColors = style;
+            ToolStrip.Refresh();
 
             fctbRcv.ServiceLinesColor = style;
             fctbRcv.LineNumberColor = style;
@@ -728,6 +756,7 @@ namespace TerminalTool
                 if (item.Text == ((MetroColorStyle)i).ToString())
                 {
                     StyleMng.Style = (MetroColorStyle)i;
+                    this.UpdateWindowButtonsStyle();
                     break;
                 }
             }
@@ -819,6 +848,7 @@ namespace TerminalTool
         private void tsmiHelp_Click(object sender, EventArgs e)
         {
             HelpForm help = new HelpForm();
+            help.MetroStyle = StyleMng.Style;
             help.Show(this);
         }
 

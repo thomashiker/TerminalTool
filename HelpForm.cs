@@ -18,6 +18,26 @@ namespace TerminalTool
         public HelpForm()
         {
             InitializeComponent();
+            StyleManager = metroStyleMng;
+        }
+
+        public MetroColorStyle MetroStyle
+        {
+            get { return metroStyleMng.Style; }
+            set
+            {
+                metroStyleMng.Style = value;
+                dividePanel.BackColor = MetroPaint.GetStyleColor(metroStyleMng.Style);
+            }
+        }
+
+        private void internetLink_Click(object sender, EventArgs e)
+        {
+            if (null != internetLink.Text)
+            {
+                System.Diagnostics.Process.Start(internetLink.Text);
+                //System.Diagnostics.Process.Start("explorer.exe", internetLink.Text);
+            }
         }
     }
 }

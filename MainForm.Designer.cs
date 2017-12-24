@@ -115,7 +115,7 @@
             this.labelConnect.FontSize = MetroFramework.MetroLabelSize.Small;
             this.labelConnect.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.labelConnect.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelConnect.Location = new System.Drawing.Point(6, 384);
+            this.labelConnect.Location = new System.Drawing.Point(7, 384);
             this.labelConnect.Name = "labelConnect";
             this.labelConnect.Size = new System.Drawing.Size(89, 15);
             this.labelConnect.TabIndex = 1;
@@ -129,7 +129,7 @@
             this.labelRcv.AutoSize = true;
             this.labelRcv.FontSize = MetroFramework.MetroLabelSize.Small;
             this.labelRcv.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.labelRcv.Location = new System.Drawing.Point(202, 384);
+            this.labelRcv.Location = new System.Drawing.Point(201, 384);
             this.labelRcv.Name = "labelRcv";
             this.labelRcv.Size = new System.Drawing.Size(22, 15);
             this.labelRcv.TabIndex = 2;
@@ -143,7 +143,7 @@
             this.labelSend.AutoSize = true;
             this.labelSend.FontSize = MetroFramework.MetroLabelSize.Small;
             this.labelSend.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.labelSend.Location = new System.Drawing.Point(271, 384);
+            this.labelSend.Location = new System.Drawing.Point(270, 384);
             this.labelSend.Name = "labelSend";
             this.labelSend.Size = new System.Drawing.Size(22, 15);
             this.labelSend.TabIndex = 3;
@@ -157,7 +157,7 @@
             this.labelTime.AutoSize = true;
             this.labelTime.FontSize = MetroFramework.MetroLabelSize.Small;
             this.labelTime.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.labelTime.Location = new System.Drawing.Point(334, 384);
+            this.labelTime.Location = new System.Drawing.Point(333, 384);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(55, 15);
             this.labelTime.TabIndex = 4;
@@ -390,7 +390,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(412, -11);
+            this.panel1.Location = new System.Drawing.Point(411, -11);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 10);
             this.panel1.TabIndex = 50;
@@ -400,7 +400,7 @@
             this.trackBarZoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBarZoom.BackColor = System.Drawing.Color.Transparent;
             this.trackBarZoom.LargeChange = 10;
-            this.trackBarZoom.Location = new System.Drawing.Point(426, 385);
+            this.trackBarZoom.Location = new System.Drawing.Point(425, 385);
             this.trackBarZoom.Maximum = 140;
             this.trackBarZoom.Name = "trackBarZoom";
             this.trackBarZoom.Size = new System.Drawing.Size(50, 12);
@@ -413,7 +413,7 @@
             // linkZoom
             // 
             this.linkZoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkZoom.Location = new System.Drawing.Point(390, 384);
+            this.linkZoom.Location = new System.Drawing.Point(389, 384);
             this.linkZoom.Name = "linkZoom";
             this.linkZoom.Size = new System.Drawing.Size(38, 15);
             this.linkZoom.TabIndex = 71;
@@ -445,7 +445,7 @@
             this.btSendSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSendSetting.Image = global::TerminalTool.Properties.Resources.ftp;
             this.btSendSetting.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btSendSetting.Location = new System.Drawing.Point(474, 359);
+            this.btSendSetting.Location = new System.Drawing.Point(473, 359);
             this.btSendSetting.Margin = new System.Windows.Forms.Padding(2);
             this.btSendSetting.Name = "btSendSetting";
             this.btSendSetting.Padding = new System.Windows.Forms.Padding(0, 0, 1, 1);
@@ -467,7 +467,7 @@
             // btSendMsg
             // 
             this.btSendMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSendMsg.Location = new System.Drawing.Point(436, 359);
+            this.btSendMsg.Location = new System.Drawing.Point(435, 359);
             this.btSendMsg.Margin = new System.Windows.Forms.Padding(0);
             this.btSendMsg.Name = "btSendMsg";
             this.btSendMsg.Size = new System.Drawing.Size(35, 22);
@@ -506,7 +506,7 @@
             this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
             this.fctbRcv.IsReplaceMode = false;
-            this.fctbRcv.Location = new System.Drawing.Point(1, 56);
+            this.fctbRcv.Location = new System.Drawing.Point(2, 56);
             this.fctbRcv.Margin = new System.Windows.Forms.Padding(0);
             this.fctbRcv.Name = "fctbRcv";
             this.fctbRcv.Paddings = new System.Windows.Forms.Padding(0);
@@ -514,7 +514,7 @@
             this.fctbRcv.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.fctbRcv.ServiceColors = null;
             this.fctbRcv.ServiceLinesColor = System.Drawing.Color.DeepSkyBlue;
-            this.fctbRcv.Size = new System.Drawing.Size(498, 300);
+            this.fctbRcv.Size = new System.Drawing.Size(496, 300);
             this.fctbRcv.TabIndex = 0;
             this.fctbRcv.WordWrapAutoIndent = false;
             this.fctbRcv.WordWrapMode = FastColoredTextBoxNS.WordWrapMode.Custom;
@@ -586,7 +586,7 @@
             this.tbSend.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tbSend.CustomButton.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.tbSend.CustomButton.Image = global::TerminalTool.Properties.Resources.arrow_7_down;
-            this.tbSend.CustomButton.Location = new System.Drawing.Point(415, 2);
+            this.tbSend.CustomButton.Location = new System.Drawing.Point(413, 2);
             this.tbSend.CustomButton.Margin = new System.Windows.Forms.Padding(0);
             this.tbSend.CustomButton.Name = "";
             this.tbSend.CustomButton.Size = new System.Drawing.Size(17, 17);
@@ -599,7 +599,7 @@
             this.tbSend.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.tbSend.Icon = global::TerminalTool.Properties.Resources.mail_inbox;
             this.tbSend.Lines = new string[0];
-            this.tbSend.Location = new System.Drawing.Point(2, 359);
+            this.tbSend.Location = new System.Drawing.Point(3, 359);
             this.tbSend.MaxLength = 32767;
             this.tbSend.Name = "tbSend";
             this.tbSend.PasswordChar = '\0';
@@ -611,7 +611,7 @@
             this.tbSend.ShortcutsEnabled = true;
             this.tbSend.ShowButton = true;
             this.tbSend.ShowClearButton = true;
-            this.tbSend.Size = new System.Drawing.Size(435, 22);
+            this.tbSend.Size = new System.Drawing.Size(433, 22);
             this.tbSend.TabIndex = 48;
             this.tbSend.UseSelectable = true;
             this.tbSend.UseStyleColors = true;
@@ -625,10 +625,10 @@
             // 
             this.ToolStrip.CanOverflow = false;
             this.ToolStrip.CheckedItemColor = System.Drawing.Color.Chocolate;
-            this.ToolStrip.CheckPressItemColors = System.Drawing.Color.Chocolate;
+            this.ToolStrip.CheckPressItemColors = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.ToolStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStrip.ItemPressedColors = System.Drawing.Color.Chocolate;
+            this.ToolStrip.ItemPressedColors = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tSBNew,
             this.tSBConnect,
@@ -650,11 +650,11 @@
             this.tSBAutoScroll,
             this.tSBTopMost});
             this.ToolStrip.ItemSelectedColor = System.Drawing.Color.Chocolate;
-            this.ToolStrip.Location = new System.Drawing.Point(2, 30);
+            this.ToolStrip.Location = new System.Drawing.Point(3, 30);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.Padding = new System.Windows.Forms.Padding(0);
             this.ToolStrip.ShowItemToolTips = false;
-            this.ToolStrip.Size = new System.Drawing.Size(496, 26);
+            this.ToolStrip.Size = new System.Drawing.Size(494, 26);
             this.ToolStrip.TabIndex = 77;
             this.ToolStrip.Text = "ToolStrip";
             // 
@@ -892,7 +892,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(450, 300);
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(2, 30, 2, 8);
+            this.Padding = new System.Windows.Forms.Padding(3, 30, 3, 8);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.StyleManager = this.StyleMng;
             this.Text = "Terminal";
