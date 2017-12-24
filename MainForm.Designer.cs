@@ -77,8 +77,6 @@
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbSend = new MetroFramework.Controls.MetroTextBox();
             this.ToolStrip = new Antiufo.Controls.MetroToolStrip();
             this.tSBNew = new System.Windows.Forms.ToolStripButton();
             this.tSBConnect = new System.Windows.Forms.ToolStripButton();
@@ -99,13 +97,15 @@
             this.tSBScreenShot = new System.Windows.Forms.ToolStripButton();
             this.tSBAutoScroll = new System.Windows.Forms.ToolStripButton();
             this.tSBTopMost = new System.Windows.Forms.ToolStripButton();
+            this.MenuBox = new System.Windows.Forms.PictureBox();
+            this.tbSend = new MetroFramework.Controls.MetroTextBox();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).BeginInit();
             this.toolMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MenuBox)).BeginInit();
             this.SuspendLayout();
             // 
             // labelConnect
@@ -564,71 +564,14 @@
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ContextMenuStrip = this.cmSys;
-            this.pictureBox1.Image = global::TerminalTool.Properties.Resources.terminal;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 68;
-            this.pictureBox1.TabStop = false;
-            // 
-            // tbSend
-            // 
-            this.tbSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSend.ContextMenuStrip = this.cmSend;
-            // 
-            // 
-            // 
-            this.tbSend.CustomButton.FlatAppearance.BorderSize = 0;
-            this.tbSend.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbSend.CustomButton.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.tbSend.CustomButton.Image = global::TerminalTool.Properties.Resources.arrow_7_down;
-            this.tbSend.CustomButton.Location = new System.Drawing.Point(413, 2);
-            this.tbSend.CustomButton.Margin = new System.Windows.Forms.Padding(0);
-            this.tbSend.CustomButton.Name = "";
-            this.tbSend.CustomButton.Size = new System.Drawing.Size(17, 17);
-            this.tbSend.CustomButton.Style = MetroFramework.MetroColorStyle.Lime;
-            this.tbSend.CustomButton.TabIndex = 1;
-            this.tbSend.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbSend.CustomButton.UseSelectable = true;
-            this.tbSend.CustomButton.UseStyleColors = true;
-            this.tbSend.DisplayIcon = true;
-            this.tbSend.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.tbSend.Icon = global::TerminalTool.Properties.Resources.mail_inbox;
-            this.tbSend.Lines = new string[0];
-            this.tbSend.Location = new System.Drawing.Point(3, 359);
-            this.tbSend.MaxLength = 32767;
-            this.tbSend.Name = "tbSend";
-            this.tbSend.PasswordChar = '\0';
-            this.tbSend.PromptText = "send...";
-            this.tbSend.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbSend.SelectedText = "";
-            this.tbSend.SelectionLength = 0;
-            this.tbSend.SelectionStart = 0;
-            this.tbSend.ShortcutsEnabled = true;
-            this.tbSend.ShowButton = true;
-            this.tbSend.ShowClearButton = true;
-            this.tbSend.Size = new System.Drawing.Size(433, 22);
-            this.tbSend.TabIndex = 48;
-            this.tbSend.UseSelectable = true;
-            this.tbSend.UseStyleColors = true;
-            this.tbSend.WaterMark = "send...";
-            this.tbSend.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbSend.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSend.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbSend_ButtonClick);
-            this.tbSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSend_KeyDown);
-            // 
             // ToolStrip
             // 
             this.ToolStrip.CanOverflow = false;
             this.ToolStrip.CheckedItemColor = System.Drawing.Color.Chocolate;
-            this.ToolStrip.CheckPressItemColors = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.ToolStrip.CheckPressItemColors = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(237)))));
             this.ToolStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStrip.ItemPressedColors = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.ToolStrip.ItemPressedColors = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(237)))));
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tSBNew,
             this.tSBConnect,
@@ -869,6 +812,64 @@
             this.tSBTopMost.ToolTipText = "top most";
             this.tSBTopMost.Click += new System.EventHandler(this.tSBTopMost_Click);
             // 
+            // MenuBox
+            // 
+            this.MenuBox.ContextMenuStrip = this.cmSys;
+            this.MenuBox.Image = global::TerminalTool.Properties.Resources.toolbox;
+            this.MenuBox.Location = new System.Drawing.Point(4, 8);
+            this.MenuBox.Name = "MenuBox";
+            this.MenuBox.Size = new System.Drawing.Size(16, 16);
+            this.MenuBox.TabIndex = 68;
+            this.MenuBox.TabStop = false;
+            this.MenuBox.Click += new System.EventHandler(this.MenuBox_Click);
+            // 
+            // tbSend
+            // 
+            this.tbSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSend.ContextMenuStrip = this.cmSend;
+            // 
+            // 
+            // 
+            this.tbSend.CustomButton.FlatAppearance.BorderSize = 0;
+            this.tbSend.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbSend.CustomButton.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.tbSend.CustomButton.Image = global::TerminalTool.Properties.Resources.arrow_7_down;
+            this.tbSend.CustomButton.Location = new System.Drawing.Point(413, 2);
+            this.tbSend.CustomButton.Margin = new System.Windows.Forms.Padding(0);
+            this.tbSend.CustomButton.Name = "";
+            this.tbSend.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.tbSend.CustomButton.Style = MetroFramework.MetroColorStyle.Lime;
+            this.tbSend.CustomButton.TabIndex = 1;
+            this.tbSend.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbSend.CustomButton.UseSelectable = true;
+            this.tbSend.CustomButton.UseStyleColors = true;
+            this.tbSend.DisplayIcon = true;
+            this.tbSend.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
+            this.tbSend.Icon = global::TerminalTool.Properties.Resources.mail_inbox;
+            this.tbSend.Lines = new string[0];
+            this.tbSend.Location = new System.Drawing.Point(3, 359);
+            this.tbSend.MaxLength = 32767;
+            this.tbSend.Name = "tbSend";
+            this.tbSend.PasswordChar = '\0';
+            this.tbSend.PromptText = "send...";
+            this.tbSend.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbSend.SelectedText = "";
+            this.tbSend.SelectionLength = 0;
+            this.tbSend.SelectionStart = 0;
+            this.tbSend.ShortcutsEnabled = true;
+            this.tbSend.ShowButton = true;
+            this.tbSend.ShowClearButton = true;
+            this.tbSend.Size = new System.Drawing.Size(433, 22);
+            this.tbSend.TabIndex = 48;
+            this.tbSend.UseSelectable = true;
+            this.tbSend.UseStyleColors = true;
+            this.tbSend.WaterMark = "send...";
+            this.tbSend.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbSend.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSend.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbSend_ButtonClick);
+            this.tbSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSend_KeyDown);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -879,7 +880,7 @@
             this.Controls.Add(this.fctbRcv);
             this.Controls.Add(this.linkZoom);
             this.Controls.Add(this.trackBarZoom);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.MenuBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btSendSetting);
             this.Controls.Add(this.tbSend);
@@ -904,9 +905,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).EndInit();
             this.toolMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MenuBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -924,7 +925,7 @@
         private MetroFramework.Controls.MetroTextBox tbSend;
         private FastColoredTextBoxNS.FastColoredTextBox fctbRcv;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox MenuBox;
         private MetroFramework.Controls.MetroTrackBar trackBarZoom;
         private MetroFramework.Controls.MetroLink linkZoom;
         private System.IO.Ports.SerialPort serialPort;

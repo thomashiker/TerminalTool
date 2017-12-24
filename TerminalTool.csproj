@@ -2117,6 +2117,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Monitor_Flat_128px.ico" />
+    <None Include="Resources\push_pin_16px.png" />
+    <None Include="Resources\bg_color_16px_1101267_easyicon.net.png" />
     <None Include="Resources\pin_16.png" />
     <None Include="Resources\pin_24px.png" />
   </ItemGroup>

@@ -1143,6 +1143,16 @@ namespace TerminalTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_color_16px_1101267_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("bg_color_16px_1101267_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bicycle {
             get {
                 object obj = ResourceManager.GetObject("bicycle", resourceCulture);
@@ -5236,6 +5246,16 @@ namespace TerminalTool.Properties {
         internal static System.Drawing.Bitmap projector {
             get {
                 object obj = ResourceManager.GetObject("projector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap push_pin_16px {
+            get {
+                object obj = ResourceManager.GetObject("push_pin_16px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

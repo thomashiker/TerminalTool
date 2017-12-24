@@ -874,5 +874,10 @@ namespace TerminalTool
         {
             tSBConnect_Click(sender, e);
         }
+
+        private void MenuBox_Click(object sender, EventArgs e)
+        {
+            cmSys.Show(MenuBox, 0, MenuBox.Height);
+        }
     }
 }
