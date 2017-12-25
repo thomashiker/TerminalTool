@@ -12,7 +12,6 @@ C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\bin\Debug
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\bin\Debug\MetroFramework.pdb
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\bin\Debug\PortSettingContextMenu.pdb
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.csprojResolveAssemblyReference.cache
-C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.csproj.TerminalTool.exe.config
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.NewCmdForm.resources
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.MainForm.resources
 C:\Users\hiker\Documents\GitHub\TerminalTool\TerminalTool\TerminalTool\obj\Debug\TerminalTool.Properties.Resources.resources
