@@ -30,10 +30,8 @@ namespace TerminalTool
         private Int64 rcvCharNum = 0;
         private Int64 sendCharNum = 0;
         private Int64 TimeElapse = 0;
-        private bool btLoopChecked = false;
         private Color styleColor;
         private bool recordState = true;
-        private bool sendTBMLoopChecked = false;
         private bool fctbRcvAutoScroll = true;
 
         private SendToolForm sendTool;
@@ -600,8 +598,8 @@ namespace TerminalTool
             
             //因为要访问ui资源，所以需要使用invoke方式同步ui。 
             rcvdata = Encoding.Default.GetString(buf);
-            //AppendRcvText(rcvdata);
-            WriteReceiveText(rcvdata);
+            AppendRcvText(rcvdata);
+            //WriteReceiveText(rcvdata);
             UpdateRcvCharDisplay(rcvCharNum);
             
             //Application.DoEvents();
