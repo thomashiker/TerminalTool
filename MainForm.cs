@@ -148,19 +148,19 @@ namespace TerminalTool
         public delegate void WriteText(string msg);
         public void WriteReceiveText(String msg)
         {
-            if (fctbRcv.InvokeRequired)
+            if (this.InvokeRequired)
             {
-                fctbRcv.BeginInvoke(new WriteText(WriteReceiveText), msg);
+                this.BeginInvoke(new WriteText(WriteReceiveText), msg);
                 return;
             }
-            fctbRcv.BeginUpdate();
+            //fctbRcv.BeginUpdate();
             fctbRcv.AppendText(msg);
             if (fctbRcvAutoScroll)
             {
                 //fctbRcv.GoEnd();
                 fctbRcv.GoEndLine();
             }
-            fctbRcv.EndUpdate();
+            //fctbRcv.EndUpdate();
         }
 
         bool PortInit()
@@ -598,8 +598,8 @@ namespace TerminalTool
             
             //因为要访问ui资源，所以需要使用invoke方式同步ui。 
             rcvdata = Encoding.Default.GetString(buf);
-            AppendRcvText(rcvdata);
-            //WriteReceiveText(rcvdata);
+            //AppendRcvText(rcvdata);
+            WriteReceiveText(rcvdata);
             UpdateRcvCharDisplay(rcvCharNum);
             
             //Application.DoEvents();
