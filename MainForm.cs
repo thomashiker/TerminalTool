@@ -133,7 +133,7 @@ namespace TerminalTool
         {
             LogToFile(msg);
 
-            fctbRcv.BeginInvoke((MethodInvoker)delegate ()
+            /*this.BeginInvoke((MethodInvoker)delegate ()
             {
                 fctbRcv.BeginUpdate();
                 fctbRcv.AppendText(msg);
@@ -143,7 +143,18 @@ namespace TerminalTool
                     fctbRcv.GoEndLine();
                 }
                 fctbRcv.EndUpdate();
-            }); 
+            });*/
+            BeginInvoke(new Action(() =>
+            {
+                fctbRcv.BeginUpdate();
+                fctbRcv.AppendText(msg);
+                if (fctbRcvAutoScroll)
+                {
+                    //fctbRcv.GoEnd();
+                    fctbRcv.GoEndLine();
+                }
+                fctbRcv.EndUpdate();
+            }));
         }
         public delegate void WriteText(string msg);
         public void WriteReceiveText(String msg)
@@ -582,10 +593,14 @@ namespace TerminalTool
 
         private void UpdateRcvCharDisplay(Int64 num)
         {
-            labelRcv.BeginInvoke((MethodInvoker)delegate ()
+            /*this.BeginInvoke((MethodInvoker)delegate ()
             {
                 labelRcv.Text = "r:" + num.ToString();
-            });
+            });*/
+            BeginInvoke(new Action(() =>
+            {
+                labelRcv.Text = "r:" + num.ToString();
+            }));
         }
         private void serialPort_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
@@ -598,11 +613,12 @@ namespace TerminalTool
             
             //因为要访问ui资源，所以需要使用invoke方式同步ui。 
             rcvdata = Encoding.Default.GetString(buf);
-            //AppendRcvText(rcvdata);
-            WriteReceiveText(rcvdata);
+            AppendRcvText(rcvdata);
+            //WriteReceiveText(rcvdata);
             UpdateRcvCharDisplay(rcvCharNum);
-            
-            //Application.DoEvents();
+
+            Thread.Sleep(50);
+            Application.DoEvents();
 
             //serialPort.DiscardInBuffer();
             //serialPort.ReadExisting
