@@ -440,16 +440,6 @@ namespace TerminalTool
             fctbRcv.NavigateForward();
         }
 
-        private void tSBFindPrevious_Click(object sender, EventArgs e)
-        {
-            //fctbRcv.findForm.FCBFindPrevious();
-        }
-
-        private void tSBFindNext_Click(object sender, EventArgs e)
-        {
-            //fctbRcv.findForm.FCBFindNext();
-        }
-
         private void tSBScreenShot_Click(object sender, EventArgs e)
         {
             CaptureImageTool capture = new CaptureImageTool();
@@ -459,6 +449,11 @@ namespace TerminalTool
             if (capture.ShowDialog() == DialogResult.OK)
             {
             }
+        }
+
+        private void tSBSetting_Click(object sender, EventArgs e)
+        {
+            cmSys.Show(ToolStrip, tSBSetting.Bounds.Left, tSBSetting.Bounds.Bottom);
         }
 
         private void tSBAutoScroll_Click(object sender, EventArgs e)
@@ -889,9 +884,25 @@ namespace TerminalTool
             tSBConnect_Click(sender, e);
         }
 
-        private void MenuBox_Click(object sender, EventArgs e)
+        private void bColoerBlackItem_Click(object sender, EventArgs e)
         {
-            cmSys.Show(MenuBox, 0, MenuBox.Height);
+            fctbRcv.BackColor = Color.Black;
+            fctbRcv.IndentBackColor = Color.Black;
+            fctbRcv.ForeColor = Color.White;
+        }
+
+        private void bColoerWhiteItem_Click(object sender, EventArgs e)
+        {
+            fctbRcv.BackColor = Color.White;
+            fctbRcv.IndentBackColor = Color.White;
+            fctbRcv.ForeColor = Color.Black;
+        }
+
+        private void bColoerGrayItem_Click(object sender, EventArgs e)
+        {
+            fctbRcv.BackColor = Color.WhiteSmoke;
+            fctbRcv.IndentBackColor = Color.WhiteSmoke;
+            fctbRcv.ForeColor = Color.Black;
         }
     }
 }

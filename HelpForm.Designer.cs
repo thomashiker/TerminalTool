@@ -37,7 +37,7 @@
             // 
             // internetLink
             // 
-            this.internetLink.Location = new System.Drawing.Point(37, 75);
+            this.internetLink.Location = new System.Drawing.Point(22, 80);
             this.internetLink.Name = "internetLink";
             this.internetLink.Size = new System.Drawing.Size(306, 23);
             this.internetLink.TabIndex = 0;
@@ -56,7 +56,7 @@
             this.dividePanel.HorizontalScrollbarSize = 10;
             this.dividePanel.Location = new System.Drawing.Point(20, 60);
             this.dividePanel.Name = "dividePanel";
-            this.dividePanel.Size = new System.Drawing.Size(372, 2);
+            this.dividePanel.Size = new System.Drawing.Size(319, 2);
             this.dividePanel.TabIndex = 1;
             this.dividePanel.UseCustomBackColor = true;
             this.dividePanel.UseStyleColors = true;
@@ -72,13 +72,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 171);
+            this.ClientSize = new System.Drawing.Size(359, 129);
             this.Controls.Add(this.dividePanel);
             this.Controls.Add(this.internetLink);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(412, 171);
+            this.MaximumSize = new System.Drawing.Size(400, 180);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(412, 171);
+            this.MinimumSize = new System.Drawing.Size(350, 120);
             this.Name = "HelpForm";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;

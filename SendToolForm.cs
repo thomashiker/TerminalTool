@@ -71,7 +71,7 @@ namespace TerminalTool
             if (null != ParentControl)
             {
                 this.Width = ParentControl.Width - 1;
-                this.Location = ParentControl.PointToScreen(new Point(ParentControl.Left - 1, ParentControl.Height));
+                this.Location = ParentControl.PointToScreen(new Point(ParentControl.Left - 3, ParentControl.Height));
             }
         }
 

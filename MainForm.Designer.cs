@@ -36,10 +36,9 @@
             this.labelTime = new MetroFramework.Controls.MetroLabel();
             this.cmSys = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.tsmiBackColor = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.whiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.grayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bColoerBlackItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bColoerWhiteItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bColoerGrayItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiStyleSelect = new System.Windows.Forms.ToolStripMenuItem();
             this.styleDefault = new System.Windows.Forms.ToolStripMenuItem();
             this.styleBlack = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,13 +70,12 @@
             this.LinkTimer = new System.Windows.Forms.Timer(this.components);
             this.StyleMng = new MetroFramework.Components.MetroStyleManager(this.components);
             this.btSendMsg = new MetroFramework.Controls.MetroButton();
-            this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
             this.toolMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStrip = new Antiufo.Controls.MetroToolStrip();
+            this.tbSend = new MetroFramework.Controls.MetroTextBox();
             this.tSBNew = new System.Windows.Forms.ToolStripButton();
             this.tSBConnect = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -91,21 +89,18 @@
             this.tSBOpenLog = new System.Windows.Forms.ToolStripButton();
             this.tSBOpenLogDir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.tSBFindPrevious = new System.Windows.Forms.ToolStripButton();
-            this.tSBFindNext = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tSBScreenShot = new System.Windows.Forms.ToolStripButton();
             this.tSBAutoScroll = new System.Windows.Forms.ToolStripButton();
             this.tSBTopMost = new System.Windows.Forms.ToolStripButton();
-            this.MenuBox = new System.Windows.Forms.PictureBox();
-            this.tbSend = new MetroFramework.Controls.MetroTextBox();
+            this.ToolStrip = new Antiufo.Controls.MetroToolStrip();
+            this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.tSBSetting = new System.Windows.Forms.ToolStripButton();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).BeginInit();
             this.toolMenu.SuspendLayout();
             this.ToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MenuBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).BeginInit();
             this.SuspendLayout();
             // 
             // labelConnect
@@ -183,37 +178,33 @@
             // tsmiBackColor
             // 
             this.tsmiBackColor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.whiteToolStripMenuItem,
-            this.grayToolStripMenuItem,
-            this.customizeToolStripMenuItem});
+            this.bColoerBlackItem,
+            this.bColoerWhiteItem,
+            this.bColoerGrayItem});
             this.tsmiBackColor.Name = "tsmiBackColor";
             this.tsmiBackColor.Size = new System.Drawing.Size(140, 22);
             this.tsmiBackColor.Text = "&Back Color";
             // 
-            // toolStripMenuItem1
+            // bColoerBlackItem
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
-            this.toolStripMenuItem1.Text = "&Black";
+            this.bColoerBlackItem.Name = "bColoerBlackItem";
+            this.bColoerBlackItem.Size = new System.Drawing.Size(109, 22);
+            this.bColoerBlackItem.Text = "&Black";
+            this.bColoerBlackItem.Click += new System.EventHandler(this.bColoerBlackItem_Click);
             // 
-            // whiteToolStripMenuItem
+            // bColoerWhiteItem
             // 
-            this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.whiteToolStripMenuItem.Text = "&White";
+            this.bColoerWhiteItem.Name = "bColoerWhiteItem";
+            this.bColoerWhiteItem.Size = new System.Drawing.Size(109, 22);
+            this.bColoerWhiteItem.Text = "&White";
+            this.bColoerWhiteItem.Click += new System.EventHandler(this.bColoerWhiteItem_Click);
             // 
-            // grayToolStripMenuItem
+            // bColoerGrayItem
             // 
-            this.grayToolStripMenuItem.Name = "grayToolStripMenuItem";
-            this.grayToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.grayToolStripMenuItem.Text = "&Gray";
-            // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.customizeToolStripMenuItem.Text = "&Customize";
+            this.bColoerGrayItem.Name = "bColoerGrayItem";
+            this.bColoerGrayItem.Size = new System.Drawing.Size(109, 22);
+            this.bColoerGrayItem.Text = "&Gray";
+            this.bColoerGrayItem.Click += new System.EventHandler(this.bColoerGrayItem_Click);
             // 
             // tmsiStyleSelect
             // 
@@ -358,7 +349,7 @@
             // 
             this.tsmiHelp.Name = "tsmiHelp";
             this.tsmiHelp.Size = new System.Drawing.Size(140, 22);
-            this.tsmiHelp.Text = "&Help";
+            this.tsmiHelp.Text = "&About";
             this.tsmiHelp.Click += new System.EventHandler(this.tsmiHelp_Click);
             // 
             // cmSend
@@ -478,52 +469,6 @@
             this.btSendMsg.UseStyleColors = true;
             this.btSendMsg.Click += new System.EventHandler(this.btSendMsg_Click);
             // 
-            // fctbRcv
-            // 
-            this.fctbRcv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.fctbRcv.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.fctbRcv.AutoScrollMinSize = new System.Drawing.Size(27, 14);
-            this.fctbRcv.BackBrush = null;
-            this.fctbRcv.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.fctbRcv.BookmarkColor = System.Drawing.Color.RoyalBlue;
-            this.fctbRcv.CaretColor = System.Drawing.Color.MediumSeaGreen;
-            this.fctbRcv.CharHeight = 14;
-            this.fctbRcv.CharWidth = 8;
-            this.fctbRcv.ContextMenuStrip = this.toolMenu;
-            this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
-            this.fctbRcv.IsReplaceMode = false;
-            this.fctbRcv.Location = new System.Drawing.Point(2, 56);
-            this.fctbRcv.Margin = new System.Windows.Forms.Padding(0);
-            this.fctbRcv.Name = "fctbRcv";
-            this.fctbRcv.Paddings = new System.Windows.Forms.Padding(0);
-            this.fctbRcv.ReadOnly = true;
-            this.fctbRcv.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.fctbRcv.ServiceColors = null;
-            this.fctbRcv.ServiceLinesColor = System.Drawing.Color.DeepSkyBlue;
-            this.fctbRcv.Size = new System.Drawing.Size(496, 300);
-            this.fctbRcv.TabIndex = 0;
-            this.fctbRcv.WordWrapAutoIndent = false;
-            this.fctbRcv.WordWrapMode = FastColoredTextBoxNS.WordWrapMode.Custom;
-            this.fctbRcv.Zoom = 100;
-            this.fctbRcv.KeyPressed += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPressed);
-            this.fctbRcv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fctbRcv_KeyDown);
-            this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
-            this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
-            // 
             // toolMenu
             // 
             this.toolMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -564,42 +509,52 @@
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
-            // ToolStrip
+            // tbSend
             // 
-            this.ToolStrip.CanOverflow = false;
-            this.ToolStrip.CheckedItemColor = System.Drawing.Color.Chocolate;
-            this.ToolStrip.CheckPressItemColors = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(237)))));
-            this.ToolStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStrip.ItemPressedColors = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(237)))));
-            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tSBNew,
-            this.tSBConnect,
-            this.toolStripSeparator1,
-            this.tSBSave,
-            this.tSBClear,
-            this.tSBShowLineNum,
-            this.tSBClearTags,
-            this.tSBRecord,
-            this.toolStripSeparator3,
-            this.tSBNewLogFile,
-            this.tSBOpenLog,
-            this.tSBOpenLogDir,
-            this.toolStripSeparator4,
-            this.tSBFindPrevious,
-            this.tSBFindNext,
-            this.toolStripSeparator5,
-            this.tSBScreenShot,
-            this.tSBAutoScroll,
-            this.tSBTopMost});
-            this.ToolStrip.ItemSelectedColor = System.Drawing.Color.Chocolate;
-            this.ToolStrip.Location = new System.Drawing.Point(3, 30);
-            this.ToolStrip.Name = "ToolStrip";
-            this.ToolStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.ToolStrip.ShowItemToolTips = false;
-            this.ToolStrip.Size = new System.Drawing.Size(494, 26);
-            this.ToolStrip.TabIndex = 77;
-            this.ToolStrip.Text = "ToolStrip";
+            this.tbSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSend.ContextMenuStrip = this.cmSend;
+            // 
+            // 
+            // 
+            this.tbSend.CustomButton.FlatAppearance.BorderSize = 0;
+            this.tbSend.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbSend.CustomButton.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.tbSend.CustomButton.Image = global::TerminalTool.Properties.Resources.arrow_7_down;
+            this.tbSend.CustomButton.Location = new System.Drawing.Point(413, 2);
+            this.tbSend.CustomButton.Margin = new System.Windows.Forms.Padding(0);
+            this.tbSend.CustomButton.Name = "";
+            this.tbSend.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.tbSend.CustomButton.Style = MetroFramework.MetroColorStyle.Lime;
+            this.tbSend.CustomButton.TabIndex = 1;
+            this.tbSend.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbSend.CustomButton.UseSelectable = true;
+            this.tbSend.CustomButton.UseStyleColors = true;
+            this.tbSend.DisplayIcon = true;
+            this.tbSend.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
+            this.tbSend.Icon = global::TerminalTool.Properties.Resources.mail_inbox;
+            this.tbSend.Lines = new string[0];
+            this.tbSend.Location = new System.Drawing.Point(3, 359);
+            this.tbSend.MaxLength = 32767;
+            this.tbSend.Name = "tbSend";
+            this.tbSend.PasswordChar = '\0';
+            this.tbSend.PromptText = "send...";
+            this.tbSend.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbSend.SelectedText = "";
+            this.tbSend.SelectionLength = 0;
+            this.tbSend.SelectionStart = 0;
+            this.tbSend.ShortcutsEnabled = true;
+            this.tbSend.ShowButton = true;
+            this.tbSend.ShowClearButton = true;
+            this.tbSend.Size = new System.Drawing.Size(433, 22);
+            this.tbSend.TabIndex = 48;
+            this.tbSend.UseSelectable = true;
+            this.tbSend.UseStyleColors = true;
+            this.tbSend.WaterMark = "send...";
+            this.tbSend.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbSend.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSend.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbSend_ButtonClick);
+            this.tbSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSend_KeyDown);
             // 
             // tSBNew
             // 
@@ -740,36 +695,6 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
             // 
-            // tSBFindPrevious
-            // 
-            this.tSBFindPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tSBFindPrevious.Image = global::TerminalTool.Properties.Resources.arrow_2_left;
-            this.tSBFindPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBFindPrevious.Name = "tSBFindPrevious";
-            this.tSBFindPrevious.Size = new System.Drawing.Size(23, 23);
-            this.tSBFindPrevious.Text = "toolStripButton13";
-            this.tSBFindPrevious.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tSBFindPrevious.ToolTipText = "find previous";
-            this.tSBFindPrevious.Click += new System.EventHandler(this.tSBFindPrevious_Click);
-            // 
-            // tSBFindNext
-            // 
-            this.tSBFindNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tSBFindNext.Image = global::TerminalTool.Properties.Resources.arrow_2_right;
-            this.tSBFindNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBFindNext.Name = "tSBFindNext";
-            this.tSBFindNext.Size = new System.Drawing.Size(23, 23);
-            this.tSBFindNext.Text = "toolStripButton14";
-            this.tSBFindNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tSBFindNext.ToolTipText = "find next";
-            this.tSBFindNext.Click += new System.EventHandler(this.tSBFindNext_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 2);
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
-            // 
             // tSBScreenShot
             // 
             this.tSBScreenShot.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -812,63 +737,97 @@
             this.tSBTopMost.ToolTipText = "top most";
             this.tSBTopMost.Click += new System.EventHandler(this.tSBTopMost_Click);
             // 
-            // MenuBox
+            // ToolStrip
             // 
-            this.MenuBox.ContextMenuStrip = this.cmSys;
-            this.MenuBox.Image = global::TerminalTool.Properties.Resources.toolbox;
-            this.MenuBox.Location = new System.Drawing.Point(4, 8);
-            this.MenuBox.Name = "MenuBox";
-            this.MenuBox.Size = new System.Drawing.Size(16, 16);
-            this.MenuBox.TabIndex = 68;
-            this.MenuBox.TabStop = false;
-            this.MenuBox.Click += new System.EventHandler(this.MenuBox_Click);
+            this.ToolStrip.CanOverflow = false;
+            this.ToolStrip.CheckedItemColor = System.Drawing.Color.Chocolate;
+            this.ToolStrip.CheckPressItemColors = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.ToolStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.ToolStrip.ItemPressedColors = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tSBNew,
+            this.tSBConnect,
+            this.toolStripSeparator1,
+            this.tSBSave,
+            this.tSBClear,
+            this.tSBShowLineNum,
+            this.tSBClearTags,
+            this.tSBRecord,
+            this.toolStripSeparator3,
+            this.tSBNewLogFile,
+            this.tSBOpenLog,
+            this.tSBOpenLogDir,
+            this.toolStripSeparator4,
+            this.tSBSetting,
+            this.tSBScreenShot,
+            this.tSBAutoScroll,
+            this.tSBTopMost});
+            this.ToolStrip.ItemSelectedColor = System.Drawing.Color.Chocolate;
+            this.ToolStrip.Location = new System.Drawing.Point(3, 30);
+            this.ToolStrip.Name = "ToolStrip";
+            this.ToolStrip.Padding = new System.Windows.Forms.Padding(0);
+            this.ToolStrip.ShowItemToolTips = false;
+            this.ToolStrip.Size = new System.Drawing.Size(494, 26);
+            this.ToolStrip.TabIndex = 77;
+            this.ToolStrip.Text = "ToolStrip";
             // 
-            // tbSend
+            // fctbRcv
             // 
-            this.tbSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.fctbRcv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSend.ContextMenuStrip = this.cmSend;
+            this.fctbRcv.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.fctbRcv.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            this.fctbRcv.BackBrush = null;
+            this.fctbRcv.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.fctbRcv.BookmarkColor = System.Drawing.Color.RoyalBlue;
+            this.fctbRcv.CaretColor = System.Drawing.Color.MediumSeaGreen;
+            this.fctbRcv.CharHeight = 14;
+            this.fctbRcv.CharWidth = 8;
+            this.fctbRcv.ContextMenuStrip = this.toolMenu;
+            this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
+            this.fctbRcv.IsReplaceMode = false;
+            this.fctbRcv.Location = new System.Drawing.Point(2, 56);
+            this.fctbRcv.Margin = new System.Windows.Forms.Padding(0);
+            this.fctbRcv.Name = "fctbRcv";
+            this.fctbRcv.Paddings = new System.Windows.Forms.Padding(0);
+            this.fctbRcv.ReadOnly = true;
+            this.fctbRcv.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.fctbRcv.ServiceColors = null;
+            this.fctbRcv.ServiceLinesColor = System.Drawing.Color.DeepSkyBlue;
+            this.fctbRcv.Size = new System.Drawing.Size(496, 300);
+            this.fctbRcv.TabIndex = 0;
+            this.fctbRcv.WordWrapAutoIndent = false;
+            this.fctbRcv.WordWrapMode = FastColoredTextBoxNS.WordWrapMode.Custom;
+            this.fctbRcv.Zoom = 100;
+            this.fctbRcv.KeyPressed += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPressed);
+            this.fctbRcv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fctbRcv_KeyDown);
+            this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
+            this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
             // 
+            // tSBSetting
             // 
-            // 
-            this.tbSend.CustomButton.FlatAppearance.BorderSize = 0;
-            this.tbSend.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbSend.CustomButton.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.tbSend.CustomButton.Image = global::TerminalTool.Properties.Resources.arrow_7_down;
-            this.tbSend.CustomButton.Location = new System.Drawing.Point(413, 2);
-            this.tbSend.CustomButton.Margin = new System.Windows.Forms.Padding(0);
-            this.tbSend.CustomButton.Name = "";
-            this.tbSend.CustomButton.Size = new System.Drawing.Size(17, 17);
-            this.tbSend.CustomButton.Style = MetroFramework.MetroColorStyle.Lime;
-            this.tbSend.CustomButton.TabIndex = 1;
-            this.tbSend.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbSend.CustomButton.UseSelectable = true;
-            this.tbSend.CustomButton.UseStyleColors = true;
-            this.tbSend.DisplayIcon = true;
-            this.tbSend.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.tbSend.Icon = global::TerminalTool.Properties.Resources.mail_inbox;
-            this.tbSend.Lines = new string[0];
-            this.tbSend.Location = new System.Drawing.Point(3, 359);
-            this.tbSend.MaxLength = 32767;
-            this.tbSend.Name = "tbSend";
-            this.tbSend.PasswordChar = '\0';
-            this.tbSend.PromptText = "send...";
-            this.tbSend.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbSend.SelectedText = "";
-            this.tbSend.SelectionLength = 0;
-            this.tbSend.SelectionStart = 0;
-            this.tbSend.ShortcutsEnabled = true;
-            this.tbSend.ShowButton = true;
-            this.tbSend.ShowClearButton = true;
-            this.tbSend.Size = new System.Drawing.Size(433, 22);
-            this.tbSend.TabIndex = 48;
-            this.tbSend.UseSelectable = true;
-            this.tbSend.UseStyleColors = true;
-            this.tbSend.WaterMark = "send...";
-            this.tbSend.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbSend.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSend.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbSend_ButtonClick);
-            this.tbSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSend_KeyDown);
+            this.tSBSetting.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBSetting.Image = global::TerminalTool.Properties.Resources.settings;
+            this.tSBSetting.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBSetting.Name = "tSBSetting";
+            this.tSBSetting.Size = new System.Drawing.Size(23, 23);
+            this.tSBSetting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBSetting.ToolTipText = "setting";
+            this.tSBSetting.Click += new System.EventHandler(this.tSBSetting_Click);
             // 
             // MainForm
             // 
@@ -880,7 +839,6 @@
             this.Controls.Add(this.fctbRcv);
             this.Controls.Add(this.linkZoom);
             this.Controls.Add(this.trackBarZoom);
-            this.Controls.Add(this.MenuBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btSendSetting);
             this.Controls.Add(this.tbSend);
@@ -903,11 +861,10 @@
             this.cmSys.ResumeLayout(false);
             this.cmSend.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).EndInit();
             this.toolMenu.ResumeLayout(false);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MenuBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fctbRcv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -925,7 +882,6 @@
         private MetroFramework.Controls.MetroTextBox tbSend;
         private FastColoredTextBoxNS.FastColoredTextBox fctbRcv;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox MenuBox;
         private MetroFramework.Controls.MetroTrackBar trackBarZoom;
         private MetroFramework.Controls.MetroLink linkZoom;
         private System.IO.Ports.SerialPort serialPort;
@@ -949,40 +905,37 @@
         private System.Windows.Forms.ToolStripMenuItem styleYellow;
         private MetroFramework.Components.MetroStyleManager StyleMng;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem whiteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem grayToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bColoerBlackItem;
+        private System.Windows.Forms.ToolStripMenuItem bColoerWhiteItem;
+        private System.Windows.Forms.ToolStripMenuItem bColoerGrayItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
         private MetroFramework.Controls.MetroContextMenu cmSend;
         private System.Windows.Forms.ToolStripMenuItem sendTBMSave;
         private System.Windows.Forms.ToolStripMenuItem sendTBMSend;
         private MetroFramework.Controls.MetroButton btSendMsg;
-        private Antiufo.Controls.MetroToolStrip ToolStrip;
-        private System.Windows.Forms.ToolStripButton tSBNew;
-        private System.Windows.Forms.ToolStripButton tSBConnect;
-        private System.Windows.Forms.ToolStripButton tSBSave;
-        private System.Windows.Forms.ToolStripButton tSBClear;
-        private System.Windows.Forms.ToolStripButton tSBShowLineNum;
-        private System.Windows.Forms.ToolStripButton tSBClearTags;
-        private System.Windows.Forms.ToolStripButton tSBRecord;
-        private System.Windows.Forms.ToolStripButton tSBNewLogFile;
-        private System.Windows.Forms.ToolStripButton tSBOpenLog;
-        private System.Windows.Forms.ToolStripButton tSBOpenLogDir;
-        private System.Windows.Forms.ToolStripButton tSBFindPrevious;
-        private System.Windows.Forms.ToolStripButton tSBFindNext;
-        private System.Windows.Forms.ToolStripButton tSBScreenShot;
-        private System.Windows.Forms.ToolStripButton tSBAutoScroll;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton tSBTopMost;
         private MetroFramework.Controls.MetroContextMenu toolMenu;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem connectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
+        private Antiufo.Controls.MetroToolStrip ToolStrip;
+        private System.Windows.Forms.ToolStripButton tSBNew;
+        private System.Windows.Forms.ToolStripButton tSBConnect;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton tSBSave;
+        private System.Windows.Forms.ToolStripButton tSBClear;
+        private System.Windows.Forms.ToolStripButton tSBShowLineNum;
+        private System.Windows.Forms.ToolStripButton tSBClearTags;
+        private System.Windows.Forms.ToolStripButton tSBRecord;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton tSBNewLogFile;
+        private System.Windows.Forms.ToolStripButton tSBOpenLog;
+        private System.Windows.Forms.ToolStripButton tSBOpenLogDir;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton tSBScreenShot;
+        private System.Windows.Forms.ToolStripButton tSBAutoScroll;
+        private System.Windows.Forms.ToolStripButton tSBTopMost;
+        private System.Windows.Forms.ToolStripButton tSBSetting;
     }
 }
 
