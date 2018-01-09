@@ -17,6 +17,7 @@ using System.Diagnostics;
 using System.Management;
 using CSharpWin;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace TerminalTool
 {
@@ -903,6 +904,65 @@ namespace TerminalTool
             fctbRcv.BackColor = Color.WhiteSmoke;
             fctbRcv.IndentBackColor = Color.WhiteSmoke;
             fctbRcv.ForeColor = Color.Black;
+        }
+
+
+
+        // usb消息定义
+        public const int WM_DEVICE_CHANGE = 0x219;
+        public const int DBT_DEVICEARRIVAL = 0x8000;
+        public const int DBT_DEVICE_REMOVE_COMPLETE = 0x8004;
+        public const UInt32 DBT_DEVTYP_PORT = 0x00000003;
+
+        //[StructLayout(LayoutKind.Sequential)]
+        struct DEV_BROADCAST_HDR
+        {
+            public UInt32 dbch_size;
+            public UInt32 dbch_devicetype;
+            public UInt32 dbch_reserved;
+        }
+
+
+        //[StructLayout(LayoutKind.Sequential)]
+        protected struct DEV_BROADCAST_PORT_Fixed
+        {
+            public uint dbcp_size;
+            public uint dbcp_devicetype;
+            public uint dbcp_reserved;
+            // Variable?length field dbcp_name is declared here in the C header file.
+        }
+
+
+        /// <summary>
+        /// 检测USB串口的拔插
+        /// </summary>
+        /// <param name="m"></param>
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WM_DEVICE_CHANGE)        // 捕获USB设备的拔出消息WM_DEVICECHANGE
+            {
+                DEV_BROADCAST_HDR dbhdr;
+                switch (m.WParam.ToInt32())
+                {
+                    case DBT_DEVICE_REMOVE_COMPLETE:    // USB拔出     
+                        dbhdr = (DEV_BROADCAST_HDR)Marshal.PtrToStructure(m.LParam, typeof(DEV_BROADCAST_HDR));
+                        if (dbhdr.dbch_devicetype == DBT_DEVTYP_PORT)
+                        {
+                            string portName = Marshal.PtrToStringUni((IntPtr)(m.LParam.ToInt32() + Marshal.SizeOf(typeof(DEV_BROADCAST_PORT_Fixed))));
+                            fctbRcv.AppendText(portName + " removed\n");
+                        }
+                        break;
+                    case DBT_DEVICEARRIVAL:             // USB插入获取对应串口名称
+                        dbhdr = (DEV_BROADCAST_HDR)Marshal.PtrToStructure(m.LParam, typeof(DEV_BROADCAST_HDR));
+                        if (dbhdr.dbch_devicetype == DBT_DEVTYP_PORT)
+                        {
+                            string portName = Marshal.PtrToStringUni((IntPtr)(m.LParam.ToInt32() + Marshal.SizeOf(typeof(DEV_BROADCAST_PORT_Fixed))));
+                            fctbRcv.AppendText(portName + " inserted\n");
+                        }
+                        break;
+                }
+            }
+            base.WndProc(ref m);
         }
     }
 }

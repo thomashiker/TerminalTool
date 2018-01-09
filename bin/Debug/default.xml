@@ -1,9 +1,3 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cmdlist>
-  <CMD cmd="1" discription="读内存" />
-  <CMD cmd="2" discription="test" />
-  <CMD cmd="3" discription="No Discription" />
-  <CMD cmd="4" discription="no discription" />
-  <CMD cmd="5" discription="hello " />
-  <CMD cmd="" discription="" />
 </cmdlist>
