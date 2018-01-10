@@ -242,6 +242,8 @@ namespace TerminalTool
                 }
                 catch
                 {
+                    serialPort.Dispose();
+                    serialPort = new SerialPort();
                 }
             }
 
@@ -265,6 +267,8 @@ namespace TerminalTool
                 }
                 catch
                 {
+                    serialPort.Dispose();
+                    serialPort = new SerialPort();
                 }
             }
 
@@ -937,7 +941,7 @@ namespace TerminalTool
         /// 检测USB串口的拔插
         /// </summary>
         /// <param name="m"></param>
-        protected override void WndProc(ref Message m)
+        /*protected override void WndProc(ref Message m)
         {
             if (m.Msg == WM_DEVICE_CHANGE)        // 捕获USB设备的拔出消息WM_DEVICECHANGE
             {
@@ -949,7 +953,7 @@ namespace TerminalTool
                         if (dbhdr.dbch_devicetype == DBT_DEVTYP_PORT)
                         {
                             string portName = Marshal.PtrToStringUni((IntPtr)(m.LParam.ToInt32() + Marshal.SizeOf(typeof(DEV_BROADCAST_PORT_Fixed))));
-                            fctbRcv.AppendText(portName + " removed\n");
+                            //fctbRcv.AppendText(portName + " removed\n");
                         }
                         break;
                     case DBT_DEVICEARRIVAL:             // USB插入获取对应串口名称
@@ -957,12 +961,12 @@ namespace TerminalTool
                         if (dbhdr.dbch_devicetype == DBT_DEVTYP_PORT)
                         {
                             string portName = Marshal.PtrToStringUni((IntPtr)(m.LParam.ToInt32() + Marshal.SizeOf(typeof(DEV_BROADCAST_PORT_Fixed))));
-                            fctbRcv.AppendText(portName + " inserted\n");
+                            //fctbRcv.AppendText(portName + " inserted\n");
                         }
                         break;
                 }
             }
             base.WndProc(ref m);
-        }
+        }*/
     }
 }
