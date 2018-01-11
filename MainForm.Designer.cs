@@ -93,8 +93,9 @@
             this.tSBAutoScroll = new System.Windows.Forms.ToolStripButton();
             this.tSBTopMost = new System.Windows.Forms.ToolStripButton();
             this.ToolStrip = new Antiufo.Controls.MetroToolStrip();
-            this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
             this.tSBSetting = new System.Windows.Forms.ToolStripButton();
+            this.fctbRcv = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.cmSys.SuspendLayout();
             this.cmSend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleMng)).BeginInit();
@@ -762,7 +763,8 @@
             this.tSBSetting,
             this.tSBScreenShot,
             this.tSBAutoScroll,
-            this.tSBTopMost});
+            this.tSBTopMost,
+            this.toolStripButton1});
             this.ToolStrip.ItemSelectedColor = System.Drawing.Color.Chocolate;
             this.ToolStrip.Location = new System.Drawing.Point(3, 30);
             this.ToolStrip.Name = "ToolStrip";
@@ -771,6 +773,17 @@
             this.ToolStrip.Size = new System.Drawing.Size(494, 26);
             this.ToolStrip.TabIndex = 77;
             this.ToolStrip.Text = "ToolStrip";
+            // 
+            // tSBSetting
+            // 
+            this.tSBSetting.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBSetting.Image = global::TerminalTool.Properties.Resources.settings;
+            this.tSBSetting.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBSetting.Name = "tSBSetting";
+            this.tSBSetting.Size = new System.Drawing.Size(23, 23);
+            this.tSBSetting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tSBSetting.ToolTipText = "setting";
+            this.tSBSetting.Click += new System.EventHandler(this.tSBSetting_Click);
             // 
             // fctbRcv
             // 
@@ -798,6 +811,7 @@
             this.fctbRcv.ContextMenuStrip = this.toolMenu;
             this.fctbRcv.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fctbRcv.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fctbRcv.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.fctbRcv.IndentBackColor = System.Drawing.Color.White;
             this.fctbRcv.IsReplaceMode = false;
             this.fctbRcv.Location = new System.Drawing.Point(2, 56);
@@ -818,16 +832,16 @@
             this.fctbRcv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fctbRcv_KeyPress);
             this.fctbRcv.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fctbRcv_MouseDoubleClick);
             // 
-            // tSBSetting
+            // toolStripButton1
             // 
-            this.tSBSetting.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tSBSetting.Image = global::TerminalTool.Properties.Resources.settings;
-            this.tSBSetting.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBSetting.Name = "tSBSetting";
-            this.tSBSetting.Size = new System.Drawing.Size(23, 23);
-            this.tSBSetting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tSBSetting.ToolTipText = "setting";
-            this.tSBSetting.Click += new System.EventHandler(this.tSBSetting_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 23);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // MainForm
             // 
@@ -936,6 +950,7 @@
         private System.Windows.Forms.ToolStripButton tSBAutoScroll;
         private System.Windows.Forms.ToolStripButton tSBTopMost;
         private System.Windows.Forms.ToolStripButton tSBSetting;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

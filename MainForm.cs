@@ -936,6 +936,14 @@ namespace TerminalTool
             // Variable?length field dbcp_name is declared here in the C header file.
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            serialPort.DiscardInBuffer();
+            serialPort.DiscardOutBuffer();
+            serialPort.Close();
+            serialPort.Dispose();
+            serialPort = new SerialPort();
+        }
 
         /// <summary>
         /// 检测USB串口的拔插
